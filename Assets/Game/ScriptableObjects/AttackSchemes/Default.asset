@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44ac258fbed4094c989900f1d839498, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 0}
-  _bulletPerAttack: 0
-  _bulletDamage: 0
-  _bulletVelocity: 0
-  _bulletTimeLife: 0
-  _bulletHitNumber: 0
+  _bulletPrefab: {fileID: 6921753437444622706, guid: 0dfb2ce7ba210b949af5cc0cb2bcce38, type: 3}
+  _bulletPerAttack: 1
+  _bulletDamage: 10
+  _bulletVelocity: 20
+  _bulletTimeLife: 10
+  _bulletHitNumber: 1
   _bulletAccuracy: {x: 0, y: 0}
-  _attackDelay: 0
+  _attackDelay: 1
