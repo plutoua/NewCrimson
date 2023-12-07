@@ -7,13 +7,13 @@ public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    public event UnityAction PlayerMovedEvent
+    public event UnityAction<Vector3> PlayerMovedEvent
     {
         add { _playerMovedEvent += value; } 
         remove { _playerMovedEvent -= value; }
     }
 
-    private event UnityAction _playerMovedEvent;
+    private event UnityAction<Vector3> _playerMovedEvent;
 
     private void Update()
     {
@@ -38,6 +38,6 @@ public class PlayerMover : MonoBehaviour
     private void Move(Vector3 direction)
     {
         transform.position += direction * _speed * Time.deltaTime;
-        _playerMovedEvent?.Invoke();
+        _playerMovedEvent?.Invoke(transform.position);
     }
 }

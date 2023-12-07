@@ -47,7 +47,7 @@ public class PlayerRotator : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, angle - 90);
     }
 
-    private void OnPlayerMoved()
+    private void OnPlayerMoved(Vector3 vector3)
     {
         SetRotation();
     }
