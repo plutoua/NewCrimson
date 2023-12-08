@@ -1,3 +1,4 @@
+using TimmyFramework;
 using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour
@@ -8,10 +9,19 @@ public class PlayerAttacker : MonoBehaviour
     private float _attackDelay;
     private float _lastAttackTimePass;
     private bool _isCanAttack;
+    private MouseLocatorController _mouseLocatorController;
 
     private void Start()
     {
         _attackDelay = _attackScheme.AttackDelay;
+        if (Game.IsReady)
+        {
+            _mouseLocatorController = Game.GetController<MouseLocatorController>();
+        }
+        else
+        {
+            Game.OnInitializedEvent += OnGameReady;
+        }
     }
 
     private void Update()
@@ -58,9 +68,18 @@ public class PlayerAttacker : MonoBehaviour
 
     private Vector3 GetAttackDirection()
     {
-        // TODO: world mouse position service
-        var mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0;
-        return mouseWorldPosition.normalized;
+        if(_mouseLocatorController == null)
+        {
+            return Vector3.zero;
+        }
+        
+        var mouseWorldPositionDirection = _mouseLocatorController.MouseWorldPosition - _attackPosition.position;
+        mouseWorldPositionDirection.z = 0;
+        return mouseWorldPositionDirection.normalized;
+    }
+
+    private void OnGameReady()
+    {
+        _mouseLocatorController = Game.GetController<MouseLocatorController>();
     }
 }
