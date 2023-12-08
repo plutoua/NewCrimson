@@ -15,29 +15,33 @@ public class PlayerMover : MonoBehaviour
 
     private event UnityAction<Vector3> _playerMovedEvent;
 
-    private void Update()
+    private Vector2 _moveDirection;
+    private Rigidbody2D _rigidbody;
+
+    private void Start()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            Move(Vector3.left);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            Move(Vector3.right);
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            Move(Vector3.up);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Move(Vector3.down);
-        }
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _moveDirection = Vector2.zero;
     }
 
-    private void Move(Vector3 direction)
+    private void Update()
     {
-        transform.position += direction * _speed * Time.deltaTime;
-        _playerMovedEvent?.Invoke(transform.position);
+        _moveDirection.x = Input.GetAxis("Horizontal");
+        _moveDirection.y = Input.GetAxis("Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void Move()
+    {
+        if(_rigidbody ==  null) return;
+        if(_moveDirection != Vector2.zero)
+        {
+            _rigidbody.MovePosition(_rigidbody.position + _moveDirection * _speed * Time.fixedDeltaTime);
+            _playerMovedEvent?.Invoke(transform.position);
+        }   
     }
 }

@@ -21,6 +21,8 @@ public class Bullet : MonoBehaviour
 
         _timePased = 0;
         _hitCounter = 0;
+
+        SetBulletAngle(direction);
     }
 
     private void Update()
@@ -72,5 +74,11 @@ public class Bullet : MonoBehaviour
     {
         // TODO: deactivation in objects pull 
         Destroy(gameObject);
+    }
+
+    private void SetBulletAngle(Vector3 direction)
+    {
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.eulerAngles = new Vector3(0, 0, angle - 90);
     }
 }
