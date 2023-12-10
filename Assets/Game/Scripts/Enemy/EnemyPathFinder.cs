@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyPathFinder : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] public Transform target;
 
     NavMeshAgent agent;
     // Start is called before the first frame update
@@ -19,6 +19,10 @@ public class EnemyPathFinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
+        
+        // StorageTest st = Game.GetStorage<StorageTest>();
+        if (target){
+            agent.SetDestination(target.position);
+        }
     }
 }
