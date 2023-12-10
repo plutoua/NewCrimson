@@ -1,6 +1,7 @@
 import numpy as np
 import random
 
+
 def generate_map(size, jump_spots):
     """
     Generates a map of given size.
@@ -19,8 +20,7 @@ def generate_map(size, jump_spots):
             elif random.random() < 0.1 and jump_spots > 0:  # 10% chance to be a jump spot
                 map[i, j] = 2
                 jump_spots -= 1
-    # left, down, left, right
-    # shores = [[1,2,5,12,61,2,3],[1,2,5,12,61,2,3],[1,2,5,12,61,2,3],[1,2,5,12,61,2,3]]
+
     shores = [[],[],[],[]]
     for shore in shores:
         for i in range(size):

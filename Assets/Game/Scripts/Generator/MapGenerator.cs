@@ -61,7 +61,7 @@ public class MapGenerator : MonoBehaviour
 
     void Start(){
 
-        string path = "C:\\Users\\loydy\\Desktop\\test_shit\\map1.map";
+        string path = "assets\\Game\\Scripts\\Generator\\map1.map";
         List<int[]> mapList = new List<int[]>();
 
         foreach (var line in File.ReadAllLines(path))
