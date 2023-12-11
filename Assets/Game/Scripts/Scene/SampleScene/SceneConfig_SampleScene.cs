@@ -13,6 +13,7 @@ public class SceneConfig_SampleScene : SceneConfig
         var controllerMap = new Dictionary<Type, IController>();
         controllerMap.CreateAndAdd<MouseLocatorController>();
         controllerMap.CreateAndAdd<PlayerLocatorController>();
+        controllerMap.CreateAndAdd<EnemysLocatorController>();
         return controllerMap;
     }
 

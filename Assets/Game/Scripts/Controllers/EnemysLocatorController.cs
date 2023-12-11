@@ -8,18 +8,23 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
-public class EnemysStorage : IStorage
+public class EnemysLocatorController : IController
 {
     public Dictionary<int, Vector3> enemys_coords_links;
     public Dictionary<int, GameObject> enemys;
 
     public void Initialize()
     {
-        
     }
 
     public int InsertEnemy(GameObject obj){
         // add recursive try-except with key +1 on collision, couse single link usage.
+        if (enemys == null){
+            enemys = new Dictionary<int, GameObject>
+            {
+                { 0, null }
+            };
+        }
         int maxKey = enemys.Keys.Max();
         enemys.Add(maxKey + 1, obj);
         return maxKey + 1;

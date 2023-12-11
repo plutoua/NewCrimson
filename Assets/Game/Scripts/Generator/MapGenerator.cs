@@ -10,57 +10,85 @@ using System.Collections.Generic;
 
 using System;
 using System.IO;
+using TimmyFramework;
+using System.Linq;
 
 
 public class MapGenerator : MonoBehaviour
 {
     // MAKE 1 SINGLE LIST ON START OF GAME
-    public List<Tile> tiles;
-    public Tilemap tilemap; // Посилання на Tilemap
-    // public Tile walkableTile; // Тайл для вільного пересування
-    // public Tile blockedTile; // Тайл з забороною на пересування
-    public GameObject testEnemyObject;
-    public Transform player_transform;
+    [SerializeField]
+    private List<Tile> _tiles;
 
+    private void getTiles(){
+        Dictionary<string, Tile> temp_tiles = new Dictionary<string, Tile>();
 
+        // Завантаження усіх Tile об'єктів з папки Resources/Tiles
+        Tile[] loadedTiles = Resources.LoadAll<Tile>("Sprites");
 
-
-    public bool started = false;
-    public int type = 0;
-    public NavMeshSurface surface;
-
-    // Метод для генерації карти
-    public void GenerateMap(int[,] mapData)
-    {
-        for (int x = 0; x < mapData.GetLength(0); x++)
+        foreach (Tile tile in loadedTiles)
         {
-            for (int y = 0; y < mapData.GetLength(1); y++)
-            {
-                PlaceTile(x, y, mapData[x, y]);
+            if (!temp_tiles.ContainsKey(tile.name)){
+                temp_tiles.Add(tile.name, tile);
             }
         }
-    }
 
-    // Метод для розміщення тайлів
-    void PlaceTile(int x, int y, int tileType)
-    {
-        Vector3Int position = new Vector3Int(x, y, 0);
-        if (tileType == type){
-            tilemap.SetTile(position, tiles[tileType]);
-        }
-        // тимчасове місце для спавну ворогів і обєктів на першому генераторі (виділить окремий генератор ворогів)
-        if (type == 0 && tileType == 4){
-            float fx = (float)x + 0.5f;
-            float fy = (float)y + 0.5f;
-            GameObject obj_clone = Instantiate(testEnemyObject, new Vector3(fx, fy, 0), Quaternion.identity);
-            EnemyPathFinder emp = obj_clone.GetComponent<EnemyPathFinder>();
-            emp.target = player_transform;
+        foreach (string name in ObjectTypes.namesList){
+            
+            _tiles.Add(temp_tiles[name]);
         }
     }
 
+    private Tilemap _tilemap; // Посилання на Tilemap
+    // public Tile walkableTile; // Тайл для вільного пересування
+    // public Tile blockedTile; // Тайл з забороною на пересування
+    
+    public static class ObjectTypes{
+        public static int walkable_area = 0;
+        public static int wall_area = 1;
+        public static int jump_area = 2;
+        public static int script_area = 3;
+        public static int enemy_area = 4;
 
-    void Start(){
+        public static List<string> namesList = new List<string>{ 
+            nameof(walkable_area), 
+            nameof(wall_area),
+            nameof(jump_area),
+            nameof(script_area),
+            nameof(enemy_area),
+            };
 
+        public static string asString(int type){
+            if (namesList.Count > type){
+                return namesList[type];
+            }
+            return "";
+        }
+
+
+    }
+
+
+
+    public GameObject testEnemyObject;
+    private PlayerLocatorController _playerLocatorController;
+
+    // public Transform player_transform;
+
+    // public bool started = false;
+    [SerializeField]
+    private int type = 0;
+
+    public NavMeshSurface surface;
+
+    public void loadTiles(){
+        
+    }
+
+    // Метод для генерації карти
+    private void Start(){
+
+        getTiles();
         string path = "assets\\Game\\Scripts\\Generator\\map1.map";
         List<int[]> mapList = new List<int[]>();
 
@@ -107,12 +135,52 @@ public class MapGenerator : MonoBehaviour
             { 1, 2, 2, 1, 1 },
         };
         */
-
+        _tilemap = GetComponent<Tilemap>();
         GenerateMap(mapData);
 
         surface.BuildNavMesh();
+        
+        if (Game.IsReady){
+           _playerLocatorController = Game.GetController<PlayerLocatorController>();
+        }
+        else {
+            Game.OnInitializedEvent += OnGameReady;
+        }
     }
 
+    private void OnGameReady()
+    {
+        Game.OnInitializedEvent -= OnGameReady;
+        _playerLocatorController = Game.GetController<PlayerLocatorController>();
+    }
+
+    private void GenerateMap(int[,] mapData)
+    {
+        for (int x = 0; x < mapData.GetLength(0); x++)
+        {
+            for (int y = 0; y < mapData.GetLength(1); y++)
+            {
+                PlaceTile(x, y, mapData[x, y]);
+            }
+        }
+    }
+
+    // Метод для розміщення тайлів
+    private void PlaceTile(int x, int y, int tileType)
+    {
+        Vector3Int position = new Vector3Int(x, y, 0);
+        if (tileType == type){
+            _tilemap.SetTile(position, _tiles[tileType]);
+        }
+        // тимчасове місце для спавну ворогів і обєктів на першому генераторі (виділить окремий генератор ворогів)
+        if (type == ObjectTypes.enemy_area && tileType == ObjectTypes.enemy_area){
+            float fx = (float)x + 0.5f;
+            float fy = (float)y + 0.5f;
+            GameObject obj_clone = Instantiate(testEnemyObject, new Vector3(fx, fy, 0.1f), Quaternion.identity);
+        }
+    }
+
+ 
 
 
 }

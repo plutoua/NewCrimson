@@ -19,6 +19,7 @@ public class PlayerLocatorController : IController
     {
     }
 
+
     public void SetPlayerMover(PlayerMover playerMover)
     {
         _playerMover = playerMover;
