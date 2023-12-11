@@ -22,6 +22,7 @@ public class PlayerLocatorController : IController
     public void SetPlayerMover(PlayerMover playerMover)
     {
         _playerMover = playerMover;
+        _playerMover.PlayerMovedEvent += OnPlayerMoved;
     }
 
     private Vector3 GetPlayerPosition()
