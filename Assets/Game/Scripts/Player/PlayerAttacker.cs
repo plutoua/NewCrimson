@@ -42,7 +42,7 @@ public class PlayerAttacker : MonoBehaviour
     private void Attack()
     {
         StartAttackDelay();
-        _attackScheme.Attack(_attackPosition.position, GetAttackDirection());
+        _attackScheme.Attack(_attackPosition, GetAttackDirection());
     }
 
     private void StartAttackDelay()

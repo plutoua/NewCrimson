@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7813033457691955605}
   - component: {fileID: 8057735065305112394}
-  - component: {fileID: 2456390674001527715}
+  - component: {fileID: 5098006438152600976}
   m_Layer: 0
   m_Name: MeleeBullet
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2456390674001527715
+--- !u!114 &5098006438152600976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1190360948094689736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b32986b437dcc4a9d056c4e3eb41ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 07221c09b1eba224caa2ac62c29980a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

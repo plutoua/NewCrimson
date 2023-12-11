@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
-    private Vector3 _direction;
-    private float _damage;
-    private float _velocity;
-    private int _hitNumber;
-    private float _lifeTime;
+    protected Vector3 _direction;
+    protected float _damage;
+    protected float _velocity;
+    protected int _hitNumber;
+    protected float _lifeTime;
 
-    private float _timePased;
-    private int _hitCounter;
+    protected float _timePased;
+    protected int _hitCounter;
+    protected Transform _spawnTransform;
 
-    public void Init(Vector3 direction, float damage,float velocity, int hitNumber, float lifeTime)
+    public void Init(Vector3 direction, float damage,float velocity, int hitNumber, 
+        float lifeTime, Transform spawnTransform)
     {
         _direction = direction;
         _damage = damage;
         _velocity = velocity;
         _hitNumber = hitNumber;
         _lifeTime = lifeTime;
+        _spawnTransform = spawnTransform;
 
         _timePased = 0;
         _hitCounter = 0;
@@ -27,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        Action();
         TimeFlow();
     }
 
@@ -36,15 +39,7 @@ public class Bullet : MonoBehaviour
         // TODO: hit reaction
     }
 
-    private void Move()
-    {
-        if(_direction == null)
-        {
-            return;
-        }
-
-        transform.position += _direction * _velocity * Time.deltaTime;
-    }
+    protected abstract void Action();
 
     private void TimeFlow()
     {
@@ -76,7 +71,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void SetBulletAngle(Vector3 direction)
+    protected void SetBulletAngle(Vector3 direction)
     {
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.eulerAngles = new Vector3(0, 0, angle - 90);

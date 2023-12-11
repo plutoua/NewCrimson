@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class MouseLocatorController : IController
 {
-
-    
     public event UnityAction MouseChangePositionEvent
     {
         add { _mouseChangePositionEvent += value; }

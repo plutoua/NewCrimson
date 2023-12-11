@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44ac258fbed4094c989900f1d839498, type: 3}
   m_Name: DefaultMelee
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 2456390674001527715, guid: bc8929d9d42e2704cb957e3e8cd052bf, type: 3}
+  _bulletPrefab: {fileID: 5098006438152600976, guid: bc8929d9d42e2704cb957e3e8cd052bf, type: 3}
   _bulletPerAttack: 1
   _bulletDamage: 1
   _bulletVelocity: 0

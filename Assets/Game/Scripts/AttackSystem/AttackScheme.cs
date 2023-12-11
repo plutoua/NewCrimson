@@ -14,13 +14,13 @@ public class AttackScheme : ScriptableObject
 
     public float AttackDelay => _attackDelay;
 
-    public void Attack(Vector3 spawnPosition, Vector3 target)
+    public void Attack(Transform spawnTransform, Vector3 target)
     {
         Bullet bulletTemp;
         for(int i = 0;  i < _bulletPerAttack; i++)
         {
-            bulletTemp = GetBullet(spawnPosition);
-            InitBullet(bulletTemp, target);
+            bulletTemp = GetBullet(spawnTransform.position);
+            InitBullet(bulletTemp, target, spawnTransform);
         }
     }
 
@@ -30,14 +30,15 @@ public class AttackScheme : ScriptableObject
         return Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
     }
 
-    private void InitBullet(Bullet bullet, Vector3 target)
+    private void InitBullet(Bullet bullet, Vector3 target, Transform spawnTransform)
     {
         bullet.Init(
             TargetPositionAccuracyImpact(target),
             _bulletDamage,
             _bulletVelocity, 
             _bulletHitNumber,
-            _bulletTimeLife
+            _bulletTimeLife,
+            spawnTransform
             );
     }
 
