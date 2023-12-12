@@ -44,6 +44,14 @@ public class PlayerMover : MonoBehaviour
         Move();
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (Game.IsReady)
+        {
+            _playerMovedEvent?.Invoke(transform.position);
+        }
+    }
+
     private void Move()
     {
         if(_rigidbody ==  null) return;
