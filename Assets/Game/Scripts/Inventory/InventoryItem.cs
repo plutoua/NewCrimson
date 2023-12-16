@@ -13,11 +13,11 @@ public class InventoryItem
 
     public InventoryItem(ItemScheme itemScheme, int amount)
     {
-        if(amount > MaxItemInStack)
+        _itemScheme = itemScheme;
+        if (amount > MaxItemInStack)
         {
             throw new ArgumentOutOfRangeException("Amount of inventory item can't be more than max item in stack.");
-        }
-        _itemScheme = itemScheme;
+        } 
         Amount = amount;
     }
 

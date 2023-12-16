@@ -13,6 +13,10 @@ public class SceneConfig_timtest : SceneConfig
         var controllerMap = new Dictionary<Type, IController>();
         controllerMap.CreateAndAdd<MouseLocatorController>();
         controllerMap.CreateAndAdd<PlayerLocatorController>();
+        controllerMap.CreateAndAdd<EnemysLocatorController>();
+        controllerMap.CreateAndAdd<PlayerStatController>();
+        controllerMap.CreateAndAdd<InventoryController>();
+        controllerMap.CreateAndAdd<UIWindowsController>();
         return controllerMap;
     }
 

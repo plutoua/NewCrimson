@@ -14,6 +14,9 @@ public class SceneConfig_SampleScene : SceneConfig
         controllerMap.CreateAndAdd<MouseLocatorController>();
         controllerMap.CreateAndAdd<PlayerLocatorController>();
         controllerMap.CreateAndAdd<EnemysLocatorController>();
+        controllerMap.CreateAndAdd<PlayerStatController>();
+        controllerMap.CreateAndAdd<InventoryController>();
+        controllerMap.CreateAndAdd<UIWindowsController>();
         return controllerMap;
     }
 

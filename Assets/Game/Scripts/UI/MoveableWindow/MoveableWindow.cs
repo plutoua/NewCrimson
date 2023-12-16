@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+    [SerializeField] private TMP_Text _windowName;
+
     private Canvas _canvas;
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
@@ -13,6 +16,18 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
+    }
+
+    public void Activate()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.blocksRaycasts = true;
+    }
+
+    public void Deactivate()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -33,5 +48,20 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         _canvasGroup.alpha = 1f;
+    }
+
+    public void SetSizes(float width, float height)
+    {
+        _rectTransform.sizeDelta = new Vector3(width, height + 50);
+    }
+
+    public void SetPosition(float width, float height)
+    {
+        _rectTransform.anchoredPosition = new Vector3(width, height);
+    }
+
+    public void SetName(string name)
+    {
+        _windowName.text = name;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class InventorySlot
 {
@@ -10,10 +11,13 @@ public class InventorySlot
     public int ItemID => Item.ID;
 
     private int _slotCapacity;
+    private Inventory _inventory;
 
-    public InventorySlot(int slotCapacity)
+    public InventorySlot(int slotCapacity, Inventory inventory)
     {
         _slotCapacity = slotCapacity;
+        _inventory = inventory;
+
     }
 
     public InventoryItem AddItemAndReturnRest(InventoryItem item)
@@ -52,6 +56,21 @@ public class InventorySlot
         }
 
         return item;
+    }
+
+    public void RemoveFromItemAndInventory(InventoryItem item)
+    {
+        if (IsEmpty)
+        {
+            throw new ArgumentException("Slot is empty.");
+        }
+        if (Item.ID != item.ID)
+        {
+            throw new InvalidOperationException("Different types of items.");
+        }
+
+        var restItem = RemoveItemAndReturnRest(item);
+        _inventory.Remove(restItem);
     }
 
     private int AddAmountAndReturnRest(int amount)
