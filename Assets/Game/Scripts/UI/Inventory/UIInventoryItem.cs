@@ -7,6 +7,8 @@ public class UIInventoryItem : MonoBehaviour
     [SerializeField] private Image _itemIcon;
     [SerializeField] private TMP_Text _itemAmount;
 
+    public UIInventorySlot UIInventorySlot { get; private set; }
+
     private InventoryItem _inventoryItem;
 
     public void Activate(InventoryItem inventoryItem)
@@ -28,5 +30,10 @@ public class UIInventoryItem : MonoBehaviour
         _itemAmount.text = string.Empty; 
         _itemIcon.sprite = null;
         gameObject.SetActive(false);
+    }
+
+    public void SetSlotLink(UIInventorySlot uIInventorySlot)
+    {
+        UIInventorySlot = uIInventorySlot;
     }
 }

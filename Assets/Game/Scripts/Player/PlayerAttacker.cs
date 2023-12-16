@@ -10,6 +10,7 @@ public class PlayerAttacker : MonoBehaviour
     private float _lastAttackTimePass;
     private bool _isCanAttack;
     private MouseLocatorController _mouseLocatorController;
+    private UIWindowsController _windowsController;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class PlayerAttacker : MonoBehaviour
         if (Game.IsReady)
         {
             _mouseLocatorController = Game.GetController<MouseLocatorController>();
+            _windowsController = Game.GetController<UIWindowsController>();
         }
         else
         {
@@ -26,6 +28,11 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Update()
     {
+        if(_windowsController != null && _windowsController.IsUIMode)
+        {
+            return;
+        }
+
         if (_isCanAttack)
         {
             if (Input.GetMouseButton(0))
@@ -81,5 +88,6 @@ public class PlayerAttacker : MonoBehaviour
     private void OnGameReady()
     {
         _mouseLocatorController = Game.GetController<MouseLocatorController>();
+        _windowsController = Game.GetController<UIWindowsController>();
     }
 }

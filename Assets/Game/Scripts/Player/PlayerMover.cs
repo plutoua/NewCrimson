@@ -17,6 +17,8 @@ public class PlayerMover : MonoBehaviour
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody;
 
+    private UIWindowsController _windowsController;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -24,6 +26,7 @@ public class PlayerMover : MonoBehaviour
 
         if (Game.IsReady)
         {
+            _windowsController = Game.GetController<UIWindowsController>();
             var playerLocatorController = Game.GetController<PlayerLocatorController>();
             playerLocatorController.SetPlayerMover(this);
         }
@@ -35,6 +38,11 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
+        if (_windowsController != null && _windowsController.IsUIMode)
+        {
+            return;
+        }
+
         _moveDirection.x = Input.GetAxis("Horizontal");
         _moveDirection.y = Input.GetAxis("Vertical");
     }
@@ -64,6 +72,7 @@ public class PlayerMover : MonoBehaviour
 
     private void OnGameReady()
     {
+        _windowsController = Game.GetController<UIWindowsController>();
         var playerLocatorController = Game.GetController<PlayerLocatorController>();
         playerLocatorController.SetPlayerMover(this);
     }

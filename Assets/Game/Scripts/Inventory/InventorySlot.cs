@@ -9,6 +9,7 @@ public class InventorySlot
     public int SlotCapacity => _slotCapacity < Item.MaxItemInStack ? _slotCapacity : Item.MaxItemInStack;
     public int SlotAmount => Item.Amount;
     public int ItemID => Item.ID;
+    public InventoryItem AllItemAmountInInventory => _inventory.GetAllOfID(Item);
 
     private int _slotCapacity;
     private Inventory _inventory;
@@ -32,9 +33,9 @@ public class InventorySlot
             throw new InvalidOperationException("Different types of items.");
         }
 
-        item.SetAmount(AddAmountAndReturnRest(item.Amount));
+        var clone = item.CloneItemWithAmount(AddAmountAndReturnRest(item.Amount));
 
-        return item;
+        return clone;
     }
 
     public InventoryItem RemoveItemAndReturnRest(InventoryItem item)
@@ -48,29 +49,40 @@ public class InventorySlot
             throw new InvalidOperationException("Different types of items.");
         }
 
-        item.SetAmount(RemoveAmountAndReturnRest(item.Amount));
-        
-        if(SlotAmount == 0)
+        var clone = item.CloneItemWithAmount(RemoveAmountAndReturnRest(item.Amount));
+
+        if (SlotAmount == 0)
         {
             RemoveItem();
         }
 
-        return item;
+        return clone;
     }
 
     public void RemoveFromItemAndInventory(InventoryItem item)
     {
-        if (IsEmpty)
+        if (IsEmpty || Item.ID != item.ID)
         {
-            throw new ArgumentException("Slot is empty.");
+            _inventory.Remove(item);
         }
-        if (Item.ID != item.ID)
+        else
         {
-            throw new InvalidOperationException("Different types of items.");
+            var restItem = RemoveItemAndReturnRest(item);
+            _inventory.Remove(restItem);
         }
+    }
 
-        var restItem = RemoveItemAndReturnRest(item);
-        _inventory.Remove(restItem);
+    public void AddToItemAndInventory(InventoryItem item)
+    {
+        if(!IsEmpty && Item.ID != item.ID)
+        {
+            _inventory.Add(item);
+        }
+        else
+        {
+            var restItem = AddItemAndReturnRest(item);
+            _inventory.Add(restItem);
+        }
     }
 
     private int AddAmountAndReturnRest(int amount)

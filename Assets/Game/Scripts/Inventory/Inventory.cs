@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Inventory
@@ -91,11 +92,12 @@ public class Inventory
         }
 
         var slotsOfID = _slots.Where(slot => !slot.IsEmpty && slot.ItemID == item.ID).Reverse().ToArray();
+        InventoryItem tempItem;
         foreach (var slot in slotsOfID)
         {
-            item = slot.RemoveItemAndReturnRest(item);
+            tempItem = slot.RemoveItemAndReturnRest(item);
             
-            if (item.Amount == 0)
+            if (tempItem.Amount == 0)
             {
                 _inventoryUpdatedEvent?.Invoke();
                 return;
@@ -106,9 +108,9 @@ public class Inventory
 
     public InventoryItem GetAllOfID(InventoryItem item)
     {
-        var amountInAllSlots = _slots.Where(slot => !slot.IsEmpty && slot.ItemID == item.ID && !slot.IsFull).Sum(slot => slot.SlotAmount);
-        item.SetAmount(amountInAllSlots);
-        return item;
+        var amountInAllSlots = _slots.Where(slot => !slot.IsEmpty && slot.ItemID == item.ID).Sum(slot => slot.SlotAmount);
+        var clone = item.CloneItemWithAmount(amountInAllSlots);
+        return clone;
     }
 
     public InventoryItem[] GetInventoryItems()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2396608399553331819}
   - component: {fileID: 4590211664714010160}
   - component: {fileID: 3930353121499427174}
+  - component: {fileID: 1462731480883349820}
   m_Layer: 5
   m_Name: UIInventotySlot
   m_TagString: Untagged
@@ -59,6 +60,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryItem: {fileID: 2596564599927151894}
+--- !u!114 &1462731480883349820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012195057029365431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7cd3d183d771d46baf993876bb2f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4836123976839595280
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +293,6 @@ GameObject:
   - component: {fileID: 4597181087111777879}
   - component: {fileID: 1159091182778532772}
   - component: {fileID: 4899015014145311338}
-  - component: {fileID: 1055690467398225393}
   m_Layer: 5
   m_Name: UIInventotySlotBody
   m_TagString: Untagged
@@ -346,18 +358,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1055690467398225393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7599989092334135817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7cd3d183d771d46baf993876bb2f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7899978817685429895
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117067005142f2842b0b23a02dec1ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveableParent: {fileID: 0}
 --- !u!225 &314111469206559673
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -7,13 +7,16 @@ public class PlayerRotator : MonoBehaviour
 {
     private PlayerMover _playerMover;
     private MouseLocatorController _mouseLocatorController;
+    private UIWindowsController _windowsController;
 
     private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
         if (Game.IsReady)
         {
+            _windowsController = Game.GetController<UIWindowsController>();
             _mouseLocatorController = Game.GetController<MouseLocatorController>();
+            _mouseLocatorController.MouseChangePositionEvent += OnMouseMoved;
         }
         else
         {
@@ -32,6 +35,11 @@ public class PlayerRotator : MonoBehaviour
 
     private void Update()
     {
+        if (_windowsController != null && _windowsController.IsUIMode)
+        {
+            return;
+        }
+
         if (_mouseLocatorController != null)
         {
             _mouseLocatorController.CheckMousePosition();
@@ -66,6 +74,7 @@ public class PlayerRotator : MonoBehaviour
 
     private void OnGameReady()
     {
+        _windowsController = Game.GetController<UIWindowsController>();
         _mouseLocatorController = Game.GetController<MouseLocatorController>();
         _mouseLocatorController.MouseChangePositionEvent += OnMouseMoved;
     }

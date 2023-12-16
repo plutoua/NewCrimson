@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private TMP_Text _windowName;
+    [SerializeField] private Button _closeButton;
 
     private Canvas _canvas;
     private CanvasGroup _canvasGroup;
@@ -16,6 +18,8 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
+
+        _closeButton.onClick.AddListener(Deactivate);
     }
 
     public void Activate()

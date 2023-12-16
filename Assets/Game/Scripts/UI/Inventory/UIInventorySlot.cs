@@ -4,6 +4,8 @@ public class UIInventorySlot : MonoBehaviour
 {
     [SerializeField] private UIInventoryItem _inventoryItem;
 
+    public InventorySlot InventorySlot => _inventorySlot;
+
     private InventorySlot _inventorySlot;
     private bool _isEmpty;
 
@@ -16,6 +18,11 @@ public class UIInventorySlot : MonoBehaviour
             _inventoryItem.Deactivate();
         }
         gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        _inventoryItem.SetSlotLink(this);
     }
 
     public void SetSlot(InventorySlot slot)

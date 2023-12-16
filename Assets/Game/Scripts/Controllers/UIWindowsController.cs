@@ -6,8 +6,8 @@ using UnityEngine;
 public class UIWindowsController : IController
 {
     public bool IsUIMode {  get; private set; }
-
-    private UISlider _slider;
+    public UIMoveable Moveable {  get; private set; }
+    public UISlider Slider { get; private set; }
 
     public void Initialize()
     {
@@ -25,11 +25,21 @@ public class UIWindowsController : IController
 
     public void SetSlider(UISlider slider)
     {
-        if(_slider != null)
+        if(Slider != null)
         {
             return;
         }
 
-        _slider = slider;
+        Slider = slider;
+    }
+
+    public void SetMoveable(UIMoveable moveable)
+    {
+        if (Moveable != null)
+        {
+            return;
+        }
+
+        Moveable = moveable;
     }
 }
