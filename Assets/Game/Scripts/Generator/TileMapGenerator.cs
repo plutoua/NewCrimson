@@ -19,6 +19,7 @@ public class TileMapGenerator : MonoBehaviour
 
     // temporary MapCreator
     private MapCreator _mapCreator;
+    private List<Tile> _tiles;
     private Tile _tile;
     private Tile _walkable_tile;
     private Tile _obsticle_tile;
@@ -47,18 +48,21 @@ public class TileMapGenerator : MonoBehaviour
     public void Init(int[,] mapData, List<Tile> tiles, MapCreator mapCreator){
         _mapCreator = mapCreator;
         _tile = tiles[type];
+        //CHANGE _tile or _tiles, remove mix
+        _tiles = tiles;
         
         
         _walkable_tile = tiles[ObjectTypes.walkable_area];
         _obsticle_tile = tiles[ObjectTypes.wall_area];
         _mapData = mapData;
-        AfterStart();
+        _tilemap = GetComponent<Tilemap>();
+        
     }
 
     private Tilemap _tilemap; // Посилання на Tilemap
     
-    private void AfterStart(){
-        _tilemap = GetComponent<Tilemap>();
+    public void AfterStart(){
+        
         GenerateMap();
 
         _surface.BuildNavMesh();
@@ -99,6 +103,15 @@ public class TileMapGenerator : MonoBehaviour
         
     }
 
+    private void SetMapPartToWalkable(int x, int y){
+        //if (OnGlobalMapChange != null)
+        //    {
+        //        OnGlobalMapChange(x, y, ObjectTypes.wall_area);
+        //    }
+        _mapData[x, y] = ObjectTypes.walkable_area;
+        _mapCreator.RedrawTileOnTilemap(x, y, -1);
+    }
+
       private void SetMapPartToScript(int x, int y){
           //if (OnGlobalMapChange != null)
           //      {
@@ -111,8 +124,14 @@ public class TileMapGenerator : MonoBehaviour
 
     public void PlaceTile(int x, int y, int tileType)
     {
+        
         Vector3Int position = new Vector3Int(x, y, 0);
-        if (type == tileType || additionalTypes.Contains(tileType)){
+
+        if (tileType == ObjectTypes.on_delete){
+            _tilemap.SetTile(position, null);
+        }
+
+        else if (type == tileType || additionalTypes.Contains(tileType)){
             Debug.Log("+++++++++++++++++");
             if (ObjectTypes.isMarked(tileType)){
                 
@@ -121,7 +140,12 @@ public class TileMapGenerator : MonoBehaviour
                     _tilemap.SetTile(position, _obsticle_tile);
                 }
                 else{
-                    _tilemap.SetTile(position, _tile);
+                    Debug.Log(_tiles);
+                    Debug.Log(tileType);
+                    Debug.Log(_tiles[tileType]);
+                    Debug.Log(type);
+                    Debug.Log(_tilemap);
+                    _tilemap.SetTile(position, _tiles[tileType]);
                 } 
             }
             else{
@@ -202,6 +226,7 @@ public class TileMapGenerator : MonoBehaviour
                                 Array.Resize(ref coords, coords.Length + 2); // Resizing to 4 elements
                                 if (i != 0){
                                     Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
+                                    SetMapPartToWalkable(t_x, t_y);
                                     SetMapPartToScript(t_x, t_y);
                                 }
                             }
@@ -222,6 +247,7 @@ public class TileMapGenerator : MonoBehaviour
                         if (i % 2 == 0) {
                                 if (i != 0){
                                     Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
+                                    SetMapPartToWalkable(t_x, t_y);
                                     SetMapPartToScript(t_x, t_y);
                                 }
                         }

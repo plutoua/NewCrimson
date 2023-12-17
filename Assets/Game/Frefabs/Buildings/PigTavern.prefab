@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   additionalCoords: 000000000100000001000000000000000100000001000000
   _objectCoords: 
-  _activatorsCoords: 
+  _activatorsCoords: 0000000000000000
   _coordsNeeded: 1
   type: 5

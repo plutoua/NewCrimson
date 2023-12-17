@@ -7,6 +7,7 @@ using System.IO;
 
 
 public static class ObjectTypes{
+        public static int on_delete = -1;
         public static int walkable_area = 0;
         public static int wall_area = 1;
         public static int jump_area = 2;
@@ -85,6 +86,17 @@ public class MapCreator : MonoBehaviour
                 Debug.Log("Event triggered!");
                 Debug.Log(type);
                 tmg.PlaceTile(x, y, type);
+                
+            }
+            if (type == ObjectTypes.on_delete){
+                if (tmg.GetTileType() == ObjectTypes.walkable_area){
+                    tmg.PlaceTile(x, y, ObjectTypes.walkable_area);
+                }
+                else
+                {
+                    tmg.PlaceTile(x, y, ObjectTypes.on_delete);
+                }
+                
             }
         }
         
@@ -136,6 +148,10 @@ public class MapCreator : MonoBehaviour
         tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
         foreach (TileMapGenerator tmg in tilemapGenerators){
             tmg.Init(mapData, tiles, this);
+        }
+
+        foreach (TileMapGenerator tmg in tilemapGenerators){
+            tmg.AfterStart();
         }
     }
 
