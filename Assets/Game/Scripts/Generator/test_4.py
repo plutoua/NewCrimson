@@ -11,15 +11,28 @@ def generate_map(size, jump_spots):
     """
     # Initialize the map with walls
     map = np.ones((size, size), dtype=int)
+    map2 = np.ones((size, size), dtype=int)
 
     # Randomly create paths and jump spots
     for i in range(size):
         for j in range(size):
-            if random.random() < 0.8:  # 30% chance to be a path
-                map[i, j] = 0
-            elif random.random() < 0.1 and jump_spots > 0:  # 10% chance to be a jump spot
-                map[i, j] = 2
-                jump_spots -= 1
+            if map[i, j] == 1:
+                r = random.randint(0, 831)
+
+                if r in range(0, 800):  # chance to be a path
+                    map[i, j] = 0
+                elif r in range(800, 810):  # chance to be a jump spot
+                    map[i, j] = 2
+                    jump_spots -= 1
+                elif r in range(820, 830):  # chance to be an enemy
+                    map[i, j] = 4
+                elif r in range(830, 831):  # chance to be a building
+                    map[i, j] = 5
+                    map[i - 1, j] = 5
+                    map[i - 1, j + 1] = 5
+                    map[i, j + 1] = 5
+
+
 
     shores = [[],[],[],[]]
     for shore in shores:

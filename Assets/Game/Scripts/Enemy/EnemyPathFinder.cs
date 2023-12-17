@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using TimmyFramework;
 
-public class EnemyPathFinder : MonoBehaviour
+public class EnemyPathFinder : TileObject
 {
-    public NavMeshAgent agent;
+    
     private PlayerLocatorController _playerLocatorController;
     private EnemysLocatorController _enemysLocatorController;
     private float timer = 0.0f;
@@ -15,6 +15,7 @@ public class EnemyPathFinder : MonoBehaviour
     private float decision_time_min = 0.3f;
     private int _id = -1;
     private bool new_move = false;
+    public NavMeshAgent agent;
 
     void Start()
     {
@@ -67,8 +68,6 @@ public class EnemyPathFinder : MonoBehaviour
                 }
                 new_move = false;
         }
-
-
     }
 
     

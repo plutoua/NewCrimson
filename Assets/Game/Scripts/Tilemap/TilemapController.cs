@@ -5,7 +5,7 @@ public class TilemapController : MonoBehaviour
 {
     public Transform tileParent; // Батьківський трансформ для інстанційованих префабів
     public GameObject[] tilePrefabs; // Масив префабів тайлів
-    public MapGenerator mg;
+    public TileMapGenerator mg;
 
     // Функція для створення тайла
     public void SpawnTile(Vector3Int cellPosition, int prefabIndex)

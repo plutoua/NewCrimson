@@ -11,6 +11,7 @@ using System.Linq;
 public class EnemysLocatorController : IController
 {
     public Dictionary<int, Vector3> enemys_coords_links;
+
     public Dictionary<int, GameObject> enemys;
 
     public void Initialize()

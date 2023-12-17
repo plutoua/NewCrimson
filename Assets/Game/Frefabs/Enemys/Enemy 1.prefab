@@ -100,8 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a770083fa0fdd4a9a09135094d450c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  additionalCoords: 
+  _objectCoords: 
+  _activatorsCoords: 
+  _coordsNeeded: 0
+  type: 4
   agent: {fileID: 8010861715432666883}
-  _id: -1
 --- !u!195 &8010861715432666883
 NavMeshAgent:
   m_ObjectHideFlags: 0
