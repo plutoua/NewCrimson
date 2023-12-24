@@ -4,7 +4,7 @@ using TimmyFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class UIInventoryBase : MonoBehaviour
+public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
 {
     [SerializeField] private UIInventorySlot _uiSlotPrefab;
 
@@ -13,6 +13,7 @@ public abstract class UIInventoryBase : MonoBehaviour
     protected MoveableWindow _moveableWindow;
     protected CanvasScaler _canvasScaler;
     protected Inventory _inventory;
+    protected UIWindowsController _windowsController;
 
     public void Activate()
     {
@@ -27,6 +28,7 @@ public abstract class UIInventoryBase : MonoBehaviour
     private void Start()
     {
         _moveableWindow = GetComponentInParent<MoveableWindow>();
+        _moveableWindow.CloseButtonEvent += OnCloseButton;
         _canvasScaler = GetComponentInParent<CanvasScaler>();
 
         _uiSlots = new List<UIInventorySlot>();
@@ -44,6 +46,7 @@ public abstract class UIInventoryBase : MonoBehaviour
     private void InitialSetup()
     {
         var inventoryController = Game.GetController<InventoryController>();
+        _windowsController = Game.GetController<UIWindowsController>();
         SetInventory(inventoryController);
         SetInventorySizesAndPosition();
 
@@ -53,6 +56,11 @@ public abstract class UIInventoryBase : MonoBehaviour
 
         _inventory.InventoryUpdatedEvent += OnInventoryUpdated;
         _inventory.InventoryChangeSlotNumberEvent += OnInventoryChangeSlotNumber;
+    }
+
+    private void OnCloseButton()
+    {
+        _windowsController.CloseWindow(this);
     }
 
     private void OnGameReady()

@@ -5,7 +5,7 @@ using TimmyFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UISlider : MonoBehaviour
+public class UISlider : MonoBehaviour, UIIWindow
 {
     private UISliderStayValue _stayValue;
     private UISliderSendValue _sendValue;
@@ -22,6 +22,7 @@ public class UISlider : MonoBehaviour
     private void Start()
     {
         _moveableWindow = GetComponentInParent<MoveableWindow>();
+        _moveableWindow.CloseButtonEvent += OnCloseButton;
         _stayValue = GetComponentInChildren<UISliderStayValue>();
         _sendValue = GetComponentInChildren<UISliderSendValue>();
 
@@ -47,6 +48,11 @@ public class UISlider : MonoBehaviour
         _windowsController.SetSlider(this);
     }
 
+    private void OnCloseButton()
+    {
+        _windowsController.CloseWindow(this);
+    }
+
     private void OnGameReady()
     {
         Game.OnInitializedEvent -= OnGameReady;
@@ -67,10 +73,22 @@ public class UISlider : MonoBehaviour
         var actionItem = _fromSlot.Item.CloneItemWithAmount(picked); 
         _fromSlot.RemoveFromItemAndInventory(actionItem);
         _toSlot.AddToItemAndInventory(actionItem);
-        Deactivate();
+        _windowsController.CloseWindow(this);
     }
 
     public void Activate(InventorySlot fromSlot, InventorySlot toSlot)
+    {   
+        if(fromSlot.Item.MaxItemInStack == 1) 
+        {
+            SingkeItemTransfer(fromSlot, toSlot);
+        }
+        else
+        {
+            MultipleItemTransfer(fromSlot, toSlot);
+        }
+    }
+
+    public void MultipleItemTransfer(InventorySlot fromSlot, InventorySlot toSlot)
     {
         _fromSlot = fromSlot;
         _workingValue = _fromSlot.AllItemAmountInInventory.Amount;
@@ -82,7 +100,14 @@ public class UISlider : MonoBehaviour
         var sliderValue = _fromSlot.SlotAmount / (float)_workingValue;
         _slider.value = sliderValue;
 
-        _moveableWindow.Activate();
+        _windowsController.OpenWindow(this);
+    }
+
+    public void SingkeItemTransfer(InventorySlot fromSlot, InventorySlot toSlot)
+    {
+        var newItem = fromSlot.Item.CloneItemWithAmount(1);
+        toSlot.AddToItemAndInventory(newItem);
+        fromSlot.RemoveFromItemAndInventory(newItem);  
     }
 
     public void Deactivate()
@@ -98,5 +123,8 @@ public class UISlider : MonoBehaviour
         _moveableWindow.Deactivate();
     }
 
-
+    public void Activate()
+    {
+        _moveableWindow.Activate();
+    }
 }

@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daeb72b89ca16f449bc8eaf14e42cd58, type: 3}
-  m_Name: testItem
+  m_Script: {fileID: 11500000, guid: 2505dd5ec300572449689d02c5473588, type: 3}
+  m_Name: test
   m_EditorClassIdentifier: 
-  _id: 111
-  _sprite: {fileID: 21300000, guid: bafbdb4546b9bdd47921a2fb2ce97fe0, type: 3}
-  _name: testInem
-  _maxItemsInStack: 1
+  _recepts:
+  - {fileID: 11400000, guid: 310df0de665a8ca4a82be601cc769934, type: 2}
+  - {fileID: 11400000, guid: c4841a4548ad18f4b97643ba5c9a05fb, type: 2}
