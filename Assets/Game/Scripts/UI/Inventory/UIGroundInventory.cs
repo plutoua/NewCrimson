@@ -3,7 +3,6 @@ public class UIGroundInventory : UIInventoryBase
     protected override void SetInventory(InventoryController inventoryController)
     {
         _inventory = inventoryController.GroundInventory;
-        _windowsController.SetGroundInventory(this);
     }
 
     protected override void SetName()

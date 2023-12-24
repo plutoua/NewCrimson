@@ -131,41 +131,6 @@ public class Inventory
         _inventoryChangeSlotNumberEvent?.Invoke();
     }
 
-    public void CopyFromOtherInventory(Inventory otherInventory)
-    {
-        ClearInventory();
-
-        ChangeInventorySize(otherInventory.SlotNumber);
-
-        CopySlotsToInventory(otherInventory.Slots);
-    }
-
-    public void ClearInventory()
-    {
-        var slotsWithItems = _slots.Where(slot => !slot.IsEmpty).ToArray();
-        foreach (var slot in slotsWithItems)
-        {
-            slot.Clear();
-        }
-    }
-
-    private void CopySlotsToInventory(List<InventorySlot> anotherSlots)
-    {
-        for(int i = 0; i < _slots.Count; i++)
-        {
-            if (!anotherSlots[i].IsEmpty)
-            {      
-                if (!_slots[i].IsEmpty)
-                {
-                    _slots[i].Clear();
-                }
-                var item = anotherSlots[i].Item.CloneItemWithAmount(anotherSlots[i].SlotAmount);
-                _slots[i].AddItemAndReturnRest(item);
-            }
-        }
-        _inventoryUpdatedEvent?.Invoke();
-    }
-
     private void CreateInventorySlots()
     {
         _slots = new List<InventorySlot>();

@@ -6,8 +6,6 @@ public class InventoryController : IController, IOnCreate
     public Inventory GroundInventory => _groundInventory;
     public Inventory InnerInventory => _innerInventory;
 
-    public bool IsInnerInventoryReady {  get; private set; }
-
     private PlayerStatController _playerStatController;
 
     private Inventory _playerInventory;
@@ -18,20 +16,6 @@ public class InventoryController : IController, IOnCreate
     private int _groundInventoryStackSize;
     private int _defaultStackSize;
 
-    // for test
-
-    private Inventory _testInnerInventory;
-    private Inventory _testGroundInventory;
-
-    public void SetTest(ItemScheme testItem)
-    {
-        _testInnerInventory = new Inventory(10, _defaultStackSize);
-        _testInnerInventory.Add(new InventoryItem(testItem, 5));
-
-        _testGroundInventory = new Inventory(_groundInventorySlotCapacity, _groundInventoryStackSize);
-        _testGroundInventory.Add(new InventoryItem(testItem, 15));
-    }
-
     public void OnCreate()
     {
         _playerStatController = Game.GetController<PlayerStatController>();
@@ -39,57 +23,13 @@ public class InventoryController : IController, IOnCreate
         _groundInventorySlotCapacity = 51;
         _groundInventoryStackSize = 99;
         _defaultStackSize = 10;
-
-        IsInnerInventoryReady = false;
     }
 
     public void Initialize()
     {
         _groundInventory = new Inventory(_groundInventorySlotCapacity, _groundInventoryStackSize);
         _playerInventory = new Inventory(_playerStatController.InventorySlotNumber, _defaultStackSize, _groundInventory);
-        _innerInventory = new Inventory(1, _defaultStackSize, _groundInventory);
-
-        _groundInventory.InventoryUpdatedEvent += UpdateGroundInventory;
-        _innerInventory.InventoryUpdatedEvent -= UpdateInnerInventory;
-    }
-
-    public void SetupInnerInventory()
-    {
-        // set inventory start
-        var innerInventory = _testInnerInventory;
-        // set inventory end
-
-        _innerInventory.CopyFromOtherInventory(innerInventory);
-
-        IsInnerInventoryReady = true;
-    }
-
-    private void UpdateInnerInventory() 
-    { 
-        // return inventory start
-        _testInnerInventory.CopyFromOtherInventory(_innerInventory);
-        // return inventory end
-    }
-
-    public void OffInnerInventory()
-    {
-        IsInnerInventoryReady = false;
-    }
-
-    public void SetupGroundInventory()
-    {
-        // set inventory start
-        var groundInventory = _testGroundInventory;
-        // set inventory end
-
-        _groundInventory.CopyFromOtherInventory(groundInventory);
-    }
-
-    private void UpdateGroundInventory()
-    {
-        // return inventory start
-        _testGroundInventory.CopyFromOtherInventory(_groundInventory);
-        // return inventory end
+        _innerInventory = new Inventory(1, _defaultStackSize, _groundInventory); 
     }
 
 

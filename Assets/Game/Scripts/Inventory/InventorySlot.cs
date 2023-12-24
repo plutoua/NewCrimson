@@ -49,8 +49,7 @@ public class InventorySlot
             throw new InvalidOperationException("Different types of items.");
         }
 
-        var restAmount = RemoveAmountAndReturnRest(item.Amount);
-        var clone = item.CloneItemWithAmount(restAmount);
+        var clone = item.CloneItemWithAmount(RemoveAmountAndReturnRest(item.Amount));
 
         if (SlotAmount == 0)
         {
@@ -84,11 +83,6 @@ public class InventorySlot
             var restItem = AddItemAndReturnRest(item);
             _inventory.Add(restItem);
         }
-    }
-
-    public void Clear()
-    {
-        RemoveItem();
     }
 
     private int AddAmountAndReturnRest(int amount)

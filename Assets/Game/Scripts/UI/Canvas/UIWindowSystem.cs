@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class UIWindowSystem : MonoBehaviour
 {
-    // for test
-    [SerializeField] private ItemScheme _forTest;
-
     private bool _isUIMode => _windowsController.IsUIMode;
+
+    private UIGroundInventory _groundInventory;
+    private UIPlayerInventory _playerInventory;
 
     private UIWindowsController _windowsController;
 
     private void Start()
     {
+        _groundInventory = GetComponentInChildren<UIGroundInventory>();
+        _playerInventory = GetComponentInChildren<UIPlayerInventory>();
+
         if (Game.IsReady)
         {
             _windowsController = Game.GetController<UIWindowsController>();
-            // for test
-            _windowsController.SetTest(_forTest);
         }
         else
         {
@@ -35,17 +36,14 @@ public class UIWindowSystem : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.I)) 
         {
-             ActivateInventory();
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            _windowsController.OpenInnerInventory();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            _windowsController.CloseAllWindows();
+            if (_isUIMode)
+            {
+                DeactivateInventory();
+            }
+            else
+            {
+                ActivateInventory();
+            }
         }
     }
 
@@ -53,12 +51,19 @@ public class UIWindowSystem : MonoBehaviour
     {
         Game.OnInitializedEvent -= OnGameReady;
         _windowsController = Game.GetController<UIWindowsController>();
-        // for test
-        _windowsController.SetTest(_forTest);
+    }
+
+    private void DeactivateInventory()
+    {
+        _groundInventory.Deactivate();
+        _playerInventory.Deactivate();
+        _windowsController.TurnOffUIMode();
     }
 
     private void ActivateInventory()
     {
-        _windowsController.OpenInventory();
+        _groundInventory.Activate();
+        _playerInventory.Activate();
+        _windowsController.TurnOnUIMode();
     }
 }

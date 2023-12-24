@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -9,8 +8,6 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 {
     [SerializeField] private TMP_Text _windowName;
     [SerializeField] private Button _closeButton;
-
-    public event UnityAction CloseButtonEvent; 
 
     private Canvas _canvas;
     private CanvasGroup _canvasGroup;
@@ -22,7 +19,7 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
 
-        _closeButton.onClick.AddListener(CloseButton);
+        _closeButton.onClick.AddListener(Deactivate);
     }
 
     public void Activate()
@@ -35,11 +32,6 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     {
         _canvasGroup.alpha = 0;
         _canvasGroup.blocksRaycasts = false;
-    }
-
-    private void CloseButton()
-    {
-        CloseButtonEvent?.Invoke();
     }
 
     public void OnDrag(PointerEventData eventData)

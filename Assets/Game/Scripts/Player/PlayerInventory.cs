@@ -6,12 +6,6 @@ public class PlayerInventory : MonoBehaviour
     // Test only
     [SerializeField] private ItemScheme _testItemScheme;
     [SerializeField] private int _testItemAmount;
-    [SerializeField] private ItemScheme _testItem1Scheme;
-    [SerializeField] private int _testItem1Amount;
-    [SerializeField] private ItemScheme _testItem2Scheme;
-    [SerializeField] private int _testItem2Amount;
-
-
 
     private Inventory _playerInventory;
 
@@ -31,8 +25,6 @@ public class PlayerInventory : MonoBehaviour
         var inventoryController = Game.GetController<InventoryController>();
         _playerInventory = inventoryController.PlayerInventory;
         _playerInventory.Add(new InventoryItem(_testItemScheme, _testItemAmount));
-        _playerInventory.Add(new InventoryItem(_testItem1Scheme, _testItem1Amount));
-        _playerInventory.Add(new InventoryItem(_testItem2Scheme, _testItem2Amount));
     }
 
     private void OnGameReady()

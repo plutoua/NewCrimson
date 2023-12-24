@@ -16,7 +16,7 @@ public class InventoryItem
         _itemScheme = itemScheme;
         if (amount > MaxItemInStack)
         {
-            amount = MaxItemInStack;
+            throw new ArgumentOutOfRangeException("Amount of inventory item can't be more than max item in stack.");
         } 
         Amount = amount;
     }

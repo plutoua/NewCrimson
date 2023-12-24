@@ -3,7 +3,6 @@ public class UIPlayerInventory : UIInventoryBase
     protected override void SetInventory(InventoryController inventoryController)
     {
         _inventory = inventoryController.PlayerInventory;
-        _windowsController.SetPlayerInventory(this);
     }
 
     protected override void SetName()

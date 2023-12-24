@@ -6,7 +6,6 @@ public class UIInventoryItem : MonoBehaviour
 {
     [SerializeField] private Image _itemIcon;
     [SerializeField] private TMP_Text _itemAmount;
-    [SerializeField] private GameObject _itemNumberView;
 
     public UIInventorySlot UIInventorySlot { get; private set; }
 
@@ -18,26 +17,10 @@ public class UIInventoryItem : MonoBehaviour
         _inventoryItem = inventoryItem;
         _itemAmount.text = _inventoryItem.Amount.ToString();
         _itemIcon.sprite = _inventoryItem.Sprite;
-        if (_inventoryItem.Amount == 1)
-        {
-            _itemNumberView.SetActive(false);
-        }
-        else
-        {
-            _itemNumberView.SetActive(true);
-        }
     }
 
     public void UpdateItem()
     {
-        if(_inventoryItem.Amount == 1)
-        {
-            _itemNumberView.SetActive(false);
-        }
-        else
-        {
-            _itemNumberView.SetActive(true);
-        }
         _itemAmount.text = _inventoryItem.Amount.ToString();
     }
 
