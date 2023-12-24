@@ -19,7 +19,7 @@ public class Activeable : MonoBehaviour
         if(collision.TryGetComponent(out ActivationZone activationZone)) 
         {
             _active = true;
-            Debug.Log("On active zone - " + transform.position);
+            Debug.Log("On active zone - " + activationZone.transform.position);
         }
     }
 

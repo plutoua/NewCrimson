@@ -22,6 +22,13 @@ public class TileObject : MonoBehaviour
 		return 0.5f;
 	}
 
+	public int GetTileType(){
+		/// CHANGE TO BY SIZE COMPARATOR
+        
+		return type;
+	}
+
+
 	public void SetObjectCoords(int[] coords){
 		if (_coordsNeeded){
 			_objectCoords = coords;

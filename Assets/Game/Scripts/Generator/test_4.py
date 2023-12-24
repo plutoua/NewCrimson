@@ -1,6 +1,7 @@
 import numpy as np
 import random
 
+bioms_primitive_data = {"wild_west", "rocky_mountains"}
 
 def generate_map(size, jump_spots):
     """
@@ -12,6 +13,8 @@ def generate_map(size, jump_spots):
     # Initialize the map with walls
     map = np.ones((size, size), dtype=int)
     map2 = np.ones((size, size), dtype=int)
+
+
 
     # Randomly create paths and jump spots
     for i in range(size):

@@ -14,10 +14,10 @@ public static class ObjectTypes{
         public static int script_area = 3;
         public static int enemy_area = 4;
         public static int building_area = 5;
-        // public static int spawner_area = 6;
+        public static int spawner_area = 6;
+        public static int background_area = 7;
 
-
-        public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area };
+        public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area, spawner_area, background_area };
 
         public static int[] obsticles = new int[]{ wall_area, building_area };
 
@@ -41,6 +41,9 @@ public static class ObjectTypes{
             nameof(jump_area),
             nameof(script_area),
             nameof(enemy_area),
+            nameof(building_area),
+            nameof(spawner_area),
+            nameof(background_area),
             };
 
         public static string asString(int type){
@@ -77,24 +80,22 @@ public class MapCreator : MonoBehaviour
 
 
     // temporary public, make event
-    public void RedrawTileOnTilemap(int x, int y, int type)
+    public void RedrawTileOnTilemap(int x, int y, int type, TileObject tileToUse=null)
     {
         // Логіка обробки події
         
         foreach (TileMapGenerator tmg in tilemapGenerators){
             if (tmg.GetTileType() == type){
-                Debug.Log("Event triggered!");
-                Debug.Log(type);
-                tmg.PlaceTile(x, y, type);
+                tmg.PlaceTile(x, y, type, tileToUse);
                 
             }
             if (type == ObjectTypes.on_delete){
                 if (tmg.GetTileType() == ObjectTypes.walkable_area){
-                    tmg.PlaceTile(x, y, ObjectTypes.walkable_area);
+                    tmg.PlaceTile(x, y, ObjectTypes.walkable_area, tileToUse);
                 }
                 else
                 {
-                    tmg.PlaceTile(x, y, ObjectTypes.on_delete);
+                    tmg.PlaceTile(x, y, ObjectTypes.on_delete, tileToUse);
                 }
                 
             }
@@ -105,8 +106,8 @@ public class MapCreator : MonoBehaviour
     // private Tile walkableTile;
     void Start()
     {
-        List<Tile> tiles = getTiles();
-        // walkableTile = tiles[ObjectTypes.walkable_area];
+        Dictionary<string, Tile> tiles = getTiles();
+        Dictionary<string, CustomRuleTile> customTiles = getCustomTiles();
 
         //List<string> typeNames = new List<string>();
         tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
@@ -127,7 +128,7 @@ public class MapCreator : MonoBehaviour
         }
 
         /*string objectsOnMap = "assets\\Game\\Scripts\\Generator\\map2.map";
-        List<int[]> BuildingsList = new List<int[]>();
+        List<int[]> objectsList = new List<int[]>();
 
         foreach (var line in File.ReadAllLines(path))
         {
@@ -147,7 +148,7 @@ public class MapCreator : MonoBehaviour
         //Debug.Log(ObjectTypes.walkable_area);
         tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
         foreach (TileMapGenerator tmg in tilemapGenerators){
-            tmg.Init(mapData, tiles, this);
+            tmg.Init(mapData, tiles, this, customTiles);
         }
 
         foreach (TileMapGenerator tmg in tilemapGenerators){
@@ -155,8 +156,29 @@ public class MapCreator : MonoBehaviour
         }
     }
 
-    private List<Tile> getTiles(){
-        List<Tile> tiles = new List<Tile>();
+    private Dictionary<string, CustomRuleTile> getCustomTiles(){
+        Dictionary<string, CustomRuleTile> tiles = new Dictionary<string, CustomRuleTile>();
+        Dictionary<string, CustomRuleTile> temp_tiles = new Dictionary<string, CustomRuleTile>();
+        // Завантаження усіх CustomRuleTile об'єктів з папки Resources/Tiles
+        CustomRuleTile[] loadedRuleTiles = Resources.LoadAll<CustomRuleTile>("Sprites");
+
+        foreach (CustomRuleTile tile in loadedRuleTiles)
+        {
+            if (!temp_tiles.ContainsKey(tile.name)){
+                temp_tiles.Add(tile.name, tile);
+            }
+        }
+
+        foreach (string name in ObjectTypes.namesList){
+            if (temp_tiles.ContainsKey(name)){
+                tiles.Add(name, temp_tiles[name]);
+            }
+        }
+        return temp_tiles;
+    }
+
+    private Dictionary<string, Tile> getTiles(){
+        Dictionary<string, Tile> tiles = new Dictionary<string, Tile>();
         Dictionary<string, Tile> temp_tiles = new Dictionary<string, Tile>();
         // Завантаження усіх Tile об'єктів з папки Resources/Tiles
         Tile[] loadedTiles = Resources.LoadAll<Tile>("Sprites");
@@ -169,7 +191,9 @@ public class MapCreator : MonoBehaviour
         }
 
         foreach (string name in ObjectTypes.namesList){
-            tiles.Add(temp_tiles[name]);
+            if (temp_tiles.ContainsKey(name)){
+                tiles.Add(name, temp_tiles[name]);
+            }
         }
         return tiles;
     }
