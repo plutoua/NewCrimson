@@ -1,0 +1,5957 @@
+fileFormatVersion: 2
+guid: 4369c0546a27b6849b86c1b9924410e6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: test_sprites_complex_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65615f18d85108f4d89754a3012f521c
+      internalID: -61399454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c121bcb7df16d17478f027ac6446299b
+      internalID: 1316991362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579136fcefeedef4198e326cd058914b
+      internalID: -87591412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6064abbcdb0d74e8e6460619a87400
+      internalID: 673057313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0041fc99af29f2e4597f98da6ffe08d6
+      internalID: -836625038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab660793d80ed540b9ce15ab39c9089
+      internalID: -1499466968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c89be50069a21c4fb96d8b374070303
+      internalID: -929561384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d381aa9dd8ea7334bad17bbc002b1fd5
+      internalID: 1702808316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fded8756d3ce84fa61ae6e0da2cff1
+      internalID: -712883770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b41d62fb1a09b4aa47ebca04e87eb2
+      internalID: 132058355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5e42711c196d8489e33de9bc5533fe
+      internalID: 328339218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b053d0e854e5b847ba82b6ffad432aa
+      internalID: -1433153673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1385
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6c196bf931b6e4ca40447fd447e67e
+      internalID: 967872035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36882884586fe7c47b211a5e64f9ad27
+      internalID: -1494711185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df0faef490763740bcdd3b6a6d50cce
+      internalID: 143692313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34ecc24247919e439acf3ed42857f8a
+      internalID: -5092547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94be0037da1ebb940bf1f49e58e3bc32
+      internalID: -479744386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3768732fc23fb11439c9520df6fef6f8
+      internalID: 113288508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7314ee7b0413628479433b988b90add5
+      internalID: 673040719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cb13cdeb354594f980251d5e8c5c31
+      internalID: -14638719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_20
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b89b1ecad324504aa46ce5189e60a06
+      internalID: 1975953390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de66cab5edab62429be3f1994cb3cb1
+      internalID: -97916397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7439be5e91dba44a2201834a0d8247
+      internalID: 1301193432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b1f52831097be48855ddb6b2710417
+      internalID: -935718056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_24
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1353
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b2eec009721534585ce67a2dca87c2
+      internalID: 1603537418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c37d9ce18b7f3e4fa4e1e558689524d
+      internalID: 1430350010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437bf43591581854d926cb5365db9deb
+      internalID: 1654652637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_27
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb5722be9ab45249a8efbf73a8a69be
+      internalID: -845031819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3791e2f9af8f69f4597452de683982a6
+      internalID: -372604405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0eb48cd54655b149b49da788647eed8
+      internalID: -767829196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_30
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618dc324bb8255c41b47d01a1ec1cf2d
+      internalID: 443762524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1610d90ca6b922f4ca68e5c16b29cd36
+      internalID: 413200709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755ebb1d73530c64f954aa26e351f196
+      internalID: -1828212000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_33
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9f50aa48dfba5479eedeb858b8e444
+      internalID: 279270088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_34
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4573cb0da14c1a4b84ff22676eccd2d
+      internalID: 1705044831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_35
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb8b89ff8439c74e8fbae39918656d3
+      internalID: 1839863859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_36
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1321
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b638119ccda42864fa79beab9b52141a
+      internalID: 591019490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdd1db4f2e368844b81442e24ca024c
+      internalID: 121627670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9e5bd04f25c0c4495cbdc32ebe31c3
+      internalID: 1024750285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_39
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f0616527bc3044594680cd10ec6bb9
+      internalID: -598890006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67123e226a5c30347959440576e61f48
+      internalID: 40775683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7e27e6e34e7734ca7e286b49ad49c4
+      internalID: -104615876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eef7b9bd8e013d4eb4722ed744bfd00
+      internalID: 1540496952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f078bbf544f7c50498671c96603c70fd
+      internalID: -1080107012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_44
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa76e29893c6c44db842d930dd7d31e
+      internalID: -671844312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_45
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcd396f8621a3049957286e327ae425
+      internalID: -171203509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09a6d77606dd16498399f84b79b1b09
+      internalID: 273772539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_47
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874c51245620a0f41bb6beb35b6bb1c7
+      internalID: -1969390994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_48
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1289
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b918b7beb4e864a85076400d7a732a
+      internalID: -2103833829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9489619774b0499429f0b7f3a2623ce4
+      internalID: -1247553557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_50
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1149a360155b33e46bd7b27b41e867ea
+      internalID: -1916810099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84127b7c14de5194a9aa296449d7d9f1
+      internalID: 449224546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dd1e9e397feb243b02db79e4bba138
+      internalID: -1757444233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ac5d409138263428f66bc2a3030eb8
+      internalID: -1099321041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_54
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b67ca44e0c8544691100a8318de4a0
+      internalID: -253282466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_55
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967b2ef8cd17dc74db0782210d1f22d3
+      internalID: -1206920442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_56
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e33349c2c0cf5458bd67be3ca2e619
+      internalID: 1746848192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_57
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e89adb7d608d748a5e52b46b1b0e0d
+      internalID: 1487390254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_58
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7978ccb5188b0024b96c78ed1f46ca95
+      internalID: -241126088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_59
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9655cc562911d469e127d76bf1553b
+      internalID: 48307350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_60
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dec3467f5e5a5642933e58b2faaa7cc
+      internalID: -1346319552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157b556cd3fe8de4c9f400dd1cada14a
+      internalID: -898636684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_62
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c013e5968ecbec48beb7def8be61061
+      internalID: -1804873426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_63
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8906396be4637cd479141afb602ba4bc
+      internalID: -475444939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_64
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea66d7426a265c45898d8758951bc6a
+      internalID: 548537791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_65
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc0ad7f064273340908ce6f44be571c
+      internalID: -1394063621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_66
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b364530aff9bbe4991b117e53eaf6e4
+      internalID: 1998484025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_67
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd383c0426611b4b89f9a1fc42eb95f
+      internalID: 1633252969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_68
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366b21a22f3fe2541a9b2a6023068361
+      internalID: -1264752655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_69
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349d210743c42634d85bebf9101dcb50
+      internalID: -1181874919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_70
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c3f73d91decbd4a88b7442607202ec
+      internalID: -471913783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_71
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa503a48d38eb1498b3d87572740ee7
+      internalID: -1785959621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_72
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c5945f6460f0d4580d0ca49c3e9c6e
+      internalID: -1006222759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a83605be8f5ac43a5b3f5832ee8492
+      internalID: 27371869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_74
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c3836fce9184544be6b538313d8ee2
+      internalID: -1760368758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_75
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694960ce3e5268f418f8497073dfaf92
+      internalID: 205815528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_76
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b3d10e0c7086d469676b0be4297404
+      internalID: 1764465315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_77
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc696719a49fc64a8e112e4a4dd2abc
+      internalID: -755635207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_78
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58965ed145ebdf842bb15632df2caa56
+      internalID: -408493673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_79
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de316cedbceb4294ea87c51c9ad98c12
+      internalID: 990713935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_80
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d3d2a8acfba3449a09e4092cb1eeaf
+      internalID: 2037166392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_81
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e65314331c30244af7c50db9fbf78c
+      internalID: 730451338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_82
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab061a240631be4cb2540c2ca260ede
+      internalID: -1057207449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2c33db7bfe23b4b93d8b0be9fb7673
+      internalID: -1446908941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_84
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5038683d59ee08a44b3ef7618ae4b20f
+      internalID: 1886275824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37fe19feb3ab614eb4867eac8faf83d
+      internalID: 1264402276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_86
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2920e5f62c6776046aff93fe45639e57
+      internalID: 63029328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_87
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0f4cdb14e133544aef0d6b1a382dde
+      internalID: 1133195721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_88
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f55bf5b0927784f9615d25df5a30ee
+      internalID: 1169860500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a440f950d3b4fe4eb14c021349f2f30
+      internalID: 478457563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3354923057b89c0489e73ba4a7649fb0
+      internalID: 719944457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_91
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db85f47195c12c4380a27819638192e
+      internalID: 351660728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_92
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1edb2846dd8e744aae0e01a06515d5a
+      internalID: 1743926612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_93
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998bc52e828a8fd45b7ecefa1cc75b4f
+      internalID: -1619463508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_94
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a19da29096948042ba217a7784454cb
+      internalID: -1548667887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_95
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b35c68728902f41a10411023f39e71
+      internalID: 305237947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_96
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a8199ee44d164438faa99e80d99625
+      internalID: 1259161261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_97
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4788c0b58381c548a3d5176ad4a0ea0
+      internalID: -1876009091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_98
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7be64e48e643b84cb96653c8b22bad5
+      internalID: -1534329989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_99
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530ef6c67fc303749a25f057e5eea5a3
+      internalID: 1994998416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_100
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb49058890c82024c8cadc9a2f7dc47a
+      internalID: 2091888570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_101
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d947252ab93c03743a35921c2019e94a
+      internalID: -1764199580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_102
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a798e7c8411bc25498e7305aafffba28
+      internalID: 1655911337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_103
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e907d2f5c2fba4293678f1dc2e393e
+      internalID: 1089094322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_104
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d43372c4a7ca84c97b4ccbb4926b6d
+      internalID: -1703185048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_105
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13672a78218b0b045b374c48d815e314
+      internalID: -1824608236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_106
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467c8eff03381a041ae9360f63de83a1
+      internalID: -680255083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_107
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c539cc8cbd3844980f295a75621227
+      internalID: 813625682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_108
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f180531cd42b18c458ccc28a719054eb
+      internalID: -151250158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cabeda1e2b52249b5aa88349f49900
+      internalID: -1266307929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_110
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3a2749431528342a77de112191da1b
+      internalID: -1335905147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_111
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a3e67f518c0dd4ab2df99770e63d0a
+      internalID: -172080024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_112
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c0d6fd3cff4c442aec7f4b3cc65f73
+      internalID: 1739863654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_113
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b390f7ec0e11f45a9feb4a26ea9d92
+      internalID: 1555409164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_114
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb7f89c7e94c3a4baedf3dcec5b93ba
+      internalID: -700279028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_115
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb57879d801edc7409f2470a558c249c
+      internalID: -1708456458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_116
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4b5ba6391cbb5419e8241e21774f9a
+      internalID: -794324687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_117
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c9f689f2751c34f8b1b24557bd4cc7
+      internalID: -1891986448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_118
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffa67b9eda9a7448b3d7a7b69ba5683
+      internalID: -1471957128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_119
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a98015093be79844b75cfea7cc7b545
+      internalID: 1730631262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_120
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1097
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b49c7339c96324096384e1994385db
+      internalID: 1811814034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ec514308ef8b74398126a581c0a1fc
+      internalID: 1656004758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_122
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a0408e4a139b4439fc36a00761542d
+      internalID: -163557492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_123
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edb9aadc4726d042bf73420bc02158f
+      internalID: -969405178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_124
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2049fcc45c83d9948a851cbf9a532f59
+      internalID: -358588680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_125
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d07651c2cff114cb98fd22504a5042
+      internalID: -179232537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_126
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b8621bd8cb47d41862cb83ae03f82c
+      internalID: -2008181905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_127
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a79d9f7f2cf084aa9b83ea3b2dd449
+      internalID: -175377674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_128
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb9902eedeefae42b1d17ebd23da0e5
+      internalID: -2040118418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_129
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fcb6457a091b8478c9686e3ccc72e7
+      internalID: 1455381626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_130
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7856099d3057c04fbb2f8b76cae40e2
+      internalID: 1916625807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_131
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f9075c7148e6f47ad7ab07fc6771d6
+      internalID: 1682549866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_132
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1065
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c101451169cd55e42813c1d202961244
+      internalID: 396101542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a51f92c30fb2ff47b400d2a1afd66e9
+      internalID: -122018818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_134
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ead66cff342c8419b1a88f1b38a197
+      internalID: -625738409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_135
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d00b3c11d3e4843b5bca9ce10aa515
+      internalID: -1642557244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_136
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61fdf163453ddb4a97f6cf9468833fb
+      internalID: 180669855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_137
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc52902bf2546e4d9a286a64a03cae5
+      internalID: 1213179799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_138
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88047e22a67f592428cee8ade846d34b
+      internalID: -2083576571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_139
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b895f83896a92144695301e737ace5e7
+      internalID: 240402390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_140
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08f265b69f1fd14281a230d5817c1bf
+      internalID: -1695864915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_141
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc9ae85a56bfc843927d10ed58910ec
+      internalID: 700427512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_142
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3c3c1c05059134ca2ddef24f091339
+      internalID: -607502799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_143
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d547cb9b8ac4c14a9058b292e5ad51f
+      internalID: 826138696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_144
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1033
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26357a2727effb941a058a820997879f
+      internalID: 1568837054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_145
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f5ec043a97ded47853c648d83c8d30
+      internalID: 718798138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_146
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d21d1dc3ae2404498ade9f3ba53560
+      internalID: -709747723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_147
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669c6d171af96af478a4e289e2c4078a
+      internalID: -755136298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_148
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1256e84c457f98c4db6fb17a3a3251db
+      internalID: -1686697217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_149
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc4f21f8282f8d43bcd19d40390b38b
+      internalID: 665806189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_150
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293a0251948474640812452f14d76097
+      internalID: 876663428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_151
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6fe36f4ce5c5d4aa6954a91ee1299b
+      internalID: -1487025817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_152
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07026c5275db15488d634bc475d9b13
+      internalID: 1467663385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_153
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94029d7f054011f478c97cc863a3431e
+      internalID: -1238094051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_154
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3709431c11c8f4c9759cc03924f4db
+      internalID: 872157562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_155
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc4250bfd3b26a4fa90c295f14a93b0
+      internalID: -1918465099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_156
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1001
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f9bb765510fb04785699139a9325f1
+      internalID: 1105203388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_157
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f392314f628ec648b98748cb72a5890
+      internalID: -1371929749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_158
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae20fc12bf35fe489789e9216ebe149
+      internalID: -682034459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_159
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f6c9faba27761418c51e18c4af4917
+      internalID: -1944470842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_160
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c54c3f0be0fdcb4593783712b16627b
+      internalID: 1607722882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_161
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c369b8f67be0544d87d2b4b17ffd8db
+      internalID: -230298319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_162
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436b17349d2af8746a4a0843af3f4bbb
+      internalID: -737568432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_163
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a97059756a607640918640726414bcd
+      internalID: -1571521991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_164
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6ad1b13c219354cac31cfab0736e64
+      internalID: 1055186488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_165
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e414839a20c3cb544bd7410121fbc548
+      internalID: -887507968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_166
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38047ce6792d23440b138b9c36483201
+      internalID: 1899484421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_167
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e13b9533d56b24bacb6eab0e230505
+      internalID: -1775416036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_168
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 969
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930db91bcf6ed2940986ba959d7b0e5b
+      internalID: -1893977966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_169
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa2fd748d033b4cb5fb2ed4fa5d4e3
+      internalID: -1268160916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_170
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0301417cadaac943b75a26fe8726abc
+      internalID: -873945646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_171
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b756142fa52f0479636066fa4c5cdf
+      internalID: -1480887761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_172
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e0f1ff042098f42b95eae59524affc
+      internalID: 1760635090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_173
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6183619a8bd374990754e46293d425
+      internalID: 1259168929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_174
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9c503d9c6899d4eb6e1c9f8eea36e7
+      internalID: -1992475253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_175
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1394197b8fa8c4dba3e63d8d6f47f9
+      internalID: 563478175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_176
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e14c7b26f4dec49b03586385b32c60
+      internalID: 1904559270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_177
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211acbd112295fc4498973f1d5079c05
+      internalID: 89694530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_178
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dad403d77bd6f646ac0599b0bef1242
+      internalID: 174934552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_179
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4003222210ffe14a9c1ae4a29b0e226
+      internalID: 1794108708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_180
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 937
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2e2e23749d4fd48841a9270aba1a37
+      internalID: -426147502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_181
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8893c88bc91d6a4e92c716d8f83cb5b
+      internalID: 1477122028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_182
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23622fc1589f4a4aa8b891c328d6487
+      internalID: 789226495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_183
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a19a359cef11b40ba8f7cc9f6635f7
+      internalID: -1993465736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_184
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70a2858e53e36040b40b51c5ad0f33e
+      internalID: 1379570743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_185
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3f1196630b84847bf728214e4cab99
+      internalID: 1154049440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_186
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1d713d89995804bbf085fc79d7d8f0
+      internalID: 157344983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_187
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0bc2296ecdf8a43b68c0e3e68f5dbd
+      internalID: -1498733216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_188
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a467e192d8d8adf41b811ac093ad65b8
+      internalID: -1067202893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_189
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33fb933761022004f9a6b302d903f95e
+      internalID: -1054766985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_190
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7616a1d718b57b4d9383df520af8baa
+      internalID: -1591743635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_191
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a8997bc1f27394489a1af9c9104680
+      internalID: -570267669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_192
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 905
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e5c00b29cb52246b332f90be5e73b8
+      internalID: 646884561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_193
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac878250a853b14e8e00aebcf2f58d9
+      internalID: -929074352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_194
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f441a745e7213bc48bf33dbe0d822e86
+      internalID: -747703491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_195
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ccd20970efc134ab933a7123cf36ac
+      internalID: -1063474239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_196
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a42da691064f346a209e3a3eba5afe
+      internalID: 913377666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_197
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb94f238e02ee804f977e634cd73e032
+      internalID: 1098350738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_198
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 873
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebb4242fa043aa40b626f70dc5b980f
+      internalID: -1999091680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_199
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0713194553c7e6746b46663595966f02
+      internalID: -734867886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_200
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5222a02ac5a2d1048bd9c09517684fd0
+      internalID: 753803100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_201
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b9714c897eeeb46b3f3b8dff85cbc3
+      internalID: 2014208131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_202
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4f8ec757e9c4449b8f43feb9bb1e88
+      internalID: 1814286169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_203
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a75dcb27249ab8439b8f0fc4581a853
+      internalID: -124391940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_204
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 841
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922794c8a86097a429b11d3bf648db4a
+      internalID: -572746654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_205
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25eee921349b02a4384514ada38d202c
+      internalID: 1080975204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_206
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a983a27cadc1df5409102d0030e92cf3
+      internalID: -2143875685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_207
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4787d62adbe82469bf17ee5955b96c
+      internalID: -869843282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_208
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c31906ca2983b49a2b386e649fd06d
+      internalID: 583546388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_209
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f61bd167b27674fa5a38fd33b64b72
+      internalID: 1982522318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_210
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 809
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41347b0a1dbb3a24d965d38ee093449d
+      internalID: -1813621678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_211
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da29eb967547d6b4d94e16eae154794e
+      internalID: -65036095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_212
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7376a24d8057af04dacdf49e12093fe2
+      internalID: -154622237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_213
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0995106b0be7d4c44b56c7de8f83e3e0
+      internalID: 90753084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_214
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7249a844bbe680f46871b7ac4896ed5a
+      internalID: -2055971574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_215
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9af056d76d2701418e0641680d3c640
+      internalID: -1070759981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_216
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 777
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f170d532973c9b4eb9d3038db76f742
+      internalID: 596025548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_217
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5274c5d6ba17a7488890b0038893ec2
+      internalID: -1076205830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_218
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff3ecb216ce5704d89d754095a12e69
+      internalID: -1136658003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_219
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f64d1cd4d085f043a85bfb53dc5731a
+      internalID: -1204338536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_220
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e16a3008b8109049b1aab77f61fb140
+      internalID: 660468116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_221
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e826c2c5b86174d87e907970c92a24
+      internalID: -5835473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_222
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 745
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edfaa29a8918284bbb8bee8beca770b
+      internalID: 1249968328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_223
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e850c2001b91e6b45b6fd29b9c8f4419
+      internalID: 1472803039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_224
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8540c909177e78242afafc403d332365
+      internalID: -1829069256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_225
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2547b704d6489574aa5c5c3318cd3bca
+      internalID: 564286204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_226
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a0cce345f7747498840cca29ae77a3
+      internalID: 1064109527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_227
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb68f6b02ef5ac489fb8e12f9f200b4
+      internalID: 1610625371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_228
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 713
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c737ab430c56e0448ee5679a5712737
+      internalID: 637247196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_229
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d3a3a478cbe684996fc84b13e9b4e2
+      internalID: 256698717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_230
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1c1e0b34f896643bba9297880f3e2d
+      internalID: -1595451990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_231
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e14981ce67e1ad4aa16c66a28333323
+      internalID: -979814799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_232
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1b23da6696bae47839996c31772997
+      internalID: -562903817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_233
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b677d17b0a788574e81ed76c48071b16
+      internalID: 630462637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_234
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 681
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269bbbbc9624fdd4f97615b875bbab1b
+      internalID: 1822723103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_235
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a135cac5fb336142919e957e34c9d71
+      internalID: 2121692532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_236
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24d40492de40a447b6001c60aceec9f
+      internalID: -426328325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_237
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7070944785e37b46a1aa9ff3d8acc67
+      internalID: 368605304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_238
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2153da71e81caac40968f6867bbe10af
+      internalID: -637973245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_239
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385f59fa773c1a849beeefda389e6cc4
+      internalID: 368769686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_240
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 649
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071a269b71ef3f341a891f65f77060cf
+      internalID: 48826093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_241
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab278cf6d627181409858925e0e645b7
+      internalID: 100980009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_242
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53068b1965584b044b5b2380594e0c1a
+      internalID: -1374679338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_243
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33ecf35eb1631949bc7e5e6c77a8269
+      internalID: 1650587436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_244
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffb112a7db6dbb4b9e75a5a51e24294
+      internalID: -2010779859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_245
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c730dedc49ecf314c95bdfc85960a2b4
+      internalID: 1272676225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_246
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 617
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee8dbe7079eed14fa08f43fce19ea16
+      internalID: -356647340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_247
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5805dd79c77f1264c8d6e4fd06608015
+      internalID: 538321137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_248
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a158f5e14c22e644b54a4d6ac81a7e5
+      internalID: 1477668090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_249
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13e6a8882c58a44eb7d44999a796e2f
+      internalID: -2105195039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_250
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a9158ba28d7984d866dbc43923c53a
+      internalID: -24635967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_251
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e180f0244dedad4e820754be9c90d9c
+      internalID: 1905684349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_252
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 585
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60eae1f4aa0b4742a7a66f01a493abf
+      internalID: 2001986766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_253
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02d5aa3d05984042a008d8d44099f51
+      internalID: 1318430135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_254
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec951e8601bfc6343b2cd25f293436bb
+      internalID: 1002973675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_255
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1965c943ef64034c80ebeff5cab6716
+      internalID: 2117510275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_256
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50767b79cf5fd7469784531ce198717
+      internalID: -1589768771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_257
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b7d68f72df3964082149689aff5748
+      internalID: 1080985536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_258
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 553
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac3ba85097c101448f74763377b6ed4
+      internalID: -1832004680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_259
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968f872eaf1349b44b58322d31b51d2e
+      internalID: 1390046200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_260
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15eb749245f169847b94d089af630d41
+      internalID: 1965208544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_261
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a465e305d387d4e93cb086b497b150
+      internalID: 826656770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_262
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c13daa6104c1d64d913e01fd84eabc5
+      internalID: -1023131584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_263
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3502873887a5aa46a5a017b9d878ab1
+      internalID: -1144859760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: test_sprites_complex_264
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 521
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5150c14ff52782e46b8ffcf8588a24dc
+      internalID: 1296906053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      test_sprites_complex_0: 1316991362
+      test_sprites_complex_1: -87591412
+      test_sprites_complex_10: 328339218
+      test_sprites_complex_100: 2091888570
+      test_sprites_complex_101: -1764199580
+      test_sprites_complex_102: 1655911337
+      test_sprites_complex_103: 1089094322
+      test_sprites_complex_104: -1703185048
+      test_sprites_complex_105: -1824608236
+      test_sprites_complex_106: -680255083
+      test_sprites_complex_107: 813625682
+      test_sprites_complex_108: -151250158
+      test_sprites_complex_109: -1266307929
+      test_sprites_complex_11: -1433153673
+      test_sprites_complex_110: -1335905147
+      test_sprites_complex_111: -172080024
+      test_sprites_complex_112: 1739863654
+      test_sprites_complex_113: 1555409164
+      test_sprites_complex_114: -700279028
+      test_sprites_complex_115: -1708456458
+      test_sprites_complex_116: -794324687
+      test_sprites_complex_117: -1891986448
+      test_sprites_complex_118: -1471957128
+      test_sprites_complex_119: 1730631262
+      test_sprites_complex_12: 967872035
+      test_sprites_complex_120: 1811814034
+      test_sprites_complex_121: 1656004758
+      test_sprites_complex_122: -163557492
+      test_sprites_complex_123: -969405178
+      test_sprites_complex_124: -358588680
+      test_sprites_complex_125: -179232537
+      test_sprites_complex_126: -2008181905
+      test_sprites_complex_127: -175377674
+      test_sprites_complex_128: -2040118418
+      test_sprites_complex_129: 1455381626
+      test_sprites_complex_13: -1494711185
+      test_sprites_complex_130: 1916625807
+      test_sprites_complex_131: 1682549866
+      test_sprites_complex_132: 396101542
+      test_sprites_complex_133: -122018818
+      test_sprites_complex_134: -625738409
+      test_sprites_complex_135: -1642557244
+      test_sprites_complex_136: 180669855
+      test_sprites_complex_137: 1213179799
+      test_sprites_complex_138: -2083576571
+      test_sprites_complex_139: 240402390
+      test_sprites_complex_14: 143692313
+      test_sprites_complex_140: -1695864915
+      test_sprites_complex_141: 700427512
+      test_sprites_complex_142: -607502799
+      test_sprites_complex_143: 826138696
+      test_sprites_complex_144: 1568837054
+      test_sprites_complex_145: 718798138
+      test_sprites_complex_146: -709747723
+      test_sprites_complex_147: -755136298
+      test_sprites_complex_148: -1686697217
+      test_sprites_complex_149: 665806189
+      test_sprites_complex_15: -5092547
+      test_sprites_complex_150: 876663428
+      test_sprites_complex_151: -1487025817
+      test_sprites_complex_152: 1467663385
+      test_sprites_complex_153: -1238094051
+      test_sprites_complex_154: 872157562
+      test_sprites_complex_155: -1918465099
+      test_sprites_complex_156: 1105203388
+      test_sprites_complex_157: -1371929749
+      test_sprites_complex_158: -682034459
+      test_sprites_complex_159: -1944470842
+      test_sprites_complex_16: -479744386
+      test_sprites_complex_160: 1607722882
+      test_sprites_complex_161: -230298319
+      test_sprites_complex_162: -737568432
+      test_sprites_complex_163: -1571521991
+      test_sprites_complex_164: 1055186488
+      test_sprites_complex_165: -887507968
+      test_sprites_complex_166: 1899484421
+      test_sprites_complex_167: -1775416036
+      test_sprites_complex_168: -1893977966
+      test_sprites_complex_169: -1268160916
+      test_sprites_complex_17: 113288508
+      test_sprites_complex_170: -873945646
+      test_sprites_complex_171: -1480887761
+      test_sprites_complex_172: 1760635090
+      test_sprites_complex_173: 1259168929
+      test_sprites_complex_174: -1992475253
+      test_sprites_complex_175: 563478175
+      test_sprites_complex_176: 1904559270
+      test_sprites_complex_177: 89694530
+      test_sprites_complex_178: 174934552
+      test_sprites_complex_179: 1794108708
+      test_sprites_complex_18: 673040719
+      test_sprites_complex_180: -426147502
+      test_sprites_complex_181: 1477122028
+      test_sprites_complex_182: 789226495
+      test_sprites_complex_183: -1993465736
+      test_sprites_complex_184: 1379570743
+      test_sprites_complex_185: 1154049440
+      test_sprites_complex_186: 157344983
+      test_sprites_complex_187: -1498733216
+      test_sprites_complex_188: -1067202893
+      test_sprites_complex_189: -1054766985
+      test_sprites_complex_19: -14638719
+      test_sprites_complex_190: -1591743635
+      test_sprites_complex_191: -570267669
+      test_sprites_complex_192: 646884561
+      test_sprites_complex_193: -929074352
+      test_sprites_complex_194: -747703491
+      test_sprites_complex_195: -1063474239
+      test_sprites_complex_196: 913377666
+      test_sprites_complex_197: 1098350738
+      test_sprites_complex_198: -1999091680
+      test_sprites_complex_199: -734867886
+      test_sprites_complex_2: 673057313
+      test_sprites_complex_20: 1975953390
+      test_sprites_complex_200: 753803100
+      test_sprites_complex_201: 2014208131
+      test_sprites_complex_202: 1814286169
+      test_sprites_complex_203: -124391940
+      test_sprites_complex_204: -572746654
+      test_sprites_complex_205: 1080975204
+      test_sprites_complex_206: -2143875685
+      test_sprites_complex_207: -869843282
+      test_sprites_complex_208: 583546388
+      test_sprites_complex_209: 1982522318
+      test_sprites_complex_21: -97916397
+      test_sprites_complex_210: -1813621678
+      test_sprites_complex_211: -65036095
+      test_sprites_complex_212: -154622237
+      test_sprites_complex_213: 90753084
+      test_sprites_complex_214: -2055971574
+      test_sprites_complex_215: -1070759981
+      test_sprites_complex_216: 596025548
+      test_sprites_complex_217: -1076205830
+      test_sprites_complex_218: -1136658003
+      test_sprites_complex_219: -1204338536
+      test_sprites_complex_22: 1301193432
+      test_sprites_complex_220: 660468116
+      test_sprites_complex_221: -5835473
+      test_sprites_complex_222: 1249968328
+      test_sprites_complex_223: 1472803039
+      test_sprites_complex_224: -1829069256
+      test_sprites_complex_225: 564286204
+      test_sprites_complex_226: 1064109527
+      test_sprites_complex_227: 1610625371
+      test_sprites_complex_228: 637247196
+      test_sprites_complex_229: 256698717
+      test_sprites_complex_23: -935718056
+      test_sprites_complex_230: -1595451990
+      test_sprites_complex_231: -979814799
+      test_sprites_complex_232: -562903817
+      test_sprites_complex_233: 630462637
+      test_sprites_complex_234: 1822723103
+      test_sprites_complex_235: 2121692532
+      test_sprites_complex_236: -426328325
+      test_sprites_complex_237: 368605304
+      test_sprites_complex_238: -637973245
+      test_sprites_complex_239: 368769686
+      test_sprites_complex_24: 1603537418
+      test_sprites_complex_240: 48826093
+      test_sprites_complex_241: 100980009
+      test_sprites_complex_242: -1374679338
+      test_sprites_complex_243: 1650587436
+      test_sprites_complex_244: -2010779859
+      test_sprites_complex_245: 1272676225
+      test_sprites_complex_246: -356647340
+      test_sprites_complex_247: 538321137
+      test_sprites_complex_248: 1477668090
+      test_sprites_complex_249: -2105195039
+      test_sprites_complex_25: 1430350010
+      test_sprites_complex_250: -24635967
+      test_sprites_complex_251: 1905684349
+      test_sprites_complex_252: 2001986766
+      test_sprites_complex_253: 1318430135
+      test_sprites_complex_254: 1002973675
+      test_sprites_complex_255: 2117510275
+      test_sprites_complex_256: -1589768771
+      test_sprites_complex_257: 1080985536
+      test_sprites_complex_258: -1832004680
+      test_sprites_complex_259: 1390046200
+      test_sprites_complex_26: 1654652637
+      test_sprites_complex_260: 1965208544
+      test_sprites_complex_261: 826656770
+      test_sprites_complex_262: -1023131584
+      test_sprites_complex_263: -1144859760
+      test_sprites_complex_264: 1296906053
+      test_sprites_complex_27: -845031819
+      test_sprites_complex_28: -372604405
+      test_sprites_complex_29: -767829196
+      test_sprites_complex_3: -836625038
+      test_sprites_complex_30: 443762524
+      test_sprites_complex_31: 413200709
+      test_sprites_complex_32: -1828212000
+      test_sprites_complex_33: 279270088
+      test_sprites_complex_34: 1705044831
+      test_sprites_complex_35: 1839863859
+      test_sprites_complex_36: 591019490
+      test_sprites_complex_37: 121627670
+      test_sprites_complex_38: 1024750285
+      test_sprites_complex_39: -598890006
+      test_sprites_complex_4: -1499466968
+      test_sprites_complex_40: 40775683
+      test_sprites_complex_41: -104615876
+      test_sprites_complex_42: 1540496952
+      test_sprites_complex_43: -1080107012
+      test_sprites_complex_44: -671844312
+      test_sprites_complex_45: -171203509
+      test_sprites_complex_46: 273772539
+      test_sprites_complex_47: -1969390994
+      test_sprites_complex_48: -2103833829
+      test_sprites_complex_49: -1247553557
+      test_sprites_complex_5: -61399454
+      test_sprites_complex_50: -1916810099
+      test_sprites_complex_51: 449224546
+      test_sprites_complex_52: -1757444233
+      test_sprites_complex_53: -1099321041
+      test_sprites_complex_54: -253282466
+      test_sprites_complex_55: -1206920442
+      test_sprites_complex_56: 1746848192
+      test_sprites_complex_57: 1487390254
+      test_sprites_complex_58: -241126088
+      test_sprites_complex_59: 48307350
+      test_sprites_complex_6: -929561384
+      test_sprites_complex_60: -1346319552
+      test_sprites_complex_61: -898636684
+      test_sprites_complex_62: -1804873426
+      test_sprites_complex_63: -475444939
+      test_sprites_complex_64: 548537791
+      test_sprites_complex_65: -1394063621
+      test_sprites_complex_66: 1998484025
+      test_sprites_complex_67: 1633252969
+      test_sprites_complex_68: -1264752655
+      test_sprites_complex_69: -1181874919
+      test_sprites_complex_7: 1702808316
+      test_sprites_complex_70: -471913783
+      test_sprites_complex_71: -1785959621
+      test_sprites_complex_72: -1006222759
+      test_sprites_complex_73: 27371869
+      test_sprites_complex_74: -1760368758
+      test_sprites_complex_75: 205815528
+      test_sprites_complex_76: 1764465315
+      test_sprites_complex_77: -755635207
+      test_sprites_complex_78: -408493673
+      test_sprites_complex_79: 990713935
+      test_sprites_complex_8: -712883770
+      test_sprites_complex_80: 2037166392
+      test_sprites_complex_81: 730451338
+      test_sprites_complex_82: -1057207449
+      test_sprites_complex_83: -1446908941
+      test_sprites_complex_84: 1886275824
+      test_sprites_complex_85: 1264402276
+      test_sprites_complex_86: 63029328
+      test_sprites_complex_87: 1133195721
+      test_sprites_complex_88: 1169860500
+      test_sprites_complex_89: 478457563
+      test_sprites_complex_9: 132058355
+      test_sprites_complex_90: 719944457
+      test_sprites_complex_91: 351660728
+      test_sprites_complex_92: 1743926612
+      test_sprites_complex_93: -1619463508
+      test_sprites_complex_94: -1548667887
+      test_sprites_complex_95: 305237947
+      test_sprites_complex_96: 1259161261
+      test_sprites_complex_97: -1876009091
+      test_sprites_complex_98: -1534329989
+      test_sprites_complex_99: 1994998416
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
