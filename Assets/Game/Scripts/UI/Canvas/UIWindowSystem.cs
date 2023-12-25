@@ -5,21 +5,20 @@ using UnityEngine;
 
 public class UIWindowSystem : MonoBehaviour
 {
-    private bool _isUIMode => _windowsController.IsUIMode;
+    // for test
+    [SerializeField] private ItemScheme _forTest;
 
-    private UIGroundInventory _groundInventory;
-    private UIPlayerInventory _playerInventory;
+    private bool _isUIMode => _windowsController.IsUIMode;
 
     private UIWindowsController _windowsController;
 
     private void Start()
     {
-        _groundInventory = GetComponentInChildren<UIGroundInventory>();
-        _playerInventory = GetComponentInChildren<UIPlayerInventory>();
-
         if (Game.IsReady)
         {
             _windowsController = Game.GetController<UIWindowsController>();
+            // for test
+            _windowsController.SetTest(_forTest);
         }
         else
         {
@@ -36,14 +35,17 @@ public class UIWindowSystem : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.I)) 
         {
-            if (_isUIMode)
-            {
-                DeactivateInventory();
-            }
-            else
-            {
-                ActivateInventory();
-            }
+             ActivateInventory();
+        }
+
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            _windowsController.OpenInnerInventory();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            _windowsController.CloseAllWindows();
         }
     }
 
@@ -51,19 +53,12 @@ public class UIWindowSystem : MonoBehaviour
     {
         Game.OnInitializedEvent -= OnGameReady;
         _windowsController = Game.GetController<UIWindowsController>();
-    }
-
-    private void DeactivateInventory()
-    {
-        _groundInventory.Deactivate();
-        _playerInventory.Deactivate();
-        _windowsController.TurnOffUIMode();
+        // for test
+        _windowsController.SetTest(_forTest);
     }
 
     private void ActivateInventory()
     {
-        _groundInventory.Activate();
-        _playerInventory.Activate();
-        _windowsController.TurnOnUIMode();
+        _windowsController.OpenInventory();
     }
 }

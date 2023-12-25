@@ -475,3 +475,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 8212605747166820565}
   _itemAmount: {fileID: 449991764148900503}
+  _itemNumberView: {fileID: 4836123976839595280}

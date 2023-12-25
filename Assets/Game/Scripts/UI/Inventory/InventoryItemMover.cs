@@ -8,6 +8,7 @@ public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandl
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
     private Transform _transformParent;
+    private Transform _moveableParent;
     private UIWindowsController _windowsController;
 
     private void Awake()
@@ -28,6 +29,7 @@ public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandl
     private void SetupWindowController()
     {
         _windowsController = Game.GetController<UIWindowsController>();
+        _moveableParent = _windowsController.Moveable.transform;
     }
 
     private void OnGameReady()
@@ -48,18 +50,24 @@ public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _windowsController.SetItemOnMove(this);
         _transformParent = _rectTransform.parent;
-        _rectTransform.SetParent(_windowsController.Moveable.transform);
+        _rectTransform.SetParent(_moveableParent);
         _canvasGroup.alpha = 0.6f;
         _canvasGroup.blocksRaycasts = false;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        MakeEndDrag();
+    }
+
+    public void MakeEndDrag()
+    {
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
 
-        if(_rectTransform.parent == _windowsController.Moveable.transform)
+        if (_rectTransform.parent == _moveableParent)
         {
             _rectTransform.SetParent(_transformParent);
             _rectTransform.localPosition = Vector3.zero;

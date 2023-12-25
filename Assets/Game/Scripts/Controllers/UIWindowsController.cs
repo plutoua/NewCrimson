@@ -1,26 +1,35 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using TimmyFramework;
 using UnityEngine;
 
-public class UIWindowsController : IController
+public class UIWindowsController : IController, IOnStart
 {
-    public bool IsUIMode {  get; private set; }
+    public bool IsUIMode => _activeWindows.Count > 0;
     public UIMoveable Moveable {  get; private set; }
     public UISlider Slider { get; private set; }
+    public UIPlayerInventory PlayerInventory { get; private set; }
+    public UIGroundInventory GroundInventory { get; private set; }
+    public UIInnerInventory InnerInventory { get; private set; }
+
+    private Dictionary<Type, UIIWindow> _activeWindows;
+    private InventoryItemMover _itemOnMove;
+    private InventoryController _inventoryController;
+
+    //for test
+    public void SetTest(ItemScheme itemScheme)
+    {
+        _inventoryController.SetTest(itemScheme);
+    }
 
     public void Initialize()
     {
-        IsUIMode = false;
+        _activeWindows = new Dictionary<Type, UIIWindow>();
     }
 
-    public void TurnOnUIMode()
+    public void OnStart()
     {
-        IsUIMode = true;
-    }
-    public void TurnOffUIMode()
-    {
-        IsUIMode = false;
+        _inventoryController = Game.GetController<InventoryController>();
     }
 
     public void SetSlider(UISlider slider)
@@ -33,6 +42,15 @@ public class UIWindowsController : IController
         Slider = slider;
     }
 
+    public void SetItemOnMove(InventoryItemMover item)
+    {
+        if(_itemOnMove != null)
+        {
+            _itemOnMove.MakeEndDrag();
+        }
+        _itemOnMove = item;
+    }
+
     public void SetMoveable(UIMoveable moveable)
     {
         if (Moveable != null)
@@ -42,4 +60,79 @@ public class UIWindowsController : IController
 
         Moveable = moveable;
     }
+
+    public void SetPlayerInventory(UIPlayerInventory playerInventory)
+    {
+        if (PlayerInventory != null)
+        {
+            return;
+        }
+
+        PlayerInventory = playerInventory;
+    }
+
+    public void SetGroundInventory(UIGroundInventory groundInventory)
+    {
+        if (GroundInventory != null)
+        {
+            return;
+        }
+
+        GroundInventory = groundInventory;
+    }
+
+    public void SetInnerInventory(UIInnerInventory innerInventory)
+    {
+        if (InnerInventory != null)
+        {
+            return;
+        }
+
+        InnerInventory = innerInventory;
+    }
+
+    public void OpenInventory()
+    {
+        OpenWindow(PlayerInventory);
+        _inventoryController.SetupGroundInventory();
+        OpenWindow(GroundInventory);
+    }
+
+    public void OpenInnerInventory()
+    {
+        if(_inventoryController.IsInnerInventoryReady)
+        {
+            OpenInventory();
+            OpenWindow(InnerInventory);
+        }   
+    }
+
+    public void OpenWindow(UIIWindow window)
+    {
+        if (!_activeWindows.ContainsKey(window.GetType()))
+        {
+            _activeWindows[window.GetType()] = window;
+            window.Activate();
+        }
+    }
+
+    public void CloseWindow(UIIWindow window)
+    {
+        if (_activeWindows.ContainsKey(window.GetType()))
+        {
+            _activeWindows.Remove(window.GetType());
+            window.Deactivate();
+        }
+    }
+
+    public void CloseAllWindows()
+    {
+        foreach (var window in _activeWindows.Values)
+        {
+            window.Deactivate();
+        }
+        _activeWindows.Clear();
+    }
+
+    
 }
