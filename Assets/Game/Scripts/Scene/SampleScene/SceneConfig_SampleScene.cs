@@ -16,6 +16,7 @@ public class SceneConfig_SampleScene : SceneConfig
         controllerMap.CreateAndAdd<EnemysLocatorController>();
         controllerMap.CreateAndAdd<PlayerStatController>();
         controllerMap.CreateAndAdd<InventoryController>();
+        controllerMap.CreateAndAdd<GroundDetectionController>();
         controllerMap.CreateAndAdd<UIWindowsController>();
         return controllerMap;
     }

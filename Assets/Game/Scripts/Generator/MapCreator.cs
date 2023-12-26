@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using System;
 using System.IO;
+using TimmyFramework;
 
 
 public static class ObjectTypes{
@@ -72,6 +73,8 @@ public class MapCreator : MonoBehaviour
     [SerializeField]
     TileMapGenerator[] tilemapGenerators;
 
+    public ItemScheme _testItemScheme;
+
     public void Subscribe(TileMapGenerator tmg)
     {
         // Підписка на подію
@@ -108,6 +111,9 @@ public class MapCreator : MonoBehaviour
     {
         Dictionary<string, Tile> tiles = getTiles();
         Dictionary<string, CustomRuleTile> customTiles = getCustomTiles();
+
+        GroundDetectionController _groundDetectionController = Game.GetController<GroundDetectionController>();
+        _groundDetectionController._testItemScheme = _testItemScheme;
 
         //List<string> typeNames = new List<string>();
         tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();

@@ -1,4 +1,8 @@
-﻿using TimmyFramework;
+﻿using System;
+using TimmyFramework;
+using UnityEngine;
+using UnityEngine.Events;
+
 
 public class InventoryController : IController, IOnCreate
 {
@@ -9,6 +13,7 @@ public class InventoryController : IController, IOnCreate
     public bool IsInnerInventoryReady {  get; private set; }
 
     private PlayerStatController _playerStatController;
+    private GroundDetectionController _groundDetectionController;
 
     private Inventory _playerInventory;
     private Inventory _groundInventory;
@@ -35,6 +40,7 @@ public class InventoryController : IController, IOnCreate
     public void OnCreate()
     {
         _playerStatController = Game.GetController<PlayerStatController>();
+        _groundDetectionController = Game.GetController<GroundDetectionController>();
 
         _groundInventorySlotCapacity = 51;
         _groundInventoryStackSize = 99;
@@ -79,7 +85,8 @@ public class InventoryController : IController, IOnCreate
     public void SetupGroundInventory()
     {
         // set inventory start
-        var groundInventory = _testGroundInventory;
+
+        var groundInventory = _groundDetectionController.GetInventory();
         // set inventory end
 
         _groundInventory.CopyFromOtherInventory(groundInventory);
@@ -88,9 +95,8 @@ public class InventoryController : IController, IOnCreate
     private void UpdateGroundInventory()
     {
         // return inventory start
-        _testGroundInventory.CopyFromOtherInventory(_groundInventory);
+        // _testGroundInventory.CopyFromOtherInventory(_groundInventory);
+        _groundDetectionController.UpdateInventory(_groundInventory);
         // return inventory end
     }
-
-
 }

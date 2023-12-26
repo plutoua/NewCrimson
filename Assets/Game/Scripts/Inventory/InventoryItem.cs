@@ -9,7 +9,7 @@ public class InventoryItem
     public int MaxItemInStack => _itemScheme.MaxItemInStack;
     public int Amount { get; private set; }
 
-    private ItemScheme _itemScheme;
+    protected ItemScheme _itemScheme;
 
     public InventoryItem(ItemScheme itemScheme, int amount)
     {
@@ -34,5 +34,10 @@ public class InventoryItem
     public InventoryItem CloneItemWithAmount(int amount)
     {
         return new InventoryItem(_itemScheme, amount);
+    }
+
+    public ItemScheme GetItemScheme()
+    {
+        return _itemScheme;
     }
 }
