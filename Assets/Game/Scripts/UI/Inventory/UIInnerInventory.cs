@@ -12,7 +12,8 @@ public class UIInnerInventory : UIInventoryBase
 
     protected override void SetName()
     {
-        _moveableWindow.SetName("Inner inventory");
+        var text = _languageStorage.Translation("inner_inventory_name");
+        _moveableWindow.SetName(text);
     }
 
     protected override void SetPosition(float width, float height)

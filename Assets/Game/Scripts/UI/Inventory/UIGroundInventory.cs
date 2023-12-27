@@ -8,7 +8,8 @@ public class UIGroundInventory : UIInventoryBase
 
     protected override void SetName()
     {
-        _moveableWindow.SetName("Ground");
+        var text = _languageStorage.Translation("ground_inventory_name");
+        _moveableWindow.SetName(text);
     }
 
     protected override void SetPosition(float width, float height)

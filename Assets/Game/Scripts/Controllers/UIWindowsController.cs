@@ -11,6 +11,7 @@ public class UIWindowsController : IController, IOnStart
     public UIPlayerInventory PlayerInventory { get; private set; }
     public UIGroundInventory GroundInventory { get; private set; }
     public UIInnerInventory InnerInventory { get; private set; }
+    public UICrafter Crafter { get; private set; }
 
     private Dictionary<Type, UIIWindow> _activeWindows;
     private InventoryItemMover _itemOnMove;
@@ -49,6 +50,15 @@ public class UIWindowsController : IController, IOnStart
             _itemOnMove.MakeEndDrag();
         }
         _itemOnMove = item;
+    }
+
+    public void SetCrafter(UICrafter crafter)
+    {
+        if (Crafter != null)
+        {
+            return;
+        }
+        Crafter = crafter;
     }
 
     public void SetMoveable(UIMoveable moveable)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestFusion
   m_EditorClassIdentifier: 
   _resultItem: {fileID: 11400000, guid: 8c7963eec3571ee4f96ec853bd52cff9, type: 2}
-  _resultAmount: 2
+  _resultAmount: 1
   _needetItems:
   - {fileID: 11400000, guid: 83e664276d7823e45b488910b5b6c16b, type: 2}
   - {fileID: 11400000, guid: 3d084c3484d5941469b1b6e912cecf4d, type: 2}

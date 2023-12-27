@@ -24,7 +24,8 @@ public class SceneConfig_SampleScene : SceneConfig
     public override Dictionary<Type, IStorage> CreateAllStorages()
     {
         var storageMap = new Dictionary<Type, IStorage>();
-        
+        storageMap.CreateAndAdd<ItemStorage>();
+        storageMap.CreateAndAdd<LanguageStorage>();
         return storageMap;
     }
 }

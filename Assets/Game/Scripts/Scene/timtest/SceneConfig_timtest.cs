@@ -16,6 +16,7 @@ public class SceneConfig_timtest : SceneConfig
         controllerMap.CreateAndAdd<EnemysLocatorController>();
         controllerMap.CreateAndAdd<PlayerStatController>();
         controllerMap.CreateAndAdd<InventoryController>();
+        controllerMap.CreateAndAdd<GroundDetectionController>();
         controllerMap.CreateAndAdd<UIWindowsController>();
         return controllerMap;
     }
@@ -23,7 +24,8 @@ public class SceneConfig_timtest : SceneConfig
     public override Dictionary<Type, IStorage> CreateAllStorages()
     {
         var storageMap = new Dictionary<Type, IStorage>();
-        
+        storageMap.CreateAndAdd<ItemStorage>();
+        storageMap.CreateAndAdd<LanguageStorage>();
         return storageMap;
     }
 }

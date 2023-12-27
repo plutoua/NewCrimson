@@ -8,7 +8,8 @@ public class UIPlayerInventory : UIInventoryBase
 
     protected override void SetName()
     {
-        _moveableWindow.SetName("Inventory");
+        var text = _languageStorage.Translation("player_inventory_name");
+        _moveableWindow.SetName(text);
     }
 
     protected override void SetPosition(float width, float height)

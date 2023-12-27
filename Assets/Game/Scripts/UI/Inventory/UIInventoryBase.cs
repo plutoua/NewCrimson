@@ -14,6 +14,7 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
     protected CanvasScaler _canvasScaler;
     protected Inventory _inventory;
     protected UIWindowsController _windowsController;
+    protected LanguageStorage _languageStorage;
 
     public void Activate()
     {
@@ -47,8 +48,12 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
     {
         var inventoryController = Game.GetController<InventoryController>();
         _windowsController = Game.GetController<UIWindowsController>();
+        _languageStorage = Game.GetStorage<LanguageStorage>();
+
         SetInventory(inventoryController);
         SetInventorySizesAndPosition();
+
+        SetName();
 
         CreateSlots();
 

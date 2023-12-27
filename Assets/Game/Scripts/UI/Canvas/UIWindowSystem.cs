@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TimmyFramework;
 using UnityEngine;
 
@@ -41,6 +39,11 @@ public class UIWindowSystem : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             _windowsController.OpenInnerInventory();
+        }
+
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+            _windowsController.OpenWindow(_windowsController.Crafter);
         }
 
         if (Input.GetKeyUp(KeyCode.Escape))
