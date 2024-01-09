@@ -283,8 +283,11 @@ public class TileMapGenerator : MonoBehaviour
                     }
 
             }
-            
-            foreach (TileObject to in _objectsPrefabs){
+
+            if (_objectsPrefabs.Count() > 0) {
+                int random_number = UnityEngine.Random.Range(0, _objectsPrefabs.Count());
+                // random_number = random.randint(0, _objectsPrefabs.Count);
+                TileObject to = _objectsPrefabs[random_number];
                 // MAKE RANDOM MECHANIZM
                 if (to && (tileType == to.type || additionalTypes.Contains(tileType))){
 
