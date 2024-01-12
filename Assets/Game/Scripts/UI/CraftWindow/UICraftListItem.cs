@@ -10,6 +10,10 @@ public class UICraftListItem : MonoBehaviour, IPointerDownHandler
     [SerializeField] private TMP_Text _name;
     [SerializeField] private TMP_Text _amount;
 
+    [Header("Background")]
+    [SerializeField] private Sprite _defaultIcon;
+    [SerializeField] private Sprite _activeIcon;
+
     public RecipeScheme Recipe => _recipe;
 
     private RecipeScheme _recipe;
@@ -47,7 +51,7 @@ public class UICraftListItem : MonoBehaviour, IPointerDownHandler
         if (_isActive)
         {
             _isActive = false;
-            _background.enabled = false;
+            _background.sprite = _defaultIcon;
         }
     }
 
@@ -56,7 +60,7 @@ public class UICraftListItem : MonoBehaviour, IPointerDownHandler
         if (!_isActive)
         {
             _isActive = true;
-            _background.enabled = true;
+            _background.sprite = _activeIcon;
             _controller.SetActiveItem(this);
         }
     }

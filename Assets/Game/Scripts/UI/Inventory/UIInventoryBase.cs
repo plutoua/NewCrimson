@@ -95,10 +95,10 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
 
     private void SetInventorySizesAndPosition()
     {
-        int collumNumber = 3;
+        int collumNumber = 5;
         if (_inventory.IsGround)
         {
-            collumNumber = 17;
+            collumNumber = 27;
         }
         else if (_inventory.SlotNumber > 30)
         {
@@ -108,14 +108,6 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
         {
             collumNumber = 6;
         }
-        else if (_inventory.SlotNumber > 20)
-        {
-            collumNumber = 5;
-        }
-        else if (_inventory.SlotNumber > 12)
-        {
-            collumNumber = 4;
-        }    
 
         var rowNumber = _inventory.SlotNumber / collumNumber;
         if(rowNumber * collumNumber < _inventory.SlotNumber)
@@ -123,8 +115,8 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
             rowNumber++;
         }
 
-        int width = collumNumber * 112;
-        int height = rowNumber * 112;
+        int width = collumNumber * 65 + 20;
+        int height = rowNumber * 65 + 20;
 
         _moveableWindow.SetSizes(width, height);
         SetPosition(width, height);

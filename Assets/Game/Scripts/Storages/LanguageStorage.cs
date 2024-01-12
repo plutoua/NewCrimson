@@ -12,7 +12,7 @@ public class LanguageStorage : IStorage
 
         _languages["ground_inventory_name"] = "Ground";
         _languages["player_inventory_name"] = "Inventory";
-        _languages["inner_inventory_name"] = "Outside storage";
+        _languages["inner_inventory_name"] = "Outside";
         _languages["craft_label_text"] = "Craft cost:";
         _languages["craft_button_text"] = "Craft";
     }

@@ -42,7 +42,7 @@ public class InventoryController : IController, IOnCreate
         _playerStatController = Game.GetController<PlayerStatController>();
         _groundDetectionController = Game.GetController<GroundDetectionController>();
 
-        _groundInventorySlotCapacity = 51;
+        _groundInventorySlotCapacity = 81;
         _groundInventoryStackSize = 99;
         _defaultStackSize = 10;
 

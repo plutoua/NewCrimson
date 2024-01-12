@@ -16,6 +16,6 @@ public class UIGroundInventory : UIInventoryBase
     {
         var canvasSizes = _canvasScaler.referenceResolution;
 
-        _moveableWindow.SetPosition((canvasSizes.x - width)/2, height + 50);
+        _moveableWindow.SetPosition((canvasSizes.x - width)/2, height + 70);
     }
 }

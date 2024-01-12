@@ -64,7 +64,7 @@ public class MoveableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     public void SetSizes(float width, float height)
     {
-        _rectTransform.sizeDelta = new Vector3(width, height + 50);
+        _rectTransform.sizeDelta = new Vector3(width, height + 70);
     }
 
     public void SetPosition(float width, float height)
