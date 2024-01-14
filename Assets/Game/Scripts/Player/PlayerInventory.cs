@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private ItemScheme _testItem2Scheme;
     [SerializeField] private int _testItem2Amount;
 
-
+    private PlayerStatController _playerStatController;
 
     private Inventory _playerInventory;
 
@@ -33,6 +33,8 @@ public class PlayerInventory : MonoBehaviour
         _playerInventory.Add(new InventoryItem(_testItemScheme, _testItemAmount));
         _playerInventory.Add(new InventoryItem(_testItem1Scheme, _testItem1Amount));
         _playerInventory.Add(new InventoryItem(_testItem2Scheme, _testItem2Amount));
+
+        _playerStatController = Game.GetController<PlayerStatController>();
     }
 
     private void OnGameReady()
@@ -58,6 +60,10 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.L))
         {
             _playerInventory.ChangeInventorySize(_playerInventory.SlotNumber - 1);
+        }
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            _playerStatController.Stats.AddExperience(10);
         }
     }
 }

@@ -1,18 +1,21 @@
+using System;
+
+[Serializable]
 public class Stats
 {
-    public int Strength {  get; set; }
-    public int Agility { get; set; }
-    public int Intelligence { get; set; }
-    public int Luck { get; set; }
-    public int Endurance { get; set; }
-    public int Will { get; set; }
-    public int Charisma { get; set; }
-    public int Perception { get; set; }
-    public float MoveSpeed { get; set; }
-    public float AttackSpeed { get; set; }
-    public int InventorySize { get; set; }
-    public float ViewAngle {  get; set; }
-    public float ViewLenght {  get; set; }
+    public int Strength;
+    public int Agility;
+    public int Intelligence;
+    public int Luck;
+    public int Endurance;   
+    public int Will;
+    public int Charisma;
+    public int Perception;
+    public float MoveSpeed;
+    public float AttackSpeed;
+    public int InventorySize;
+    public float ViewAngle;
+    public float ViewLenght;
 
     public Stats()
     {
@@ -29,5 +32,47 @@ public class Stats
         InventorySize = 0;
         ViewAngle = 0;
         ViewLenght = 0;
+    }
+
+    public static Stats operator +(Stats first, Stats second)
+    {
+        Stats result = new Stats();
+
+        result.Strength = first.Strength + second.Strength;
+        result.Agility = first.Agility + second.Agility;
+        result.Intelligence = first.Intelligence + second.Intelligence;
+        result.Luck = first.Luck + second.Luck;
+        result.Endurance = first.Endurance + second.Endurance;
+        result.Will = first.Will + second.Will;
+        result.Charisma = first.Charisma + second.Charisma;
+        result.Perception = first.Perception + second.Perception;
+        result.MoveSpeed = first.MoveSpeed + second.MoveSpeed;
+        result.AttackSpeed = first.AttackSpeed + second.AttackSpeed;
+        result.InventorySize = first.InventorySize + second.InventorySize;
+        result.ViewAngle = first.ViewAngle + second.ViewAngle;
+        result.ViewLenght = first.ViewLenght + second.ViewLenght;
+
+        return result;
+    }
+
+    public static Stats operator -(Stats first, Stats second)
+    {
+        Stats result = new Stats();
+
+        result.Strength = first.Strength - second.Strength;
+        result.Agility = first.Agility - second.Agility;
+        result.Intelligence = first.Intelligence - second.Intelligence;
+        result.Luck = first.Luck - second.Luck;
+        result.Endurance = first.Endurance - second.Endurance;
+        result.Will = first.Will - second.Will;
+        result.Charisma = first.Charisma - second.Charisma;
+        result.Perception = first.Perception - second.Perception;
+        result.MoveSpeed = first.MoveSpeed - second.MoveSpeed;
+        result.AttackSpeed = first.AttackSpeed - second.AttackSpeed;
+        result.InventorySize = first.InventorySize - second.InventorySize;
+        result.ViewAngle = first.ViewAngle - second.ViewAngle;
+        result.ViewLenght = first.ViewLenght - second.ViewLenght;
+
+        return result;
     }
 }

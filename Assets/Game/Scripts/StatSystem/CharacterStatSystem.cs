@@ -8,6 +8,18 @@ public class CharacterStatSystem
         remove { _statChangeEvent -= value; }
     }
 
+    public event UnityAction ExperienceChangeEvent
+    {
+        add { _experienceChangeEvent += value; }
+        remove { _experienceChangeEvent -= value; }
+    }
+
+    public event UnityAction LevelUpEvent
+    {
+        add { _levelUpEvent += value; }
+        remove { _levelUpEvent -= value; }
+    }
+
     public int Level {  get; private set; }
     public int Experience { get; private set; }
     public int ExperienceBorder { get; private set; }
@@ -28,6 +40,8 @@ public class CharacterStatSystem
     public float ViewLenght => _selfStats.ViewLenght + _tempStats.ViewLenght;
 
     private event UnityAction _statChangeEvent;
+    private event UnityAction _experienceChangeEvent;
+    private event UnityAction _levelUpEvent;
     private Stats _selfStats;
     private Stats _tempStats;
 
@@ -40,5 +54,35 @@ public class CharacterStatSystem
 
         _selfStats = new Stats();
         _tempStats = new Stats();
+    }
+
+    public void AddExperience(int value)
+    {
+        Experience += value;
+
+        if(Experience >= ExperienceBorder)
+        {
+            LevelUp();
+        }
+
+        _experienceChangeEvent?.Invoke();
+    }
+
+    public void AddStatByPoint(Stats stats)
+    {
+        if(StatsPoints > 0)
+        {
+            StatsPoints--;
+            _selfStats += stats;
+            _statChangeEvent?.Invoke();
+        }
+    }
+
+    private void LevelUp()
+    {
+        Level++;
+        ExperienceBorder = LevelSystem.Experience[Level];
+        StatsPoints += 3;
+        _levelUpEvent?.Invoke();
     }
 }
