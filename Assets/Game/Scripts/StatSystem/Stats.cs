@@ -16,6 +16,8 @@ public class Stats
     public int InventorySize;
     public float ViewAngle;
     public float ViewLenght;
+    public int Health;
+    public int Stamina;
 
     public Stats()
     {
@@ -32,6 +34,8 @@ public class Stats
         InventorySize = 0;
         ViewAngle = 0;
         ViewLenght = 0;
+        Health = 0;
+        Stamina = 0;
     }
 
     public static Stats operator +(Stats first, Stats second)
@@ -51,6 +55,8 @@ public class Stats
         result.InventorySize = first.InventorySize + second.InventorySize;
         result.ViewAngle = first.ViewAngle + second.ViewAngle;
         result.ViewLenght = first.ViewLenght + second.ViewLenght;
+        result.Health = first.Health + second.Health;
+        result.Stamina = first.Stamina + second.Stamina;
 
         return result;
     }
@@ -72,6 +78,8 @@ public class Stats
         result.InventorySize = first.InventorySize - second.InventorySize;
         result.ViewAngle = first.ViewAngle - second.ViewAngle;
         result.ViewLenght = first.ViewLenght - second.ViewLenght;
+        result.Health = first.Health - second.Health;
+        result.Stamina = first.Stamina - second.Stamina;
 
         return result;
     }

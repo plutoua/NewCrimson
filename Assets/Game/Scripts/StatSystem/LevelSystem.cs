@@ -4,13 +4,15 @@ public static class LevelSystem
 
     static LevelSystem()
     {
-        Experience = new int[]
+        Experience = new int[100];
+
+        for (int i = 0; i < 100; i++)
         {
-            0,
-            100,
-            300,
-            600,
-            1000
-        };
+            Experience[i] = i * 100;
+            if(i != 0)
+            {
+                Experience[i] += Experience[i - 1];
+            }
+        }
     }
 }

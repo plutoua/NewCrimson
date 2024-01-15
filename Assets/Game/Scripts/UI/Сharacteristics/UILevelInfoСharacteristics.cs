@@ -47,6 +47,8 @@ public class UILevelInfoСharacteristics : MonoBehaviour
     private void OnExperienceChange()
     {
         _experienceText.text = _playerStatController.Stats.Experience + " / " + _playerStatController.Stats.ExperienceBorder;
-        _experienceBar.value = _playerStatController.Stats.Experience / (float)_playerStatController.Stats.ExperienceBorder;
+        var relativeExperience = _playerStatController.Stats.Experience - LevelSystem.Experience[_playerStatController.Stats.Level - 1];
+        var relativeBorder = _playerStatController.Stats.ExperienceBorder - LevelSystem.Experience[_playerStatController.Stats.Level - 1];
+        _experienceBar.value = relativeExperience / (float)relativeBorder;
     }
 }

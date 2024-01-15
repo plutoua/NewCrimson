@@ -33,9 +33,11 @@ public class CharacterStatSystem
     public int Will => _selfStats.Will + _tempStats.Will;
     public int Charisma => _selfStats.Charisma + _tempStats.Charisma;
     public int Perception => _selfStats.Perception + _tempStats.Perception;
+    public int Health => _selfStats.Health + _tempStats.Health;
+    public int Stamina => _selfStats.Stamina + _tempStats.Stamina;
     public float MoveSpeed => _selfStats.MoveSpeed + _selfStats.MoveSpeed * _tempStats.MoveSpeed;
     public float AttackSpeed => _selfStats.AttackSpeed + _selfStats.AttackSpeed * _tempStats.AttackSpeed;
-    public int InventorySize => _selfStats.InventorySize + _tempStats.InventorySize;
+    public int InventorySize => 4 + Strength + _selfStats.InventorySize + _tempStats.InventorySize;
     public float ViewAngle => _selfStats.ViewAngle + _tempStats.ViewAngle;
     public float ViewLenght => _selfStats.ViewLenght + _tempStats.ViewLenght;
 
