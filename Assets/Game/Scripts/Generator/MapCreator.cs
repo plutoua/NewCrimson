@@ -20,7 +20,7 @@ public static class ObjectTypes{
 
         public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area, spawner_area, background_area };
 
-        public static int[] obsticles = new int[]{ wall_area, building_area };
+        public static int[] obsticles = new int[]{ wall_area, building_area, 13 };
 
         public static bool isObsticle(int type){
             if (Array.IndexOf(obsticles, type) != -1){

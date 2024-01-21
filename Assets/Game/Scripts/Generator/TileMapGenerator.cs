@@ -171,6 +171,10 @@ public class TileMapGenerator : MonoBehaviour
                     else if (_tiles.ContainsKey(ObjectTypes.asString(tileType))){
                         _tilemap.SetTile(position, _tiles[ObjectTypes.asString(tileType)]);
                     }
+                    else
+                    {
+                        _tilemap.SetTile(position, _tiles[ObjectTypes.asString(ObjectTypes.wall_area)]);
+                    }
 
                     // _tilemap.SetTile(position, _tiles[tileType]);
                 } 

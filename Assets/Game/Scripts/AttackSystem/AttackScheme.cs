@@ -11,16 +11,33 @@ public class AttackScheme : ScriptableObject
     [SerializeField] private int _bulletHitNumber;
     [SerializeField] private Vector2 _bulletAccuracy;
     [SerializeField] private float _attackDelay;
+    [SerializeField] private bool _isPlayerBullets;
+
+    public void SetIsPlayerBullets(bool isPlayerBullets = false)
+    {
+        // якщо треба поміняти пулю на дружню. хз нашо.
+        _isPlayerBullets = isPlayerBullets;
+    }
 
     public float AttackDelay => _attackDelay;
 
-    public void Attack(Transform spawnTransform, Vector3 target)
+    public void Attack(Transform spawnTransform, Vector3 targetDirection)
     {
+        Debug.Log("Spawn Transform Position: " + spawnTransform.position);
+        Debug.Log("Target Direction: " + targetDirection);
+
         Bullet bulletTemp;
-        for(int i = 0;  i < _bulletPerAttack; i++)
+        for (int i = 0; i < _bulletPerAttack; i++)
         {
-            bulletTemp = GetBullet(spawnTransform.position);
-            InitBullet(bulletTemp, target, spawnTransform);
+            // Створення Vector2 для розрахунку напрямку лише використовуючи x та y
+            Vector2 direction2D = new Vector2(targetDirection.x, targetDirection.y).normalized;
+
+            // Конвертація назад в Vector3, зберігаючи оригінальне значення z
+            Vector3 direction = new Vector3(direction2D.x, direction2D.y, 0);
+            Vector3 spawnPosition = spawnTransform.position + direction * 0.5f;
+
+            bulletTemp = GetBullet(spawnPosition);
+            InitBullet(bulletTemp, targetDirection, spawnPosition);
         }
     }
 
@@ -30,7 +47,7 @@ public class AttackScheme : ScriptableObject
         return Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
     }
 
-    private void InitBullet(Bullet bullet, Vector3 target, Transform spawnTransform)
+    private void InitBullet(Bullet bullet, Vector3 target, Vector3 spawnTransform)
     {
         bullet.Init(
             TargetPositionAccuracyImpact(target),
@@ -38,7 +55,8 @@ public class AttackScheme : ScriptableObject
             _bulletVelocity, 
             _bulletHitNumber,
             _bulletTimeLife,
-            spawnTransform
+            spawnTransform,
+            _isPlayerBullets
             );
     }
 

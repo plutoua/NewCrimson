@@ -7,6 +7,7 @@ using TimmyFramework;
 public class EnemyPathFinder : TileObject
 {
 
+    public int partyId = -1;
     private PlayerLocatorController _playerLocatorController;
     private EnemysLocatorController _enemysLocatorController;
     private Vector3 savedPosition;
@@ -14,16 +15,20 @@ public class EnemyPathFinder : TileObject
     private float interval = 0.5f;
     private float decision_time_max = 1.5f;
     private float decision_time_min = 0.3f;
-    private int _id = -1;
+    // temporaty public
+    public int _id = -1;
     private bool new_move = false;
-    private bool group_leader = false;
+    public bool group_leader = false;
+    public bool chain_part = false;
 
     public FieldOfView prefabFieldOfView;
 
     public FieldOfView enemy_view;
 
-    public GameObject[] party;
+    public List<GameObject> party;
     public bool playerInWiev;
+
+    public int healthPersentage = 100;
 
     public int playerExistanceConfirmation; // якщо ворог зна, що ти існуєш, він не буде знижувати рівень тривоги. це ідіотизм.
                                             // крики союзників в малому радіусі - є трігером цієї херні також.
@@ -103,6 +108,9 @@ public class EnemyPathFinder : TileObject
 
     void Start()
     {
+        healthPersentage = 100;
+        partyId = -1;
+        chain_part = false;
         playerInWiev = false;
         _id = -1;
         timer = 0.0f;
@@ -138,9 +146,11 @@ public class EnemyPathFinder : TileObject
         Game.OnInitializedEvent -= OnGameReady;
         _playerLocatorController = Game.GetController<PlayerLocatorController>();
         _playerLocatorController.PlayerChangePositionEvent+= OnChangePlayerPosition;
-
-        _enemysLocatorController = Game.GetController<EnemysLocatorController>();
-        _id = _enemysLocatorController.InsertEnemy(this.gameObject);
+        if (_enemysLocatorController == null) { 
+            _enemysLocatorController = Game.GetController<EnemysLocatorController>();
+            _id = _enemysLocatorController.InsertEnemy(this.gameObject);
+        }
+        
 
     }
 
@@ -153,46 +163,102 @@ public class EnemyPathFinder : TileObject
         return outVector;
     }
 
+    private bool CheckDistanse(Vector3 pointA, Vector3 pointB)
+    {
+        // Розрахунок відстані використовуючи лише x та y координати
+        float distance = Vector2.Distance(new Vector2(pointA.x, pointA.y), new Vector2(pointB.x, pointB.y));
+
+        // Перевірка чи відстань більша за 10.0f
+        return distance < 10.0f;
+    }
+
+    public void LinkEnemy(int _leaderLevel, List<GameObject> _party)
+    {
+        chain_part = true;
+        group_leader = true;
+        leaderLevel = _leaderLevel;
+        party = _party;
+        if (group_leader && leaderLevel > party.Count)
+        {
+            List<int> ids = new List<int>();
+            ids.Add(_id);
+            foreach (GameObject partyMember in party)
+            {
+                ids.Add(partyMember.GetComponent<EnemyPathFinder>()._id);
+
+            }
+            group_leader = !_enemysLocatorController.LinkEnemy(ids, leaderLevel, this.gameObject.transform.position);
+        }
+
+        playerInWiev = true;
+
+
+
+    }
+    
 
     private void Update()
     {
-        if (playerExistanceConfirmation > 10)
-        {
-            playerInWiev = true;
-        }
-        timer += Time.deltaTime;
-        if (new_move && timer >= interval)
-        {
-            timer = 0f; // Скидання таймера
-            interval = UnityEngine.Random.Range(decision_time_min, decision_time_max);
-            if (agent && enemy_view != null)
+        if (Game.IsReady) {
+
+            //make sound wave with pathfinding (for optimisation) and using angles of objects near
+            if (_playerLocatorController != null) { 
+                if (CheckDistanse(_playerLocatorController.PlayerPosition, gameObject.transform.position))
+                {
+                    playerExistanceConfirmation++;
+                }
+            }
+            if (playerExistanceConfirmation > 120)
             {
+                playerInWiev = true;
+            }
+            timer += Time.deltaTime;
+            if (new_move && timer >= interval)
+            {
+                timer = 0f; // Скидання таймера
+                interval = UnityEngine.Random.Range(decision_time_min, decision_time_max);
+                if (agent && enemy_view != null)
+                {
                 
-                if (playerInWiev)
-                {
-                    // player in view
-                    EnemyAttacker _enemyAttacker = gameObject.GetComponent<EnemyAttacker>();
-                    _enemyAttacker.SetAttackStatus(true);
+                    if (playerInWiev)
+                    {
+                        // player in view
 
-                    agent.SetDestination(_playerLocatorController.PlayerPosition);
-                    enemy_view.setOriginObject(this.gameObject);
-                    // ON PLAYER CHANGE POSITION
-                    enemy_view.setTargetVector(_playerLocatorController.PlayerPosition);
-                    // enemy_view.SetTarget(_playerLocatorController.PlayerPosition);}
-                }
 
-                else
-                {
-                    // simple patroling
-                    Vector3 destination = GenerateRandomDirection(this.gameObject.transform.position);
-                    agent.SetDestination(destination);
-                    enemy_view.setOriginObject(this.gameObject);
-                    enemy_view.setTargetVector(GenerateRandomDirection(destination));
+                        EnemyAttacker _enemyAttacker = gameObject.GetComponent<EnemyAttacker>();
+                        _enemyAttacker.SetAttackStatus(true);
+
+                        if (!chain_part) {
+                            chain_part = true;
+                            List<int> ids = new List<int>();
+
+                            ids.Add(_id);
+                            if (_enemysLocatorController != null) {
+                                Debug.Log(gameObject.transform.position);
+                                partyId = _enemysLocatorController.GetNewPartyId();
+                                chain_part = _enemysLocatorController.LinkEnemy(ids, leaderLevel, gameObject.transform.position);
+                            }
+                        }
+                        agent.SetDestination(_playerLocatorController.PlayerPosition);
+                        enemy_view.setOriginObject(this.gameObject);
+                        // ON PLAYER CHANGE POSITION
+                        enemy_view.setTargetVector(_playerLocatorController.PlayerPosition);
+                        // enemy_view.SetTarget(_playerLocatorController.PlayerPosition);}
+                    }
+
+                    else
+                    {
+                        // simple patroling
+                        Vector3 destination = GenerateRandomDirection(this.gameObject.transform.position);
+                        agent.SetDestination(destination);
+                        enemy_view.setOriginObject(this.gameObject);
+                        enemy_view.setTargetVector(GenerateRandomDirection(destination));
+                    }
+                    new_move = false;
                 }
-                new_move = false;
             }
         }
     }
 
-    
+
 }

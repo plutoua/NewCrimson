@@ -9,11 +9,13 @@ public class InventoryController : IController, IOnCreate
     public Inventory PlayerInventory => _playerInventory;
     public Inventory GroundInventory => _groundInventory;
     public Inventory InnerInventory => _innerInventory;
+    public int GroundSlotCapacity => _groundInventorySlotCapacity;
 
     public bool IsInnerInventoryReady {  get; private set; }
 
     private PlayerStatController _playerStatController;
     private GroundDetectionController _groundDetectionController;
+    public int GroundInventoryStackSize => _groundInventoryStackSize;
 
     private Inventory _playerInventory;
     private Inventory _groundInventory;

@@ -25,6 +25,8 @@ public class FieldOfView : MonoBehaviour
 
     private MouseLocatorController _mouseLocatorController;
 
+   
+
     public void setOriginObject(GameObject o)
     {
         originObj = o;

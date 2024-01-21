@@ -2,7 +2,7 @@
 {
     protected override void Action()
     {
-        transform.position = _spawnTransform.position;
+        transform.position = _spawnPosition;
         SetBulletAngle(_direction);
     }
 }

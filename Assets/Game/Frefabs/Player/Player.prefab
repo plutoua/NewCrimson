@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 8232790148115185931}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,3 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _testItemScheme: {fileID: 11400000, guid: 8c7963eec3571ee4f96ec853bd52cff9, type: 2}
   _testItemAmount: 9
+  _testItem1Scheme: {fileID: 0}
+  _testItem1Amount: 0
+  _testItem2Scheme: {fileID: 0}
+  _testItem2Amount: 0

@@ -10,21 +10,29 @@ public abstract class Bullet : MonoBehaviour
 
     protected float _timePased;
     protected int _hitCounter;
-    protected Transform _spawnTransform;
+    protected Vector3 _spawnPosition;
+    // protected Vector3 _spawnSpeed;
+
+    public GameObject _testEnemyHit;
+    public GameObject _testPlayerHit;
+
+    public bool _playerBullet;
 
     public void Init(Vector3 direction, float damage,float velocity, int hitNumber, 
-        float lifeTime, Transform spawnTransform)
+        float lifeTime, Vector3 spawnPosition, bool isPlayerBullet= false)
     {
         _direction = direction;
         _damage = damage;
         _velocity = velocity;
         _hitNumber = hitNumber;
         _lifeTime = lifeTime;
-        _spawnTransform = spawnTransform;
+        _spawnPosition = spawnPosition;
+        // _spawnSpeed = spawnSpeed;
+        _playerBullet = isPlayerBullet;
 
         _timePased = 0;
         _hitCounter = 0;
-
+        
         SetBulletAngle(direction);
     }
 
@@ -36,7 +44,30 @@ public abstract class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // TODO: hit reaction
+        // Debug.Log(collision.tag);
+        if (collision.CompareTag("Enemy") && _playerBullet)
+        {
+            // Логіка для снарядів ворога
+            HandleEnemyCollision(collision);
+        }
+        else if (collision.CompareTag("Player") && !_playerBullet)
+        {
+            // Логіка для снарядів гравця
+            
+            HandlePlayerCollision(collision);
+        }
+    }
+
+    private void HandleEnemyCollision(Collider2D collision)
+    {
+        // TODO: Реакція на зіткнення з ворогом
+        Instantiate(_testPlayerHit, transform.position, Quaternion.identity);
+    }
+
+    private void HandlePlayerCollision(Collider2D collision)
+    {
+        // TODO: Реакція на зіткнення з гравцем
+        Instantiate(_testEnemyHit, transform.position, Quaternion.identity);
     }
 
     protected abstract void Action();

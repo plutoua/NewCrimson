@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7814612103442885566}
   m_Layer: 2
   m_Name: Enemy 1 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,10 +106,15 @@ MonoBehaviour:
   _activatorsCoords: 
   _coordsNeeded: 0
   type: 4
+  partyId: -1
+  _id: -1
+  group_leader: 0
+  chain_part: 0
   prefabFieldOfView: {fileID: 359167251448651668, guid: 0e768d1e60daa0740982989538f5aad0, type: 3}
   enemy_view: {fileID: 0}
   party: []
   playerInWiev: 0
+  healthPersentage: 100
   playerExistanceConfirmation: 0
   alertLewel: 0
   partyBlasted: 0

@@ -12,17 +12,19 @@ public class GroundDetectionController : IController, IOnCreate
     private PlayerLocatorController _playerLocatorController;
     private Quadtree _itemsMap;
     public ItemScheme _testItemScheme;
+    private InventoryController _inventoryController;
     // public bool _started = false;
 
     public void OnCreate()
     {
         _playerLocatorController = Game.GetController<PlayerLocatorController>();
+        _inventoryController = Game.GetController<InventoryController>();
+
     }
 
     public void Initialize()
     {
-
-        _inventory = new Inventory(51, 99);
+        _inventory = new Inventory(_inventoryController.GroundSlotCapacity, _inventoryController.GroundInventoryStackSize);
         _itemsMap = new Quadtree();
         // _started = false;
     }

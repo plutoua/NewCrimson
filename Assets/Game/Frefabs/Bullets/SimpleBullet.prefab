@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 654241016802235627}
   - component: {fileID: 2003112169756235367}
   - component: {fileID: 8268083402878192326}
+  - component: {fileID: 1838385007307370544}
   m_Layer: 0
   m_Name: SimpleBullet
   m_TagString: Untagged
@@ -97,3 +98,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ae6f2c3a9aba748a90ef23ce855be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _testEnemyHit: {fileID: 6729573876705409593, guid: 6257481efb36f02409654b844f37141c, type: 3}
+  _testPlayerHit: {fileID: 6729573876705409593, guid: fe9f775df3c3ddd489d43afd8f77fac7, type: 3}
+  _playerBullet: 0
+--- !u!58 &1838385007307370544
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122494160854910862}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

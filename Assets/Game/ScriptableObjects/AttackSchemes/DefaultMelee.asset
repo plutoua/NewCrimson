@@ -16,7 +16,8 @@ MonoBehaviour:
   _bulletPerAttack: 1
   _bulletDamage: 1
   _bulletVelocity: 0
-  _bulletTimeLife: 0.1
+  _bulletTimeLife: 0.3
   _bulletHitNumber: 1
   _bulletAccuracy: {x: 0, y: 0}
   _attackDelay: 1
+  _isPlayerBullets: 0

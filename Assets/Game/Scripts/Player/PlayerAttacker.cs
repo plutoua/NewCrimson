@@ -1,5 +1,7 @@
 using TimmyFramework;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerAttacker : MonoBehaviour
 {
@@ -12,9 +14,35 @@ public class PlayerAttacker : MonoBehaviour
     private MouseLocatorController _mouseLocatorController;
     private UIWindowsController _windowsController;
 
+    [SerializeField] private List<AttackScheme> _attackSchemes;
+    private int _currentAttackIndex = 0;
+
+    private void NextAttackScheme()
+    {
+        if (_attackSchemes.Count == 0)
+        {
+            return;
+        }
+
+        ChangeAttackScheme(_attackSchemes[_currentAttackIndex]);
+
+        // «б≥льшуЇмо ≥ндекс, але €кщо в≥н дос€гаЇ к≥нц€ списку, починаЇмо знову з 0
+        _currentAttackIndex = (_currentAttackIndex + 1) % _attackSchemes.Count;
+    }
+
+
+    private void ChangeAttackScheme(AttackScheme newAttackScheme)
+    {
+        StartAttackDelay();
+        _attackScheme = newAttackScheme;
+        // _attackScheme.SetIsPlayerBullets(true);
+    }
+
     private void Start()
     {
+        _attackScheme = _attackSchemes[0];
         _attackDelay = _attackScheme.AttackDelay;
+        // _attackScheme.SetIsPlayerBullets(true);
         if (Game.IsReady)
         {
             _mouseLocatorController = Game.GetController<MouseLocatorController>();
@@ -38,6 +66,10 @@ public class PlayerAttacker : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Attack();
+            }
+            if (Input.GetMouseButton(1))
+            {
+                NextAttackScheme();
             }
         }
         else
