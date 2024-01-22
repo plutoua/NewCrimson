@@ -35,8 +35,13 @@ public class PlayerStatController : IController, IOnAwake
         
     }
 
-    public void AddStatsByPoint(Stats stats)
+    public void AddStatsByPoint(Stat stat, int value)
     {
-        Stats.AddStatByPoint(stats);
+        Stats.AddStatByPoint(stat, value);
+    }
+
+    public int GetStat(Stat stat)
+    {
+        return Stats.GetStat(stat);
     }
 }

@@ -54,7 +54,7 @@ public class InventoryController : IController, IOnCreate
     public void Initialize()
     {
         _groundInventory = new Inventory(_groundInventorySlotCapacity, _groundInventoryStackSize);
-        _playerInventory = new Inventory(_playerStatController.Stats.InventorySize, _defaultStackSize, _groundInventory);
+        _playerInventory = new Inventory(_playerStatController.GetStat(Stat.InventorySize), _defaultStackSize, _groundInventory);
         _innerInventory = new Inventory(1, _defaultStackSize, _groundInventory);
 
         _playerStatController.PlayerStatChangeEvent += OnPlayerStatChange;
@@ -105,9 +105,9 @@ public class InventoryController : IController, IOnCreate
 
     private void OnPlayerStatChange()
     {
-        if(_playerStatController.Stats.InventorySize != _playerInventory.SlotNumber)
+        if(_playerStatController.GetStat(Stat.InventorySize) != _playerInventory.SlotNumber)
         {
-            _playerInventory.ChangeInventorySize(_playerStatController.Stats.InventorySize);
+            _playerInventory.ChangeInventorySize(_playerStatController.GetStat(Stat.InventorySize));
         }
     }
 }

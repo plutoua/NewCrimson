@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine.Events;
 
 public class CharacterStatSystem
@@ -25,27 +27,14 @@ public class CharacterStatSystem
     public int ExperienceBorder { get; private set; }
     public int StatsPoints { get; private set; }
 
-    public int Strength => _selfStats.Strength + _tempStats.Strength;
-    public int Agility => _selfStats.Agility + _tempStats.Agility;
-    public int Intelligence => _selfStats.Intelligence + _tempStats.Intelligence;
-    public int Luck => _selfStats.Luck + _tempStats.Luck;
-    public int Endurance => _selfStats.Endurance + _tempStats.Endurance;
-    public int Will => _selfStats.Will + _tempStats.Will;
-    public int Charisma => _selfStats.Charisma + _tempStats.Charisma;
-    public int Perception => _selfStats.Perception + _tempStats.Perception;
-    public int Health => _selfStats.Health + _tempStats.Health;
-    public int Stamina => _selfStats.Stamina + _tempStats.Stamina;
-    public float MoveSpeed => _selfStats.MoveSpeed + _selfStats.MoveSpeed * _tempStats.MoveSpeed;
-    public float AttackSpeed => _selfStats.AttackSpeed + _selfStats.AttackSpeed * _tempStats.AttackSpeed;
-    public int InventorySize => 4 + Strength + _selfStats.InventorySize + _tempStats.InventorySize;
-    public float ViewAngle => _selfStats.ViewAngle + _tempStats.ViewAngle;
-    public float ViewLenght => _selfStats.ViewLenght + _tempStats.ViewLenght;
-
     private event UnityAction _statChangeEvent;
     private event UnityAction _experienceChangeEvent;
     private event UnityAction _levelUpEvent;
-    private Stats _selfStats;
-    private Stats _tempStats;
+
+    private Dictionary<Stat, int> _selfStat;
+    private Dictionary<Stat, int> _tempStat;
+    private Dictionary<Stat, int> _percentStat;
+    private Dictionary<Stat, Func<int>> _stats;
 
     public CharacterStatSystem()
     {
@@ -54,8 +43,7 @@ public class CharacterStatSystem
         ExperienceBorder = LevelSystem.Experience[Level];
         StatsPoints = 0;
 
-        _selfStats = new Stats();
-        _tempStats = new Stats();
+        SetupStat();
     }
 
     public void AddExperience(int value)
@@ -70,14 +58,19 @@ public class CharacterStatSystem
         _experienceChangeEvent?.Invoke();
     }
 
-    public void AddStatByPoint(Stats stats)
+    public void AddStatByPoint(Stat stat, int value)
     {
         if(StatsPoints > 0)
         {
             StatsPoints--;
-            _selfStats += stats;
+            _selfStat[stat] += value;
             _statChangeEvent?.Invoke();
         }
+    }
+
+    public int GetStat(Stat stat)
+    {
+        return _stats[stat]();
     }
 
     private void LevelUp()
@@ -86,5 +79,22 @@ public class CharacterStatSystem
         ExperienceBorder = LevelSystem.Experience[Level];
         StatsPoints += 3;
         _levelUpEvent?.Invoke();
+    }
+
+    private void SetupStat()
+    {
+        _selfStat = new Dictionary<Stat, int>();
+        _tempStat = new Dictionary<Stat, int>();
+        _percentStat = new Dictionary<Stat, int>();
+        _stats = new Dictionary<Stat, Func<int>>();
+
+        foreach (Stat stat in Enum.GetValues(typeof(Stat)))
+        {
+            _selfStat[stat] = 1;
+            _tempStat[stat] = 0;
+            _percentStat[stat] = 0;
+
+            _stats[stat] = () => (int)(_selfStat[stat] * (_percentStat[stat] + 100f) / 100f + _tempStat[stat]);
+        }
     }
 }

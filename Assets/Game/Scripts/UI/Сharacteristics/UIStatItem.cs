@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TimmyFramework;
 using TMPro;
 using UnityEngine;
@@ -7,16 +5,11 @@ using UnityEngine.UI;
 
 public class UIStatItem : MonoBehaviour
 {
-    [SerializeField] private Stats _addStats;
+    [SerializeField] private Stat _stat;
 
     private Button _addButton;
     private TMP_Text _valueText;
     private PlayerStatController _playerStatController;
-
-    public void SetValue(int value)
-    {
-        _valueText.text = value.ToString();
-    }
 
     private void Start()
     {
@@ -41,6 +34,7 @@ public class UIStatItem : MonoBehaviour
         _playerStatController = Game.GetController<PlayerStatController>();
         _playerStatController.PlayerLevelUpEvent += OnChangeStat;
         _playerStatController.PlayerStatChangeEvent += OnChangeStat;
+        GetValue();
     }
 
     private void OnGameReady()
@@ -59,10 +53,16 @@ public class UIStatItem : MonoBehaviour
         {
             _addButton.gameObject.SetActive(true);
         }
+        GetValue();
     }
 
     private void OnAddButtonClick()
     {
-        _playerStatController.AddStatsByPoint(_addStats);
+        _playerStatController.AddStatsByPoint(_stat, 1);
+    }
+
+    private void GetValue()
+    {
+        _valueText.text = _playerStatController.GetStat(_stat).ToString();
     }
 }
