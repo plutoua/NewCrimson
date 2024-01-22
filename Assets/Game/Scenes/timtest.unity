@@ -462,22 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Luck: 0
-    Endurance: 0
-    Will: 0
-    Charisma: 0
-    Perception: 1
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 7
 --- !u!1 &186111660
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 13
 --- !u!1 &200134006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6462296166156256243, guid: 9c5734f819bad954580701961c8efd82, type: 3}
@@ -680,22 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 1
-    Agility: 0
-    Intelligence: 0
-    Luck: 0
-    Endurance: 0
-    Will: 0
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 0
 --- !u!1 &261084737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,22 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Luck: 0
-    Endurance: 0
-    Will: 1
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 5
 --- !u!1 &429994265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,22 +1610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Luck: 0
-    Endurance: 0
-    Will: 0
-    Charisma: 1
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 6
 --- !u!1 &449508756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,14 +2001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59a539ee446a964882f531c3a284b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strengthItem: {fileID: 251085520}
-  _agilityItem: {fileID: 2094830735}
-  _intelligenceItem: {fileID: 792218437}
-  _luckItem: {fileID: 1714455611}
-  _enduranceItem: {fileID: 1950702898}
-  _willItem: {fileID: 426737457}
-  _charismaItem: {fileID: 429994267}
-  _perceptionItem: {fileID: 167175073}
   _freePointsText: {fileID: 784260937}
 --- !u!1 &581440286
 GameObject:
@@ -3827,22 +3760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 1
-    Luck: 0
-    Endurance: 0
-    Will: 0
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 2
 --- !u!1 &832015697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 8
 --- !u!1 &1234776897
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +5867,14 @@ PrefabInstance:
       propertyPath: _testItem2Scheme
       value: 
       objectReference: {fileID: 11400000, guid: 3d084c3484d5941469b1b6e912cecf4d, type: 2}
+    - target: {fileID: 8684597793018974307, guid: 9c5734f819bad954580701961c8efd82, type: 3}
+      propertyPath: _attackSchemes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684597793018974307, guid: 9c5734f819bad954580701961c8efd82, type: 3}
+      propertyPath: _attackSchemes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 668c2b38b4132414b8598547b55cc893, type: 2}
     - target: {fileID: 8838778694935699495, guid: 9c5734f819bad954580701961c8efd82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6132,13 +6059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c9f9c08282c2444984746290b3ecba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 189567058}
-  Stamina: {fileID: 1489886905}
-  MoveSpeed: {fileID: 1228996635}
-  AttackSpeed: {fileID: 1696446847}
-  InventorySize: {fileID: 1969249342}
-  ViewAngle: {fileID: 1420177592}
-  ViewLenght: {fileID: 1778846448}
 --- !u!1 &1263945672
 GameObject:
   m_ObjectHideFlags: 0
@@ -7151,6 +7071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 11
 --- !u!1 &1426028766
 GameObject:
   m_ObjectHideFlags: 0
@@ -7604,6 +7525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 14
 --- !u!1 &1507246710
 GameObject:
   m_ObjectHideFlags: 0
@@ -8243,6 +8165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 9
 --- !u!1 &1702384379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4603091063412422744, guid: c065040fc711d9941858e8488780684c, type: 3}
@@ -8312,22 +8235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Luck: 1
-    Endurance: 0
-    Will: 0
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 3
 --- !u!1 &1740052807
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,6 +8557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 12
 --- !u!1 &1850126782
 GameObject:
   m_ObjectHideFlags: 0
@@ -8835,22 +8744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Luck: 0
-    Endurance: 1
-    Will: 0
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 4
 --- !u!1 &1969249340
 GameObject:
   m_ObjectHideFlags: 0
@@ -8902,6 +8796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362f0ddb4ba765c468f472955e7d572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stat: 10
 --- !u!1 &1973251292
 GameObject:
   m_ObjectHideFlags: 0
@@ -9347,22 +9242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886d8bbb171982429a3f67145a6e9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _addStats:
-    Strength: 0
-    Agility: 1
-    Intelligence: 0
-    Luck: 0
-    Endurance: 0
-    Will: 0
-    Charisma: 0
-    Perception: 0
-    MoveSpeed: 0
-    AttackSpeed: 0
-    InventorySize: 0
-    ViewAngle: 0
-    ViewLenght: 0
-    Health: 0
-    Stamina: 0
+  _stat: 1
 --- !u!1 &2096387876
 GameObject:
   m_ObjectHideFlags: 0
