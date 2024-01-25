@@ -12,6 +12,7 @@ public class UIWindowsController : IController, IOnStart
     public UIGroundInventory GroundInventory { get; private set; }
     public UIInnerInventory InnerInventory { get; private set; }
     public UICrafter Crafter { get; private set; }
+    public UIStaticCharacteristics Ñharacteristics { get; private set; }
 
     private Dictionary<Type, UIIWindow> _activeWindows;
     private InventoryItemMover _itemOnMove;
@@ -59,6 +60,15 @@ public class UIWindowsController : IController, IOnStart
             return;
         }
         Crafter = crafter;
+    }
+
+    public void SetCharacteristics(UIStaticCharacteristics characteristics)
+    {
+        if (Ñharacteristics != null)
+        {
+            return;
+        }
+        Ñharacteristics = characteristics;
     }
 
     public void SetMoveable(UIMoveable moveable)

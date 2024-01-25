@@ -46,6 +46,11 @@ public class UIWindowSystem : MonoBehaviour
             _windowsController.OpenWindow(_windowsController.Crafter);
         }
 
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            _windowsController.OpenWindow(_windowsController.Ñharacteristics);
+        }
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             _windowsController.CloseAllWindows();
