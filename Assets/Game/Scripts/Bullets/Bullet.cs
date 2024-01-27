@@ -45,12 +45,12 @@ public abstract class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log(collision.tag);
-        if (collision.CompareTag("Enemy") && _playerBullet)
+        if (_playerBullet)
         {
             // Логіка для снарядів ворога
             HandleEnemyCollision(collision);
         }
-        else if (collision.CompareTag("Player") && !_playerBullet)
+        else
         {
             // Логіка для снарядів гравця
             

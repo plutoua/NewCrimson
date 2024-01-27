@@ -14,9 +14,10 @@ public class PlayerAttacker : MonoBehaviour
     private MouseLocatorController _mouseLocatorController;
     private UIWindowsController _windowsController;
 
-    [SerializeField] private List<AttackScheme> _attackSchemes;
+    // [SerializeField] private AttackScheme _attackScheme;
     private int _currentAttackIndex = 0;
 
+    /*
     private void NextAttackScheme()
     {
         if (_attackSchemes.Count == 0)
@@ -28,7 +29,7 @@ public class PlayerAttacker : MonoBehaviour
 
         // «б≥льшуЇмо ≥ндекс, але €кщо в≥н дос€гаЇ к≥нц€ списку, починаЇмо знову з 0
         _currentAttackIndex = (_currentAttackIndex + 1) % _attackSchemes.Count;
-    }
+    }*/
 
 
     private void ChangeAttackScheme(AttackScheme newAttackScheme)
@@ -40,7 +41,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Start()
     {
-        _attackScheme = _attackSchemes[0];
+        _attackScheme = _attackScheme;
         _attackDelay = _attackScheme.AttackDelay;
         // _attackScheme.SetIsPlayerBullets(true);
         if (Game.IsReady)
@@ -67,10 +68,7 @@ public class PlayerAttacker : MonoBehaviour
             {
                 Attack();
             }
-            if (Input.GetMouseButton(1))
-            {
-                NextAttackScheme();
-            }
+            
         }
         else
         {

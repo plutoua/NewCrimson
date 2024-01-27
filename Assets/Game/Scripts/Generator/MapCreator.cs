@@ -184,6 +184,8 @@ public class MapCreator : MonoBehaviour
     }
 
     private Dictionary<string, Tile> getTiles(){
+        // make_dynamic
+
         Dictionary<string, Tile> tiles = new Dictionary<string, Tile>();
         Dictionary<string, Tile> temp_tiles = new Dictionary<string, Tile>();
         // Завантаження усіх Tile об'єктів з папки Resources/Tiles

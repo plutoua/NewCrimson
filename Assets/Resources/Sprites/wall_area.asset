@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c866154a96f76049b2eab60fbc69ac3, type: 3}
   m_Name: wall_area
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -929561384, guid: 4369c0546a27b6849b86c1b9924410e6, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 80c4489c1072cae46be373e23df771fe, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
@@ -184,12 +184,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   alwaysConnect: 1
   tilesToConnect:
-  - {fileID: 11400000, guid: 2efbd5ddb4092e74a908a6d62daab498, type: 2}
-  - {fileID: 11400000, guid: dadebb2f65013684b9482844c497e8e4, type: 2}
-  - {fileID: 11400000, guid: d00841f5213fd1a45a6ba3e42f445523, type: 2}
-  - {fileID: 11400000, guid: 11ba678993cd21541bddae241dc789eb, type: 2}
-  - {fileID: 11400000, guid: 069fe2b4afda3324fbbb907f5f5004f8, type: 2}
-  - {fileID: 11400000, guid: 51bb10c840eb088478c85a9db7d87b4d, type: 2}
+  - {fileID: 11400000, guid: 7c3d0cf064a772648ac794afb4c2c938, type: 2}
   type: 1
   checkSelf: 1
   first_match: 1
