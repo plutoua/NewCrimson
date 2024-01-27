@@ -135,13 +135,48 @@ public class PlayerAttacker : MonoBehaviour
 
     }
 
+    private float CalculateDelay(float start, float finish, float lowBorder, float hightBorder, int attackSpeed)
+    {
+       
+        var delay = (finish - start) / (hightBorder - lowBorder);
+        var attackDeley = start - (attackSpeed - lowBorder) * delay;
+        return attackDeley;
+    }
+
+
     private float SetAttackDelay()
     {
-        var attackDeley = _playerStatController.GetStat(Stat.AttackDelay) / 10f;
-        if (attackDeley < 0.01f)
-        {
+
+        var attackSpeed = _playerStatController.GetStat(Stat.AttackSpeed);
+        
+        float attackDeley;
+
+        // Make Formula
+        if (attackSpeed > 60) {
+
             attackDeley = 0.01f;
+
         }
+        else if (30 < attackSpeed && attackSpeed <= 60)
+        {
+            attackDeley = CalculateDelay(0.2f, 0.01f, 30f, 60f, attackSpeed);
+        }
+        else if (10 < attackSpeed && attackSpeed <= 30)
+        {
+            attackDeley = CalculateDelay(1f, 0.2f, 10f, 30f, attackSpeed);
+        }
+        else if (0 < attackSpeed && attackSpeed <= 10)
+        {
+            attackDeley = CalculateDelay(8f, 1f, 0f, 10f, attackSpeed);
+        }
+        else
+        {
+            attackDeley = 8f;
+        }
+
+
+
+        
         return attackDeley;
     }
 }

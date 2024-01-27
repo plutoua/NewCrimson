@@ -137,39 +137,47 @@ public class CharacterStatSystem
 
         _selfStat[Stat.MoveSpeed] = 40;
         _selfStat[Stat.InventorySize] = 4;
-        _selfStat[Stat.AttackDelay] = 21;
+        _selfStat[Stat.AttackSpeed] = 10;
+        _selfStat[Stat.Health] = 50;
 
 
-        
+
 
         _stats[Stat.ViewAngle] = () => (int)(_selfStat[Stat.ViewAngle] * (_buffPercentStat[Stat.ViewAngle] + _equipmentPercentStat[Stat.ViewAngle] + 100f) / 100f + _buffStat[Stat.ViewAngle] + _equipmentStat[Stat.ViewAngle]);
 
         _stats[Stat.ViewLenght] = () => (int)(_selfStat[Stat.ViewLenght] * (_buffPercentStat[Stat.ViewLenght] + _equipmentPercentStat[Stat.ViewLenght] + 100f) / 100f + _buffStat[Stat.ViewLenght] + _equipmentStat[Stat.ViewLenght]);
 
-        _stats[Stat.Health] = () => (int)(_selfStat[Stat.Health] * (_buffPercentStat[Stat.Health] + _equipmentPercentStat[Stat.Health] + 100f) / 100f + _buffStat[Stat.Health] + _equipmentStat[Stat.Health]);
-
+        
         _stats[Stat.Stamina] = () => (int)(_selfStat[Stat.Stamina] * (_buffPercentStat[Stat.Stamina] + _equipmentPercentStat[Stat.Stamina] + 100f) / 100f + _buffStat[Stat.Stamina] + _equipmentStat[Stat.Stamina]);
 
 
 
 
 
-        _stats[Stat.Strength] = () => (int)(_selfStat[Stat.Strength] * (_buffPercentStat[Stat.Strength] + _equipmentPercentStat[Stat.Strength] + 100f) / 100f + _buffStat[Stat.Strength] + _equipmentStat[Stat.Strength]);
-        _stats[Stat.Agility] = () => (int)(_selfStat[Stat.Agility] * (_buffPercentStat[Stat.Agility] + _equipmentPercentStat[Stat.Agility] + 100f) / 100f + _buffStat[Stat.Agility] + _equipmentStat[Stat.Agility]);
-        _stats[Stat.Intelligence] = () => (int)(_selfStat[Stat.Intelligence] * (_buffPercentStat[Stat.Intelligence] + _equipmentPercentStat[Stat.Intelligence] + 100f) / 100f + _buffStat[Stat.Intelligence] + _equipmentStat[Stat.Intelligence]);
-        _stats[Stat.Luck] = () => (int)(_selfStat[Stat.Luck] * (_buffPercentStat[Stat.Luck] + _equipmentPercentStat[Stat.Luck] + 100f) / 100f + _buffStat[Stat.Luck] + _equipmentStat[Stat.Luck]);
-        _stats[Stat.Endurance] = () => (int)(_selfStat[Stat.Endurance] * (_buffPercentStat[Stat.Endurance] + _equipmentPercentStat[Stat.Endurance] + 100f) / 100f + _buffStat[Stat.Endurance] + _equipmentStat[Stat.Endurance]);
-        _stats[Stat.Will] = () => (int)(_selfStat[Stat.Will] * (_buffPercentStat[Stat.Will] + _equipmentPercentStat[Stat.Will] + 100f) / 100f + _buffStat[Stat.Will] + _equipmentStat[Stat.Will]);
-        _stats[Stat.Charisma] = () => (int)(_selfStat[Stat.Charisma] * (_buffPercentStat[Stat.Charisma] + _equipmentPercentStat[Stat.Charisma] + 100f) / 100f + _buffStat[Stat.Charisma] + _equipmentStat[Stat.Charisma]);
-        _stats[Stat.Perception] = () => (int)(_selfStat[Stat.Perception] * (_buffPercentStat[Stat.Perception] + _equipmentPercentStat[Stat.Perception] + 100f) / 100f + _buffStat[Stat.Perception] + _equipmentStat[Stat.Perception]);
-        _stats[Stat.MoveSpeed] = () => (int)(_selfStat[Stat.MoveSpeed] * (_buffPercentStat[Stat.MoveSpeed] + _equipmentPercentStat[Stat.MoveSpeed] + 100f) / 100f + _buffStat[Stat.MoveSpeed] + _equipmentStat[Stat.MoveSpeed]) 
+        _stats[Stat.Strength] = () => (int)(_selfStat[Stat.Strength] * (_buffPercentStat[Stat.Strength] + _equipmentPercentStat[Stat.Strength] + 100f) / 100f) + _buffStat[Stat.Strength] + _equipmentStat[Stat.Strength];
+        
+        
+        
+        
+        _stats[Stat.Agility] = () => (int)(_selfStat[Stat.Agility] * (_buffPercentStat[Stat.Agility] + _equipmentPercentStat[Stat.Agility] + 100f) / 100f) + _buffStat[Stat.Agility] + _equipmentStat[Stat.Agility];
+        _stats[Stat.Intelligence] = () => (int)(_selfStat[Stat.Intelligence] * (_buffPercentStat[Stat.Intelligence] + _equipmentPercentStat[Stat.Intelligence] + 100f) / 100f) + _buffStat[Stat.Intelligence] + _equipmentStat[Stat.Intelligence];
+        _stats[Stat.Luck] = () => (int)(_selfStat[Stat.Luck] * (_buffPercentStat[Stat.Luck] + _equipmentPercentStat[Stat.Luck] + 100f) / 100f) + _buffStat[Stat.Luck] + _equipmentStat[Stat.Luck];
+        _stats[Stat.Endurance] = () => (int)(_selfStat[Stat.Endurance] * (_buffPercentStat[Stat.Endurance] + _equipmentPercentStat[Stat.Endurance] + 100f) / 100f) + _buffStat[Stat.Endurance] + _equipmentStat[Stat.Endurance];
+        _stats[Stat.Will] = () => (int)(_selfStat[Stat.Will] * (_buffPercentStat[Stat.Will] + _equipmentPercentStat[Stat.Will] + 100f) / 100f) + _buffStat[Stat.Will] + _equipmentStat[Stat.Will];
+        _stats[Stat.Charisma] = () => (int)(_selfStat[Stat.Charisma] * (_buffPercentStat[Stat.Charisma] + _equipmentPercentStat[Stat.Charisma] + 100f) / 100f) + _buffStat[Stat.Charisma] + _equipmentStat[Stat.Charisma];
+        _stats[Stat.Perception] = () => (int)(_selfStat[Stat.Perception] * (_buffPercentStat[Stat.Perception] + _equipmentPercentStat[Stat.Perception] + 100f) / 100f) + _buffStat[Stat.Perception] + _equipmentStat[Stat.Perception];
+        _stats[Stat.MoveSpeed] = () => (int)(_selfStat[Stat.MoveSpeed] * (_buffPercentStat[Stat.MoveSpeed] + _equipmentPercentStat[Stat.MoveSpeed] + 100f) / 100f) + _buffStat[Stat.MoveSpeed] + _equipmentStat[Stat.MoveSpeed] 
             + 2 * _stats[Stat.Agility]();
 
-        _stats[Stat.InventorySize] = () => (int)(_selfStat[Stat.InventorySize] * (_buffPercentStat[Stat.InventorySize] + _equipmentPercentStat[Stat.InventorySize] + 100f) / 100f + _buffStat[Stat.InventorySize] + _equipmentStat[Stat.InventorySize] 
-            + _stats[Stat.Strength]() + _stats[Stat.Intelligence]() + _stats[Stat.Endurance]());
+        _stats[Stat.InventorySize] = () => (int)(_selfStat[Stat.InventorySize] * (_buffPercentStat[Stat.InventorySize] + _equipmentPercentStat[Stat.InventorySize] + 100f) / 100f) + _buffStat[Stat.InventorySize] + _equipmentStat[Stat.InventorySize] 
+            + _stats[Stat.Strength]() + _stats[Stat.Intelligence]() + _stats[Stat.Endurance]();
 
-        _stats[Stat.AttackDelay] = () => (int)(_selfStat[Stat.AttackDelay] * (_buffPercentStat[Stat.AttackDelay] + _equipmentPercentStat[Stat.AttackDelay] + 100f) / 100f + _buffStat[Stat.AttackDelay] + _equipmentStat[Stat.AttackDelay] +
-            - _stats[Stat.Agility]());
+        _stats[Stat.AttackSpeed] = () => (int)(_selfStat[Stat.AttackSpeed] * (_buffPercentStat[Stat.AttackSpeed] + _equipmentPercentStat[Stat.AttackSpeed] + 100f) / 100f) + _buffStat[Stat.AttackSpeed] + _equipmentStat[Stat.AttackSpeed] +
+            + _stats[Stat.Agility]();
+
+        _stats[Stat.Health] = () => (int)(_selfStat[Stat.Health] * (_buffPercentStat[Stat.Health] + _equipmentPercentStat[Stat.Health] + 100f) / 100f) + _buffStat[Stat.Health] + _equipmentStat[Stat.Health] 
+            + _stats[Stat.Strength]() + _stats[Stat.Endurance]() + _stats[Stat.Will]();
+
 
 
 
