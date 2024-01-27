@@ -95,19 +95,17 @@ public abstract class UIInventoryBase : MonoBehaviour, UIIWindow
 
     private void SetInventorySizesAndPosition()
     {
-        int collumNumber = 5;
+        int collumNumber = 10;
         if (_inventory.IsGround)
         {
             collumNumber = 27;
         }
-        else if (_inventory.SlotNumber > 30)
+
+        else if (_inventory.SlotNumber < 10)
         {
-            collumNumber = 7;
+            collumNumber = _inventory.SlotNumber;
         }
-        else if (_inventory.SlotNumber > 25)
-        {
-            collumNumber = 6;
-        }
+        
 
         var rowNumber = _inventory.SlotNumber / collumNumber;
         if(rowNumber * collumNumber < _inventory.SlotNumber)

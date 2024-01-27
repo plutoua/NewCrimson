@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    private int _speed;
 
     public event UnityAction<Vector3> PlayerMovedEvent
     {
@@ -18,6 +18,7 @@ public class PlayerMover : MonoBehaviour
     private Rigidbody2D _rigidbody;
 
     private UIWindowsController _windowsController;
+    private PlayerStatController _playerStatController;
 
     private void Start()
     {
@@ -27,6 +28,9 @@ public class PlayerMover : MonoBehaviour
         if (Game.IsReady)
         {
             _windowsController = Game.GetController<UIWindowsController>();
+            _playerStatController = Game.GetController<PlayerStatController>();
+            _speed = _playerStatController.GetStat(Stat.MoveSpeed);
+            _playerStatController.PlayerStatChangeEvent += OnStatChange;
             var playerLocatorController = Game.GetController<PlayerLocatorController>();
             playerLocatorController.SetPlayerMover(this);
         }
@@ -49,7 +53,8 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (_windowsController != null) { Move(); }
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -65,7 +70,7 @@ public class PlayerMover : MonoBehaviour
         if(_rigidbody ==  null) return;
         if(_moveDirection != Vector2.zero)
         {
-            _rigidbody.MovePosition(_rigidbody.position + _moveDirection * _speed * Time.fixedDeltaTime);
+            _rigidbody.MovePosition(_rigidbody.position + _moveDirection * _speed / 10f * Time.fixedDeltaTime);
             _playerMovedEvent?.Invoke(transform.position);
         }   
     }
@@ -73,7 +78,15 @@ public class PlayerMover : MonoBehaviour
     private void OnGameReady()
     {
         _windowsController = Game.GetController<UIWindowsController>();
+        _playerStatController = Game.GetController<PlayerStatController>();
+        _speed = _playerStatController.GetStat(Stat.MoveSpeed);
         var playerLocatorController = Game.GetController<PlayerLocatorController>();
         playerLocatorController.SetPlayerMover(this);
+        _playerStatController.PlayerStatChangeEvent += OnStatChange;
+    }
+
+    private void OnStatChange()
+    {
+        _speed = _playerStatController.GetStat(Stat.MoveSpeed);
     }
 }

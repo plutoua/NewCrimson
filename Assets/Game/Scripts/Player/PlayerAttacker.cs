@@ -13,6 +13,7 @@ public class PlayerAttacker : MonoBehaviour
     private bool _isCanAttack;
     private MouseLocatorController _mouseLocatorController;
     private UIWindowsController _windowsController;
+    private PlayerStatController _playerStatController;
 
     // [SerializeField] private AttackScheme _attackScheme;
     private int _currentAttackIndex = 0;
@@ -42,12 +43,15 @@ public class PlayerAttacker : MonoBehaviour
     private void Start()
     {
         _attackScheme = _attackScheme;
-        _attackDelay = _attackScheme.AttackDelay;
         // _attackScheme.SetIsPlayerBullets(true);
         if (Game.IsReady)
         {
             _mouseLocatorController = Game.GetController<MouseLocatorController>();
             _windowsController = Game.GetController<UIWindowsController>();
+            _playerStatController = Game.GetController<PlayerStatController>();
+            _attackDelay = SetAttackDelay();
+            _playerStatController.PlayerStatChangeEvent += OnStatChange;
+
         }
         else
         {
@@ -97,7 +101,7 @@ public class PlayerAttacker : MonoBehaviour
     {
         _lastAttackTimePass += Time.deltaTime;
 
-        if(_lastAttackTimePass >= _attackDelay)
+        if(_lastAttackTimePass >= _attackDelay / 10f)
         {
             EndAttackDelay();
         }
@@ -119,5 +123,25 @@ public class PlayerAttacker : MonoBehaviour
     {
         _mouseLocatorController = Game.GetController<MouseLocatorController>();
         _windowsController = Game.GetController<UIWindowsController>();
+        _playerStatController = Game.GetController<PlayerStatController>();
+        _attackDelay = SetAttackDelay();
+        _playerStatController.PlayerStatChangeEvent += OnStatChange;
+
+    }
+
+    private void OnStatChange()
+    {
+        _attackDelay = SetAttackDelay();
+
+    }
+
+    private float SetAttackDelay()
+    {
+        var attackDeley = _playerStatController.GetStat(Stat.AttackDelay) / 10f;
+        if (attackDeley < 0.01f)
+        {
+            attackDeley = 0.01f;
+        }
+        return attackDeley;
     }
 }

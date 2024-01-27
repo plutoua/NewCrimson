@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0c3c97f8fa008d4db733d9fd6fe42bd, type: 3}
-  m_Name: TestEquipment
+  m_Name: TestSword
   m_EditorClassIdentifier: 
-  _id: 123456789
-  _sprite: {fileID: 21300000, guid: 556cf589bf6e5b24fa08e5b7a0825fac, type: 3}
-  _name: JustTest
-  _maxItemsInStack: 1
-  _equipmentType: 1
+  _id: 3
+  _sprite: {fileID: 21300000, guid: debfcb7c43587924e8bc5233c1b2482b, type: 3}
+  _name: 
+  _maxItemsInStack: 0
+  _equipmentType: 2
   _stats:
   - StatType: 9
-    Amount: -2
-  - StatType: 2
-    Amount: 3
+    Amount: 10
   _statsPercent: []
   _attackSchemes: []

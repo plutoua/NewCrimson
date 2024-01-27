@@ -9,7 +9,7 @@ public enum Stat
     Charisma,
     Perception,
     MoveSpeed,
-    AttackSpeed,
+    AttackDelay,
     InventorySize,
     ViewAngle,
     ViewLenght,
