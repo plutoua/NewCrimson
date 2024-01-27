@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine.Events;
 
 public class CharacterStatSystem
@@ -32,8 +33,10 @@ public class CharacterStatSystem
     private event UnityAction _levelUpEvent;
 
     private Dictionary<Stat, int> _selfStat;
-    private Dictionary<Stat, int> _tempStat;
-    private Dictionary<Stat, int> _percentStat;
+    private Dictionary<Stat, int> _buffStat; 
+    private Dictionary<Stat, int> _buffPercentStat;
+    private Dictionary<Stat, int> _equipmentStat;
+    private Dictionary<Stat, int> _equipmentPercentStat;
     private Dictionary<Stat, Func<int>> _stats;
 
     public CharacterStatSystem()
@@ -73,6 +76,37 @@ public class CharacterStatSystem
         return _stats[stat]();
     }
 
+    public void SetEquipmentStats(Dictionary<Stat, int> stats, Dictionary<Stat, int> statsPercent)
+    {
+        MakeAllStatsZero(_equipmentStat);
+        CopyStats(stats, _equipmentStat);
+
+        MakeAllStatsZero(_equipmentPercentStat);
+        CopyStats(statsPercent, _equipmentPercentStat);
+
+        _statChangeEvent?.Invoke();
+    }
+
+    private void MakeAllStatsZero(Dictionary<Stat, int> stats)
+    {
+        foreach (Stat stat in Enum.GetValues(typeof(Stat)))
+        {
+            if (stats.ContainsKey(stat))
+            {
+                stats[stat] = 0;
+            }
+        }
+    }
+
+    private void CopyStats(Dictionary<Stat, int> from, Dictionary<Stat, int> to)
+    {
+        var statKeys = from.Keys;
+        foreach (var key in statKeys)
+        {
+            to[key] = from[key];
+        }
+    }
+
     private void LevelUp()
     {
         Level++;
@@ -84,17 +118,21 @@ public class CharacterStatSystem
     private void SetupStat()
     {
         _selfStat = new Dictionary<Stat, int>();
-        _tempStat = new Dictionary<Stat, int>();
-        _percentStat = new Dictionary<Stat, int>();
+        _buffStat = new Dictionary<Stat, int>();
+        _buffPercentStat = new Dictionary<Stat, int>();
+        _equipmentStat = new Dictionary<Stat, int>();
+        _equipmentPercentStat = new Dictionary<Stat, int>();
         _stats = new Dictionary<Stat, Func<int>>();
 
         foreach (Stat stat in Enum.GetValues(typeof(Stat)))
         {
-            _selfStat[stat] = 1;
-            _tempStat[stat] = 0;
-            _percentStat[stat] = 0;
+            _selfStat[stat] = 3;
+            _buffStat[stat] = 0;
+            _buffPercentStat[stat] = 0;
+            _equipmentStat[stat] = 0;
+            _equipmentPercentStat[stat] = 0;
 
-            _stats[stat] = () => (int)(_selfStat[stat] * (_percentStat[stat] + 100f) / 100f + _tempStat[stat]);
+            _stats[stat] = () => (int)(_selfStat[stat] * (_buffPercentStat[stat] + _equipmentPercentStat[stat] + 100f) / 100f + _buffStat[stat] + _equipmentStat[stat]);
         }
     }
 }

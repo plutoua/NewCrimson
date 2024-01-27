@@ -8,6 +8,7 @@ public class InventoryItem
     public Sprite Sprite => _itemScheme.Sprite;
     public int MaxItemInStack => _itemScheme.MaxItemInStack;
     public int Amount { get; private set; }
+    public ItemScheme ItemScheme => _itemScheme;
 
     protected ItemScheme _itemScheme;
 

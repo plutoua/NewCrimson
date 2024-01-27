@@ -63,7 +63,7 @@ public class PlayerInventory : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.M))
         {
-            _playerStatController.Stats.AddExperience(10);
+            _playerStatController.AddExperience(10);
         }
     }
 }

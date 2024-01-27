@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIWindowsController : IController, IOnStart
 {
     public bool IsUIMode => _activeWindows.Count > 0;
+    public Canvas Canvas { get; private set; }
     public UIMoveable Moveable {  get; private set; }
     public UISlider Slider { get; private set; }
     public UIPlayerInventory PlayerInventory { get; private set; }
@@ -32,6 +33,15 @@ public class UIWindowsController : IController, IOnStart
     public void OnStart()
     {
         _inventoryController = Game.GetController<InventoryController>();
+    }
+
+    public void SetCanvas(Canvas canvas)
+    {
+        if (Canvas != null)
+        {
+            return;
+        }
+        Canvas = canvas;
     }
 
     public void SetSlider(UISlider slider)

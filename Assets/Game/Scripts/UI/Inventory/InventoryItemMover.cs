@@ -2,9 +2,8 @@ using TimmyFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class InventoryItemMover : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private Canvas _canvas;
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
     private Transform _transformParent;
@@ -14,7 +13,6 @@ public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandl
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
-        _canvas = GetComponentInParent<Canvas>();
 
         if (Game.IsReady)
         {
@@ -38,12 +36,7 @@ public class InventoryItemMover : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
+        _rectTransform.anchoredPosition += eventData.delta / _windowsController.Canvas.scaleFactor;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

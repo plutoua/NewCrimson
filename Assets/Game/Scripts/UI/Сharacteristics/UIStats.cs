@@ -48,6 +48,6 @@ public class UIStats : MonoBehaviour
 
     private void ChangeFreePointsText()
     {
-        _freePointsText.text = "Free points: " + _playerStatController.Stats.StatsPoints;
+        _freePointsText.text = "Free points: " + _playerStatController.PlayerStatsPoints;
     }
 }

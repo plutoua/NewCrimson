@@ -9,16 +9,15 @@ public class UIInventoryItem : MonoBehaviour
     [SerializeField] private GameObject _itemNumberView;
 
     public UIInventorySlot UIInventorySlot { get; private set; }
-
-    private InventoryItem _inventoryItem;
+    public InventoryItem InventoryItem { get; private set; }
 
     public void Activate(InventoryItem inventoryItem)
     {
         gameObject.SetActive(true);
-        _inventoryItem = inventoryItem;
-        _itemAmount.text = _inventoryItem.Amount.ToString();
-        _itemIcon.sprite = _inventoryItem.Sprite;
-        if (_inventoryItem.Amount == 1)
+        InventoryItem = inventoryItem;
+        _itemAmount.text = InventoryItem.Amount.ToString();
+        _itemIcon.sprite = InventoryItem.Sprite;
+        if (InventoryItem.Amount == 1)
         {
             _itemNumberView.SetActive(false);
         }
@@ -30,7 +29,7 @@ public class UIInventoryItem : MonoBehaviour
 
     public void UpdateItem()
     {
-        if(_inventoryItem.Amount == 1)
+        if(InventoryItem.Amount == 1)
         {
             _itemNumberView.SetActive(false);
         }
@@ -38,12 +37,12 @@ public class UIInventoryItem : MonoBehaviour
         {
             _itemNumberView.SetActive(true);
         }
-        _itemAmount.text = _inventoryItem.Amount.ToString();
+        _itemAmount.text = InventoryItem.Amount.ToString();
     }
 
     public void Deactivate()
     {
-        _inventoryItem = null;
+        InventoryItem = null;
         _itemAmount.text = string.Empty; 
         _itemIcon.sprite = null;
         gameObject.SetActive(false);

@@ -6,8 +6,6 @@ public class UIWindowSystem : MonoBehaviour
     // for test
     [SerializeField] private ItemScheme _forTest;
 
-    private bool _isUIMode => _windowsController.IsUIMode;
-
     private UIWindowsController _windowsController;
 
     private void Start()
@@ -15,6 +13,7 @@ public class UIWindowSystem : MonoBehaviour
         if (Game.IsReady)
         {
             _windowsController = Game.GetController<UIWindowsController>();
+            _windowsController.SetCanvas(GetComponent<Canvas>());
             // for test
             _windowsController.SetTest(_forTest);
         }
@@ -61,6 +60,7 @@ public class UIWindowSystem : MonoBehaviour
     {
         Game.OnInitializedEvent -= OnGameReady;
         _windowsController = Game.GetController<UIWindowsController>();
+        _windowsController.SetCanvas(GetComponent<Canvas>());
         // for test
         _windowsController.SetTest(_forTest);
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TimmyFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -41,6 +39,11 @@ public class InventoryItemFiller : MonoBehaviour, IDropHandler
             var toSlot = _uIInventorySlot.InventorySlot;
             var fromSlot = inventoryItem.UIInventorySlot.InventorySlot;
             _windowsController.Slider.Activate(fromSlot, toSlot);
+        }
+        else if(eventData.pointerDrag.gameObject.TryGetComponent(out UIEquipmentItem equipmentItem))
+        {
+            _uIInventorySlot.InventorySlot.AddToItemAndInventory(equipmentItem.uiEquipmentSlot.Item);
+            equipmentItem.uiEquipmentSlot.RemoveItem();
         }
     }
 }
