@@ -1,14 +1,11 @@
-﻿using System;
-using TimmyFramework;
-using UnityEngine;
-using UnityEngine.Events;
-
+﻿using TimmyFramework;
 
 public class InventoryController : IController, IOnCreate
 {
     public Inventory PlayerInventory => _playerInventory;
     public Inventory GroundInventory => _groundInventory;
     public Inventory InnerInventory => _innerInventory;
+    public Inventory SellInventory => _sellInventory;
     public int GroundSlotCapacity => _groundInventorySlotCapacity;
 
     public bool IsInnerInventoryReady {  get; private set; }
@@ -20,10 +17,12 @@ public class InventoryController : IController, IOnCreate
     private Inventory _playerInventory;
     private Inventory _groundInventory;
     private Inventory _innerInventory;
+    private Inventory _sellInventory;
 
     private int _groundInventorySlotCapacity;
     private int _groundInventoryStackSize;
     private int _defaultStackSize;
+    private int _sellInventorySize;
 
     // for test
 
@@ -47,6 +46,7 @@ public class InventoryController : IController, IOnCreate
         _groundInventorySlotCapacity = 81;
         _groundInventoryStackSize = 99;
         _defaultStackSize = 10;
+        _sellInventorySize = 70;
 
         IsInnerInventoryReady = false;
     }
@@ -56,6 +56,7 @@ public class InventoryController : IController, IOnCreate
         _groundInventory = new Inventory(_groundInventorySlotCapacity, _groundInventoryStackSize);
         _playerInventory = new Inventory(_playerStatController.GetStat(Stat.InventorySize), _defaultStackSize, _groundInventory);
         _innerInventory = new Inventory(1, _defaultStackSize, _groundInventory);
+        _sellInventory = new Inventory(_sellInventorySize, _groundInventoryStackSize);
 
         _playerStatController.PlayerStatChangeEvent += OnPlayerStatChange;
         _groundInventory.InventoryUpdatedEvent += UpdateGroundInventory;
@@ -64,9 +65,7 @@ public class InventoryController : IController, IOnCreate
 
     public void SetupInnerInventory()
     {
-        // set inventory start
         var innerInventory = _testInnerInventory;
-        // set inventory end
 
         _innerInventory.CopyFromOtherInventory(innerInventory);
 
@@ -75,9 +74,7 @@ public class InventoryController : IController, IOnCreate
 
     private void UpdateInnerInventory() 
     { 
-        // return inventory start
         _testInnerInventory.CopyFromOtherInventory(_innerInventory);
-        // return inventory end
     }
 
     public void OffInnerInventory()
@@ -87,20 +84,14 @@ public class InventoryController : IController, IOnCreate
 
     public void SetupGroundInventory()
     {
-        // set inventory start
-
         var groundInventory = _groundDetectionController.GetInventory();
-        // set inventory end
 
         _groundInventory.CopyFromOtherInventory(groundInventory);
     }
 
     private void UpdateGroundInventory()
     {
-        // return inventory start
-        // _testGroundInventory.CopyFromOtherInventory(_groundInventory);
         _groundDetectionController.UpdateInventory(_groundInventory);
-        // return inventory end
     }
 
     private void OnPlayerStatChange()

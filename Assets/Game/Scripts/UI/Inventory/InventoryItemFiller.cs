@@ -38,12 +38,14 @@ public class InventoryItemFiller : MonoBehaviour, IDropHandler
         {
             var toSlot = _uIInventorySlot.InventorySlot;
             var fromSlot = inventoryItem.UIInventorySlot.InventorySlot;
-            _windowsController.Slider.Activate(fromSlot, toSlot);
+            _windowsController.ItemOnMove.MakeEndDrag();
+            _windowsController.Slider.Activate(fromSlot, toSlot);  
         }
         else if(eventData.pointerDrag.gameObject.TryGetComponent(out UIEquipmentItem equipmentItem))
         {
             _uIInventorySlot.InventorySlot.AddToItemAndInventory(equipmentItem.uiEquipmentSlot.Item);
             equipmentItem.uiEquipmentSlot.RemoveItem();
+            _windowsController.ItemOnMove.MakeEndDrag();
         }
     }
 }

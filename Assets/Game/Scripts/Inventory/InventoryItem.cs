@@ -7,6 +7,8 @@ public class InventoryItem
     public string Name => _itemScheme.Name;
     public Sprite Sprite => _itemScheme.Sprite;
     public int MaxItemInStack => _itemScheme.MaxItemInStack;
+    public int Price => _itemScheme.Price;
+    public int Multiplier => _itemScheme.StackMultiplier;
     public int Amount { get; private set; }
     public ItemScheme ItemScheme => _itemScheme;
 
@@ -15,16 +17,12 @@ public class InventoryItem
     public InventoryItem(ItemScheme itemScheme, int amount)
     {
         _itemScheme = itemScheme;
-        if (amount > MaxItemInStack)
-        {
-            amount = MaxItemInStack;
-        } 
         Amount = amount;
     }
 
     public void SetAmount(int amount)
     {
-        if(amount > MaxItemInStack)
+        if(amount > MaxItemInStack * Multiplier)
         {
             throw new ArgumentOutOfRangeException("Item amount is more then MAX value.");
         }

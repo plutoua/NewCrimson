@@ -14,9 +14,11 @@ public class UIWindowsController : IController, IOnStart
     public UIInnerInventory InnerInventory { get; private set; }
     public UICrafter Crafter { get; private set; }
     public UIStaticCharacteristics Ñharacteristics { get; private set; }
+    public UITrade Trade { get; private set; }
+    public InventoryItemMover ItemOnMove { get; private set; }
 
     private Dictionary<Type, UIIWindow> _activeWindows;
-    private InventoryItemMover _itemOnMove;
+    
     private InventoryController _inventoryController;
 
     //for test
@@ -56,11 +58,11 @@ public class UIWindowsController : IController, IOnStart
 
     public void SetItemOnMove(InventoryItemMover item)
     {
-        if(_itemOnMove != null)
+        if(ItemOnMove != null)
         {
-            _itemOnMove.MakeEndDrag();
+            ItemOnMove.MakeEndDrag();
         }
-        _itemOnMove = item;
+        ItemOnMove = item;
     }
 
     public void SetCrafter(UICrafter crafter)
@@ -79,6 +81,15 @@ public class UIWindowsController : IController, IOnStart
             return;
         }
         Ñharacteristics = characteristics;
+    }
+
+    public void SetTrade(UITrade trade)
+    {
+        if (Trade != null)
+        {
+            return;
+        }
+        Trade = trade;
     }
 
     public void SetMoveable(UIMoveable moveable)

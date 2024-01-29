@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TimmyFramework;
+using UnityEditor.Sprites;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,10 +78,10 @@ public class UISlider : MonoBehaviour, UIIWindow
     }
 
     public void Activate(InventorySlot fromSlot, InventorySlot toSlot)
-    {   
-        if(fromSlot.Item.MaxItemInStack == 1) 
+    {
+        if (fromSlot.Item.MaxItemInStack == 1) 
         {
-            SingkeItemTransfer(fromSlot, toSlot);
+            SingleItemTransfer(fromSlot, toSlot);
         }
         else
         {
@@ -103,11 +104,11 @@ public class UISlider : MonoBehaviour, UIIWindow
         _windowsController.OpenWindow(this);
     }
 
-    public void SingkeItemTransfer(InventorySlot fromSlot, InventorySlot toSlot)
+    public void SingleItemTransfer(InventorySlot fromSlot, InventorySlot toSlot)
     {
         var newItem = fromSlot.Item.CloneItemWithAmount(1);
         toSlot.AddToItemAndInventory(newItem);
-        fromSlot.RemoveFromItemAndInventory(newItem);  
+        fromSlot.RemoveFromItemAndInventory(newItem);
     }
 
     public void Deactivate()

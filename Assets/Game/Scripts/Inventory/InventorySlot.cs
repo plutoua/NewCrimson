@@ -5,8 +5,8 @@ public class InventorySlot
 {
     public InventoryItem Item { get; private set; }
     public bool IsEmpty => Item == null;
-    public bool IsFull => Item.Amount >= _slotCapacity;
-    public int SlotCapacity => _slotCapacity < Item.MaxItemInStack ? _slotCapacity : Item.MaxItemInStack;
+    public bool IsFull => Item.Amount >= SlotCapacity;
+    public int SlotCapacity => _slotCapacity < Item.MaxItemInStack ? _slotCapacity * Item.Multiplier : Item.MaxItemInStack * Item.Multiplier;
     public int SlotAmount => Item.Amount;
     public int ItemID => Item.ID;
     public InventoryItem AllItemAmountInInventory => _inventory.GetAllOfID(Item);

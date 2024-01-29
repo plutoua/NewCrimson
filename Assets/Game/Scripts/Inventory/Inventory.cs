@@ -56,7 +56,7 @@ public class Inventory
         }
 
         var slotsOfID = _slots.Where(slot => !slot.IsEmpty && slot.ItemID == item.ID && !slot.IsFull).ToArray();
-
+        
         foreach (var slot in slotsOfID)
         {
             item = slot.AddItemAndReturnRest(item);
@@ -68,7 +68,7 @@ public class Inventory
         }
 
         var emptySlots = _slots.Where(slot => slot.IsEmpty).ToArray();
-
+        
         foreach (var slot in emptySlots)
         {
             item = slot.AddItemAndReturnRest(item);
@@ -147,6 +147,7 @@ public class Inventory
         {
             slot.Clear();
         }
+        _inventoryUpdatedEvent?.Invoke();
     }
 
     private void CopySlotsToInventory(List<InventorySlot> anotherSlots)

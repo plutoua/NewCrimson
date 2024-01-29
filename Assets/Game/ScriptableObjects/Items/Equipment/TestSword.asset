@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: TestSword
   m_EditorClassIdentifier: 
   _id: 3
-  _sprite: {fileID: 21300000, guid: debfcb7c43587924e8bc5233c1b2482b, type: 3}
-  _name: 
-  _maxItemsInStack: 0
+  _sprite: {fileID: 21300000, guid: e274f0a78c095f24d862f67f7e115912, type: 3}
+  _name: Name
+  _maxItemsInStack: 1
+  _stackMultiplier: 1
+  _price: 50
   _equipmentType: 2
   _stats:
   - StatType: 9

@@ -16,3 +16,5 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: f462b9d305df8ea44a23b84340c959ae, type: 3}
   _name: Test Item 1
   _maxItemsInStack: 99
+  _stackMultiplier: 1
+  _price: 22
