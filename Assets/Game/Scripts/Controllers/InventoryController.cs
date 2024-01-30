@@ -6,6 +6,7 @@ public class InventoryController : IController, IOnCreate
     public Inventory GroundInventory => _groundInventory;
     public Inventory InnerInventory => _innerInventory;
     public Inventory SellInventory => _sellInventory;
+    public Inventory BuyInventory => _buyInventory;
     public int GroundSlotCapacity => _groundInventorySlotCapacity;
 
     public bool IsInnerInventoryReady {  get; private set; }
@@ -18,11 +19,13 @@ public class InventoryController : IController, IOnCreate
     private Inventory _groundInventory;
     private Inventory _innerInventory;
     private Inventory _sellInventory;
+    private Inventory _buyInventory;
 
     private int _groundInventorySlotCapacity;
     private int _groundInventoryStackSize;
     private int _defaultStackSize;
     private int _sellInventorySize;
+    private int _buyInventorySize;
 
     // for test
 
@@ -36,6 +39,8 @@ public class InventoryController : IController, IOnCreate
 
         _testGroundInventory = new Inventory(_groundInventorySlotCapacity, _groundInventoryStackSize);
         _testGroundInventory.Add(new InventoryItem(testItem, 15));
+
+        _buyInventory.Add(new InventoryItem(testItem, 15));
     }
 
     public void OnCreate()
@@ -47,6 +52,7 @@ public class InventoryController : IController, IOnCreate
         _groundInventoryStackSize = 99;
         _defaultStackSize = 10;
         _sellInventorySize = 70;
+        _buyInventorySize = 48;
 
         IsInnerInventoryReady = false;
     }
@@ -57,6 +63,7 @@ public class InventoryController : IController, IOnCreate
         _playerInventory = new Inventory(_playerStatController.GetStat(Stat.InventorySize), _defaultStackSize, _groundInventory);
         _innerInventory = new Inventory(1, _defaultStackSize, _groundInventory);
         _sellInventory = new Inventory(_sellInventorySize, _groundInventoryStackSize);
+        _buyInventory = new Inventory(_buyInventorySize, _groundInventoryStackSize);
 
         _playerStatController.PlayerStatChangeEvent += OnPlayerStatChange;
         _groundInventory.InventoryUpdatedEvent += UpdateGroundInventory;

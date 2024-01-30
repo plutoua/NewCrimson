@@ -8,11 +8,14 @@ public class InventoryItemMover : MonoBehaviour, IDragHandler, IBeginDragHandler
     private RectTransform _rectTransform;
     private Transform _transformParent;
     private UIWindowsController _windowsController;
+    private bool _isCanDrag;
 
     private void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
+
+        _isCanDrag = true;
 
         if (Game.IsReady)
         {
@@ -36,21 +39,30 @@ public class InventoryItemMover : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / _windowsController.Canvas.scaleFactor;
+        if (_isCanDrag)
+        {
+            _rectTransform.anchoredPosition += eventData.delta / _windowsController.Canvas.scaleFactor;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _windowsController.SetItemOnMove(this);
-        _transformParent = _rectTransform.parent;
-        _rectTransform.SetParent(_windowsController.Moveable.transform);
-        _canvasGroup.alpha = 0.6f;
-        _canvasGroup.blocksRaycasts = false;
+        if(_isCanDrag )
+        {
+            _windowsController.SetItemOnMove(this);
+            _transformParent = _rectTransform.parent;
+            _rectTransform.SetParent(_windowsController.Moveable.transform);
+            _canvasGroup.alpha = 0.6f;
+            _canvasGroup.blocksRaycasts = false;
+        }  
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        MakeEndDrag();
+        if (_isCanDrag)
+        {
+            MakeEndDrag();
+        }
     }
 
     public void MakeEndDrag()
@@ -63,5 +75,10 @@ public class InventoryItemMover : MonoBehaviour, IDragHandler, IBeginDragHandler
             _rectTransform.SetParent(_transformParent);
             _rectTransform.localPosition = Vector3.zero;
         }
+    }
+
+    public void SetDragable(bool dragable)
+    {
+        _isCanDrag = dragable;
     }
 }

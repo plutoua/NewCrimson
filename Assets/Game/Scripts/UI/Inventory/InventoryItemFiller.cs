@@ -37,15 +37,23 @@ public class InventoryItemFiller : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag.gameObject.TryGetComponent(out UIInventoryItem inventoryItem))
         {
             var toSlot = _uIInventorySlot.InventorySlot;
-            var fromSlot = inventoryItem.UIInventorySlot.InventorySlot;
-            _windowsController.ItemOnMove.MakeEndDrag();
+            var fromSlot = inventoryItem.UIInventorySlot.InventorySlot;        
             _windowsController.Slider.Activate(fromSlot, toSlot);  
+
+            if(_windowsController.ItemOnMove != null)
+            {
+                _windowsController.ItemOnMove.MakeEndDrag();
+            }
         }
         else if(eventData.pointerDrag.gameObject.TryGetComponent(out UIEquipmentItem equipmentItem))
         {
             _uIInventorySlot.InventorySlot.AddToItemAndInventory(equipmentItem.uiEquipmentSlot.Item);
             equipmentItem.uiEquipmentSlot.RemoveItem();
-            _windowsController.ItemOnMove.MakeEndDrag();
+
+            if (_windowsController.ItemOnMove != null)
+            {
+                _windowsController.ItemOnMove.MakeEndDrag();
+            }
         }
     }
 }
