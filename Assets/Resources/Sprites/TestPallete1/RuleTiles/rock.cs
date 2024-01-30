@@ -17,31 +17,15 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
     [Tooltip("Check itseft when the mode is set to \"any\"")]
     public bool checkSelf = true;
     public bool first_match;
+    static float[] angles = { 0f, 90f, 180f, 270f };
+    int checkOnlyCounter;
+    int fined;
 
-    [Header("Tile Settings")]
-    public string mapName = "Map1";  // Назва карти
 
-    private Sprite[,] rotationSprites;  // Масив для зберігання спрайтів
-
-    void OnEnable()
+    private void OnAwake()
     {
-        LoadRotationSprites();
-    }
-
-    void LoadRotationSprites()
-    {
-        rotationSprites = new Sprite[3, 4];  // 3 ассети, 4 повороти для кожного (4 кутові, 4 дальні кутові, 4 центральні)
-        string basePath = $"Sprites/{mapName}/Rocks/angled_asset_";
-        Debug.Log("WE ARE HERE");
-
-        for (int i = 0; i < 3; i++) // Індекс ассету
-        {
-            for (int j = 0; j < 4; j++) // Індекс повороту
-            {
-                int rotation = j * 90; // Кут повороту
-                rotationSprites[i, j] = Resources.Load<Sprite>($"{basePath}{i + 1}_{rotation}");
-            }
-        }
+        fined = 0;
+        checkOnlyCounter = 0;
     }
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
@@ -58,42 +42,29 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
             }
         }
 
-        // Якщо є підходящі тайли, вибираємо один випадково
         if (matchingTiles.Count > 0)
         {   
             int randomIndex = Random.Range(0, matchingTiles.Count);
             CustomRuleTile randomTile = matchingTiles[randomIndex];
             randomTile.GetTileData(position, tilemap, ref tileData);
         }
-        if (type == 1) { 
-            tileData.sprite = ChooseRotationSprite(position, tilemap);
+       
+        float angle = ChooseRotationSprite(position, tilemap);
+        
+       
+        if (angle != 0f)
+        {
+            //onse = true;
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            tileData.transform = Matrix4x4.TRS(Vector3.zero, rotation, Vector3.one);
         }
+        
     }
 
-    /*Sprite ChooseRotationSprite(Vector3Int position, ITilemap tilemap)
-    {
-        // Перевірка наявності сусідніх тайлів
-        bool hasLeft = tilemap.GetTile(position + new Vector3Int(-1, 0, 0)) != null;
-        bool hasRight = tilemap.GetTile(position + new Vector3Int(1, 0, 0)) != null;
-        bool hasTop = tilemap.GetTile(position + new Vector3Int(0, 1, 0)) != null;
-        bool hasBottom = tilemap.GetTile(position + new Vector3Int(0, -1, 0)) != null;
-
-
-
-        // Визначення повороту на основі позиції сусідніх тайлів
-        if (hasLeft) return rotationSprites[1];  // 90 градусів
-        if (hasBottom) return rotationSprites[2];  // 180 градусів
-        if (hasRight) return rotationSprites[3];  // 270 градусів
-        if (hasTop) return rotationSprites[0];  // 0 градусів
-
-        // Якщо немає сусідів, повертаємо спрайт за замовчуванням
-        return rotationSprites[0];  // Приклад
-    }*/
-
-    Sprite ChooseRotationSprite(Vector3Int position, ITilemap tilemap)
+    float ChooseRotationSprite(Vector3Int position, ITilemap tilemap)
     {
         CustomRuleTile currentTile = tilemap.GetTile<CustomRuleTile>(position);
-        if (currentTile == null) return null; // Перевіряємо, чи поточний тайл є CustomRuleTile
+        if (currentTile == null) return 0f; // Перевіряємо, чи поточний тайл є CustomRuleTile
 
         // Функція для перевірки сусіднього тайлу
         bool IsSameTypeNeighbor(Vector3Int offset)
@@ -107,103 +78,106 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
         bool hasRight = IsSameTypeNeighbor(new Vector3Int(1, 0, 0));
         bool hasTop = IsSameTypeNeighbor(new Vector3Int(0, 1, 0));
         bool hasBottom = IsSameTypeNeighbor(new Vector3Int(0, -1, 0));
+        // start position - zero
+        // 5 block of logic for:
+        // possible variants by priority:
+        //
+        // unblanked 4x (random) + 
+        // blank three 4x
+        // blank two paralel 4x (2x 2 random)
+        // blank two 4x
+        // blank one 4x
 
-        // Індекс правила - змініть цей індекс відповідно до вашої логіки або налаштувань
-        int ruleIndex = 0; // Приклад індексу правила (// 3 ассети)
+        bool[] trueCounts = { hasTop, hasBottom, hasLeft, hasRight };
 
-        int conditionIndex = 0; // Приклад індексу кута (0-360, крок 90, всього 4)
-
-
-        if (hasLeft && hasRight && hasBottom && hasTop) { 
-            // blank center
-        }
-
-        else if(hasLeft && hasRight && hasBottom)
-        {
-            // up one sided
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-
-        else if (hasLeft && hasRight && hasTop && hasBottom)
-        {
-            // down one sided
-            return rotationSprites[ruleIndex, conditionIndex];
+        int trueCount = 0;
+        foreach (bool state in trueCounts) { 
+            if (state)
+            {
+                trueCount++;
+            }
         }
 
-        else if(hasLeft && hasTop && hasBottom)
+        float angle = 0f;
+
+        if (trueCount == 4)
         {
-            // right one sided
-            return rotationSprites[ruleIndex, conditionIndex];
+            // unblanked 4x (random)
+            angle = angles[UnityEngine.Random.Range(0, 4)];
+            return angle;
+        }
+        else if (trueCount == 3)
+        {
+            if (!hasTop) { angle = 180f; }
+            // if (!hasBottom) { angle = 0f; }
+            if (!hasLeft) { angle = 270f; }
+            if (!hasRight) { angle = 90f; }
+        }
+        else if (trueCount == 2)
+        {
+            // double logic
+            if (hasTop && hasBottom)
+            {
+                 angle = 90f;
+            }
+            if (hasLeft && hasRight)
+            {
+                // angle = 90f;
+            }
+
+            // double angled
+
+            if (hasLeft && hasTop)
+            {
+                angle = 270f;
+            }
+
+            if (hasLeft && hasBottom)
+            {
+                // angle = 0f;
+            }
+
+            if (hasRight && hasTop)
+            {
+                angle = 180f;
+            }
+
+            if (hasRight && hasBottom)
+            {
+                angle = 90f;
+            }
+        }
+        else if (trueCount == 1)
+        {
+            if (hasTop)
+            {
+                angle = 180f;
+            }
+            if (hasBottom)
+            {
+                // angle = 180f;
+            }
+            if (hasLeft)
+            {
+                angle = 270;
+            }
+            if (hasRight)
+            {
+                angle = 90f;
+            }
         }
 
-        else if(hasRight && hasTop && hasBottom)
-        {
-            // left one sided
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasTop && hasBottom)
-        {
-            // two sided hirisontal
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
 
-        else if (hasRight && hasLeft)
-        {
-            // two sided vertical
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
+            // Для інших умов...
+            // 
 
-        else if (hasTop && hasLeft)
-        {
-            // two angled down right
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasTop && hasRight)
-        {
-            // two angled down left
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasBottom && hasLeft)
-        {
-            // two angled up right
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasBottom && hasRight)
-        {
-            // two angled up left
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasBottom)
-        {
-            // one angled up
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasRight)
-        {
-            // one angled left
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasLeft)
-        {
-            // one angled right
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        else if (hasTop)
-        {
-            // one angled down
-            return rotationSprites[ruleIndex, conditionIndex];
-        }
-        
+            // 4 sided
 
-        // Для інших умов...
-        // 
-
-        // 4 sided
-
-        // Якщо немає сусідів, повертаємо спрайт за замовчуванням
-        // Переробити на оригінальний спрайт з правил, якщо правило не прокнуло.
-        return rotationSprites[ruleIndex, 0]; // Приклад
+            // Якщо немає сусідів, повертаємо спрайт за замовчуванням
+            // Переробити на оригінальний спрайт з правил, якщо правило не прокнуло.
+            return angle;
     }
+    
 
 
     public class Neighbor : RuleTile.TilingRule.Neighbor {
@@ -212,6 +186,9 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
         public const int Any = 3;
         public const int Specified = 4;
         public const int Nothing = 5;
+        public const int Only = 6;
+        public const int Two = 7;
+        public const int Three = 8;
     }
 
     public void SetConnected(CustomRuleTile[] tilesToConnect){
@@ -234,6 +211,17 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
         }
     }
 
+
+    public override void RefreshTile(Vector3Int position, ITilemap tilemap)
+    {
+        fined = 0;
+        checkOnlyCounter = 0;
+        base.RefreshTile(position, tilemap);
+    }
+
+
+
+
     public override bool RuleMatch(int neighbor, TileBase tile) {
         if (!first_match){
             MakeConnect();
@@ -245,9 +233,160 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
             case Neighbor.Any: return Check_Any(tile);
             case Neighbor.Specified: return Check_Specified(tile);
             case Neighbor.Nothing: return Check_Nothing(tile);
+            case Neighbor.Only: return Check_Only(tile);
+            case Neighbor.Two: return Check_Two(tile);
+            case Neighbor.Three: return Check_Three(tile);
         }
         return base.RuleMatch(neighbor, tile);
     }
+
+
+    /// <summary>
+    /// Returns true if the tile is this, or if the tile is one of the tiles specified if always connect is enabled.
+    /// </summary>
+    /// <param name="tile">Neighboring tile to compare to</param>
+    /// <returns></returns>
+    bool Check_Only(TileBase tile)
+    {
+        bool res = true;
+        checkOnlyCounter++;
+        
+
+        CustomRuleTile customTile = tile as CustomRuleTile;
+        if (customTile != null)
+        {
+            // If the type of customTile is the same as this CustomRuleTile's type, return false
+            if (customTile.type == this.type)
+            {
+                if (fined > 0)
+                {
+                    res = false;
+                    // return false;
+                }
+                fined = 1;
+                res = true;
+                // return true;
+            }
+        }
+
+        if (checkOnlyCounter % 4 == 0)
+        {
+
+            if (fined == 1)
+            {
+                res = true;
+                // return true;
+            }
+            else
+            {
+                res = false;
+                // return false;
+            }
+            fined = 0;
+
+
+        }
+       
+        return res;
+    }
+
+    bool Check_Two(TileBase tile)
+    {
+
+        checkOnlyCounter++;
+        bool res = true;
+
+        CustomRuleTile customTile = tile as CustomRuleTile;
+        if (customTile != null)
+        {
+            // If the type of customTile is the same as this CustomRuleTile's type, return false
+            if (customTile.type == this.type)
+            {
+                Debug.Log(fined);
+                fined += 1;
+                if (fined > 2)
+                {
+                    res = false;
+                    // return false;
+                }
+                res = true;
+                // return true;
+            }
+        }
+
+        if (checkOnlyCounter % 4 == 0)
+        {
+
+
+            
+            if (fined == 2)
+            {
+                res = true;
+                // return true;
+            }
+            else
+            {
+
+                res = false;
+                // return false;
+            }
+            fined = 0;
+
+
+        }
+
+        return res;
+    }
+
+    bool Check_Three(TileBase tile)
+    {
+        bool res = true;
+        checkOnlyCounter++;
+
+
+        CustomRuleTile customTile = tile as CustomRuleTile;
+        if (customTile != null)
+        {
+            // If the type of customTile is the same as this CustomRuleTile's type, return false
+            if (customTile.type == this.type)
+            {
+                fined += 1;
+                if (fined > 3)
+                {
+                    res = false;
+                    // return false;
+                }
+
+                res = true;
+                // return true;
+            }
+        }
+
+        if (checkOnlyCounter % 4 == 0)
+        {
+
+            checkOnlyCounter = 0;
+
+            if (fined == 3)
+            {
+
+                res = true;
+                //return true;
+            }
+            else
+            {
+                res = false;
+            }
+            fined = 0;
+
+
+        }
+
+        return res;
+    }
+
+
+
 
     /// <summary>
     /// Returns true if the tile is this, or if the tile is one of the tiles specified if always connect is enabled.

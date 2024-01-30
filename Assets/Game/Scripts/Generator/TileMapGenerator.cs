@@ -12,6 +12,7 @@ using System.Collections.Generic;
 
 using TimmyFramework;
 using System.Linq;
+using System.Security.Permissions;
 
 
 public class TileMapGenerator : MonoBehaviour
@@ -43,6 +44,8 @@ public class TileMapGenerator : MonoBehaviour
         return type;
     }
 
+    bool onse = false;
+
     public delegate void GlobalMapChange(int x, int y, int type, TileObject tileToUse);
 
     public event GlobalMapChange OnGlobalMapChange;
@@ -69,7 +72,7 @@ public class TileMapGenerator : MonoBehaviour
     public void AfterStart(){
         
         GenerateMap();
-        Debug.Log(type);
+        // Debug.Log(type);
         _surface.BuildNavMesh();
         
         if (Game.IsReady){
@@ -97,6 +100,7 @@ public class TileMapGenerator : MonoBehaviour
                 SetBackground(x, y);
             }
         }
+        _tilemap.RefreshAllTiles();
     }
 
     private void SetMapPartToWall(int x, int y){
@@ -135,6 +139,33 @@ public class TileMapGenerator : MonoBehaviour
         
     }
 
+    /*
+    private bool tileConnected(Vector3Int checkPosition, string direction, int type )
+    {
+        
+        Vector3Int neighborPosition = checkPosition;
+
+        switch (direction)
+        {
+            case "right":
+                neighborPosition.x += 1;
+                break;
+            case "left":
+                neighborPosition.x -= 1;
+                break;
+                // Ìîæíà äîäàòè äîäàòêîâ³ íàïðÿìêè ÿêùî ïîòð³áíî
+        }
+
+        if (neighborPosition.x >= 0 && neighborPosition.x < _mapData.GetLength(0) &&
+            neighborPosition.y >= 0 && neighborPosition.y < _mapData.GetLength(1))
+        {
+            return _mapData[neighborPosition.x, neighborPosition.y] == type;
+        }
+        
+        return false;
+    }*/
+
+
     public void PlaceTile(int x, int y, int tileType=0, TileObject tileToUse=null)
     {
         // ÑÈÑÒÅÌÀ ÒÈÏÎÂÈÕ ÒÀ ÓÍ²ÊÀËÜÍÈÕ ÎÁªÊÒ²Â. Ó îáºêòà º òèï ³ óí³êàëüíèé ³ä îáºêòà, ÿêùî â³í ïîòð³áåí
@@ -153,7 +184,36 @@ public class TileMapGenerator : MonoBehaviour
                 if (ObjectTypes.isObsticle(tileType)){
 
                     if (_custom_tiles.ContainsKey(ObjectTypes.asString(ObjectTypes.wall_area))){
-                        _tilemap.SetTile(position, _custom_tiles[ObjectTypes.asString(ObjectTypes.wall_area)]);
+
+
+                        CustomRuleTile tileToSet = _custom_tiles[ObjectTypes.asString(ObjectTypes.wall_area)];
+                        _tilemap.SetTile(position, tileToSet);
+                        /*float angle = 0f;
+                        if (tileConnected(position, "right", type))
+                        {
+                            angle = 90f;
+                            Debug.Log(angle);
+                        }
+                        else if (tileConnected(position, "left", type))
+                        {
+                            angle = -90f;
+                        }
+
+                        // REMOVE IT
+                        if (!onse) {
+                            onse = true;
+                            TileFlags flags = _tilemap.GetTileFlags(position);
+
+                            // Âèäàëåííÿ ôëàãà LockTransform
+                            flags &= ~TileFlags.LockTransform;
+
+                            // Çàñòîñóâàííÿ çì³íåíèõ ôëàã³â äî òàéëà
+                            _tilemap.SetTileFlags(position, flags);
+                        }*/
+
+                        //Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 0, angle), Vector3.one);
+                        //_tilemap.SetTransformMatrix(position, matrix);
+                        //_tilemap.RefreshTile(position);
                     }
 
                     else if (_tiles.ContainsKey(ObjectTypes.asString(ObjectTypes.wall_area))){
@@ -162,7 +222,8 @@ public class TileMapGenerator : MonoBehaviour
 
                     // _tilemap.SetTile(position, _obsticle_tile);
                 }
-                else{
+                else
+                {
 
                     if (_custom_tiles.ContainsKey(ObjectTypes.asString(tileType))){
                         _tilemap.SetTile(position, _custom_tiles[ObjectTypes.asString(tileType)]);
