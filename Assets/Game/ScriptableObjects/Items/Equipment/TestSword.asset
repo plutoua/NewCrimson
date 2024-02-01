@@ -19,8 +19,139 @@ MonoBehaviour:
   _stackMultiplier: 1
   _price: 50
   _equipmentType: 2
+  _statsOld: []
+  _statsPercentOld: []
   _stats:
-  - StatType: 9
-    Amount: 10
-  _statsPercent: []
+  - Stat: 0
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 1
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 2
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 3
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 4
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 5
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 6
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 7
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 13
+    PointCost: 20
+    CoinCost: 20
+    Value: 10
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 14
+    PointCost: 20
+    CoinCost: 20
+    Value: 10
+    MaxValue: 9999
+    IsPercent: 0
+  - Stat: 0
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 1
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 2
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 3
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 4
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 5
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 6
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 7
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 8
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 9
+    PointCost: 20
+    CoinCost: 20
+    Value: 5
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 13
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 1
+  - Stat: 14
+    PointCost: 20
+    CoinCost: 20
+    Value: 1
+    MaxValue: 9999
+    IsPercent: 1
   _attackSchemes: []

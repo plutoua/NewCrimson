@@ -4,12 +4,14 @@ using UnityEngine;
 public class EquipmentScheme : ItemScheme
 {
     [SerializeField] private EquipmentType _equipmentType;
-    [SerializeField] private StatAmount[] _stats;
-    [SerializeField] private StatAmount[] _statsPercent;
+    [SerializeField] private StatAmount[] _statsOld;
+    [SerializeField] private StatAmount[] _statsPercentOld;
+    [SerializeField] private StatProp[] _stats;
     [SerializeField] private AttackScheme[] _attackSchemes;
 
     public EquipmentType EquipmentType => _equipmentType;
-    public StatAmount[] Stats => _stats;
-    public StatAmount[] StatsPercent => _statsPercent;
+    public StatAmount[] StatsOld => _statsOld;
+    public StatAmount[] StatsPercentOld => _statsPercentOld;
+    public StatProp[] Stats => _stats;
     public AttackScheme[] AttackSchemes => _attackSchemes;
 }

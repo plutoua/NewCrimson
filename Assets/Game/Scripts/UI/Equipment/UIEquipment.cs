@@ -52,30 +52,33 @@ public class UIEquipment : MonoBehaviour
         _playerStatController.SetAttackSchemes(attackSchemes);
     }
 
-    private EquipmentScheme[] SelectItemsFromSlots()
+    private InventoryItem[] SelectItemsFromSlots()
     {
-        return _slots.Where(slot => slot.Item != null).Select(slot => (EquipmentScheme)slot.Item.ItemScheme).ToArray();
+        return _slots.Where(slot => slot.Item != null).Select(slot => slot.Item).ToArray();
     }
 
-    private Dictionary<Stat, int> SelectStatsFromItems(EquipmentScheme[] items)
+    private Dictionary<Stat, int> SelectStatsFromItems(InventoryItem[] items)
     {
         var result = new Dictionary<Stat, int>();
-
+        
         Stat tempStat;
         int tempAmount;
         for (int i = 0; i < items.Length; i++)
         {
-            for (int j = 0; j < items[i].Stats.Length; j++)
+            for (int j = 0; j < items[i].Stats.Count; j++)
             {
-                tempStat = items[i].Stats[j].StatType;
-                tempAmount = items[i].Stats[j].Amount;
-                if (result.ContainsKey(tempStat))
+                if (!items[i].Stats[j].IsPercent)
                 {
-                    result[tempStat] += tempAmount;
-                }
-                else
-                {
-                    result[tempStat] = tempAmount;
+                    tempStat = items[i].Stats[j].StatType;
+                    tempAmount = items[i].Stats[j].Amount;
+                    if (result.ContainsKey(tempStat))
+                    {
+                        result[tempStat] += tempAmount;
+                    }
+                    else
+                    {
+                        result[tempStat] = tempAmount;
+                    }
                 }
             }
         }
@@ -83,7 +86,7 @@ public class UIEquipment : MonoBehaviour
         return result;
     }
 
-    private Dictionary<Stat, int> SelectStatsPercentFromItems(EquipmentScheme[] items)
+    private Dictionary<Stat, int> SelectStatsPercentFromItems(InventoryItem[] items)
     {
         var result = new Dictionary<Stat, int>();
 
@@ -91,17 +94,20 @@ public class UIEquipment : MonoBehaviour
         int tempAmount;
         for (int i = 0; i < items.Length; i++)
         {
-            for (int j = 0; j < items[i].StatsPercent.Length; j++)
+            for (int j = 0; j < items[i].Stats.Count; j++)
             {
-                tempStat = items[i].StatsPercent[j].StatType;
-                tempAmount = items[i].StatsPercent[j].Amount;
-                if (result.ContainsKey(tempStat))
+                if (items[i].Stats[j].IsPercent)
                 {
-                    result[tempStat] += tempAmount;
-                }
-                else
-                {
-                    result[tempStat] = tempAmount;
+                    tempStat = items[i].Stats[j].StatType;
+                    tempAmount = items[i].Stats[j].Amount;
+                    if (result.ContainsKey(tempStat))
+                    {
+                        result[tempStat] += tempAmount;
+                    }
+                    else
+                    {
+                        result[tempStat] = tempAmount;
+                    }
                 }
             }
         }
@@ -109,13 +115,13 @@ public class UIEquipment : MonoBehaviour
         return result;
     }
 
-    private List<AttackScheme> GetAttackSchemes(EquipmentScheme[] items)
+    private List<AttackScheme> GetAttackSchemes(InventoryItem[] items)
     {
         var result = new List<AttackScheme>();
 
         for (int i = 0; i < items.Length; i++)
         {
-            result.AddRange(items[i].AttackSchemes);
+            result.AddRange(((EquipmentScheme)items[i].ItemScheme).AttackSchemes);
         }
 
         return result;

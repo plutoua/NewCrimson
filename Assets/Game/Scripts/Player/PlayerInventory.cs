@@ -30,7 +30,9 @@ public class PlayerInventory : MonoBehaviour
     {
         var inventoryController = Game.GetController<InventoryController>();
         _playerInventory = inventoryController.PlayerInventory;
-        _playerInventory.Add(new InventoryItem(_testItemScheme, _testItemAmount));
+        var testItem = new InventoryItem(_testItemScheme, _testItemAmount);
+        testItem.SetStatsOfProgress(1000);
+        _playerInventory.Add(testItem);
         _playerInventory.Add(new InventoryItem(_testItem1Scheme, _testItem1Amount));
         _playerInventory.Add(new InventoryItem(_testItem2Scheme, _testItem2Amount));
 
