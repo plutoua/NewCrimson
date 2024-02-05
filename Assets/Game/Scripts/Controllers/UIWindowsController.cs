@@ -21,12 +21,6 @@ public class UIWindowsController : IController, IOnStart
     
     private InventoryController _inventoryController;
 
-    //for test
-    public void SetTest(ItemScheme itemScheme)
-    {
-        _inventoryController.SetTest(itemScheme);
-    }
-
     public void Initialize()
     {
         _activeWindows = new Dictionary<Type, UIIWindow>();
@@ -141,11 +135,8 @@ public class UIWindowsController : IController, IOnStart
 
     public void OpenInnerInventory()
     {
-        if(_inventoryController.IsInnerInventoryReady)
-        {
-            OpenInventory();
-            OpenWindow(InnerInventory);
-        }   
+        OpenInventory();
+        OpenWindow(InnerInventory);  
     }
 
     public void OpenWindow(UIIWindow window)

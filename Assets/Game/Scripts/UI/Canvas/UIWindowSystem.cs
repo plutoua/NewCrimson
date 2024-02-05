@@ -4,8 +4,6 @@ using UnityEngine;
 public class UIWindowSystem : MonoBehaviour
 {
     [SerializeField] private RecipeSetScheme _selfRecipes;
-    // for test
-    [SerializeField] private ItemScheme _forTest;
 
     private UIWindowsController _windowsController;
 
@@ -15,8 +13,6 @@ public class UIWindowSystem : MonoBehaviour
         {
             _windowsController = Game.GetController<UIWindowsController>();
             _windowsController.SetCanvas(GetComponent<Canvas>());
-            // for test
-            _windowsController.SetTest(_forTest);
         }
         else
         {
@@ -34,11 +30,6 @@ public class UIWindowSystem : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.I)) 
         {
              ActivateInventory();
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            _windowsController.OpenInnerInventory();
         }
 
         if (Input.GetKeyUp(KeyCode.C))
@@ -68,8 +59,6 @@ public class UIWindowSystem : MonoBehaviour
         Game.OnInitializedEvent -= OnGameReady;
         _windowsController = Game.GetController<UIWindowsController>();
         _windowsController.SetCanvas(GetComponent<Canvas>());
-        // for test
-        _windowsController.SetTest(_forTest);
     }
 
     private void ActivateInventory()
