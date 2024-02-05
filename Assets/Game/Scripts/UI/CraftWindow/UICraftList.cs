@@ -1,29 +1,21 @@
-using TimmyFramework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UICraftList : MonoBehaviour
 {
-    // test
-    [SerializeField] private RecipeSetScheme _alowedRecipes;
-    [SerializeField] private RecipeSetScheme _knowedRecipes;
-
     [SerializeField] private UICraftListItem _itemPrefab;
 
     private UICraftListItem _activeItem;
     private UICrafter _crafter;
+    private RecipeSetScheme _alowedRecipes;
+
+    private List<UICraftListItem> _items;
 
     private void Start()
     {
         _crafter = GetComponentInParent<UICrafter>();
-
-        if (Game.IsReady)
-        {
-            MakeCraftList();
-        }
-        else
-        {
-            Game.OnInitializedEvent += OnGameReady;
-        }
+        _crafter.RecipeSetChangeEvent += OnRecipeSetChange;
+        _items = new List<UICraftListItem>();
     }
 
     public void SetActiveItem(UICraftListItem item)
@@ -37,20 +29,53 @@ public class UICraftList : MonoBehaviour
         _crafter.SetActiveRecipe(item.Recipe);
     }
 
-    private void MakeCraftList()
+    private void DeactivateItem()
     {
-        UICraftListItem tempItem;
-        foreach (var recipe in _alowedRecipes.Recepts)
+        if (_activeItem != null)
         {
-            tempItem = Instantiate(_itemPrefab, transform);
-            tempItem.SetController(this);
-            tempItem.SetRecipe(recipe);
+            _activeItem.MakeNonActive();
+            _activeItem = null;
         }
     }
 
-    private void OnGameReady()
+    private void OnRecipeSetChange()
     {
-        Game.OnInitializedEvent -= OnGameReady;
+        _alowedRecipes = _crafter.RecipeSetScheme;
+        DeactivateAll();
         MakeCraftList();
+        ActivateCraftList();
+        DeactivateItem();
+    }
+
+    private void MakeCraftList()
+    {
+        UICraftListItem tempItem;
+        if(_alowedRecipes.Recepts.Count > _items.Count)
+        {
+            for(int i = _items.Count; i < _alowedRecipes.Recepts.Count; i++)
+            {
+                tempItem = Instantiate(_itemPrefab, transform);
+                tempItem.SetController(this);
+                tempItem.gameObject.SetActive(false);
+                _items.Add(tempItem);
+            }
+        }
+    }
+
+    private void ActivateCraftList()
+    {
+        for(int i = 0; i < _alowedRecipes.Recepts.Count; i++)
+        {
+            _items[i].gameObject.SetActive(true);
+            _items[i].SetRecipe(_alowedRecipes.Recepts[i]);
+        }
+    }
+
+    private void DeactivateAll()
+    {
+        foreach(var item in _items)
+        {
+            item.gameObject.SetActive(false);
+        }  
     }
 }

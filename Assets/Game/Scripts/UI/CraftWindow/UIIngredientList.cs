@@ -43,7 +43,7 @@ public class UIIngredientList : MonoBehaviour
         }
     }
 
-    private void DeactivateItems()
+    public void DeactivateItems()
     {
         foreach (var item in _items)
         {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UIWindowSystem : MonoBehaviour
 {
+    [SerializeField] private RecipeSetScheme _selfRecipes;
     // for test
     [SerializeField] private ItemScheme _forTest;
 
@@ -42,6 +43,7 @@ public class UIWindowSystem : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.C))
         {
+            _windowsController.Crafter.SetRecipeSet(_selfRecipes);
             _windowsController.OpenWindow(_windowsController.Crafter);
         }
 

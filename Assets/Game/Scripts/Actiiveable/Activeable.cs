@@ -1,29 +1,30 @@
-using TimmyFramework;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Activeable : MonoBehaviour
 {
-    private InventoryController _inventoryController;
 
     private bool _active;
+    private Camera _camera;
+    private IActivable _activable;
 
     private void Start()
     {
         _active = false;
-
-        if (Game.IsReady)
-        {
-            _inventoryController = Game.GetController<InventoryController>();
-        }
-        {
-            Game.OnInitializedEvent += OnGameReady;
-        }
+        _camera = Camera.main;
     }
 
-    private void OnGameReady()
+    private void Update()
     {
-        Game.OnInitializedEvent -= OnGameReady;
-        _inventoryController = Game.GetController<InventoryController>();
+        if(_active)
+        {
+            UITooltip.ChangePosition(GetTooltipposition());
+        }
+        if(_active && Input.GetKey(KeyCode.F) && _activable != null) 
+        {
+            UITooltip.Hide();
+            _activable.Activate();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,7 +37,7 @@ public class Activeable : MonoBehaviour
         if(collision.TryGetComponent(out ActivationZone activationZone)) 
         {
             _active = true;
-            _inventoryController.SetupInnerInventory();
+            UITooltip.Show("Press F to activate.", GetTooltipposition());
         }
     }
 
@@ -50,7 +51,17 @@ public class Activeable : MonoBehaviour
         if (collision.TryGetComponent(out ActivationZone activationZone))
         {
             _active = false;
-            _inventoryController.OffInnerInventory();
+            UITooltip.Hide();
         }
+    }
+
+    private Vector2 GetTooltipposition()
+    {
+        return _camera.WorldToScreenPoint(transform.position);
+    }
+
+    public void SetActiveable(IActivable activable)
+    {
+        _activable = activable;
     }
 }

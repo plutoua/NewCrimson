@@ -1,6 +1,7 @@
 using TimmyFramework;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UICrafter : MonoBehaviour, UIIWindow
@@ -9,6 +10,16 @@ public class UICrafter : MonoBehaviour, UIIWindow
     [SerializeField] private TMP_Text _craftName;
     [SerializeField] private UIIngredientList _ingredientList;
     [SerializeField] private Button _craftButton;
+
+    public event UnityAction RecipeSetChangeEvent
+    {
+        add { _recipeSetChangeEvent += value; }
+        remove { _recipeSetChangeEvent -= value; }
+    }
+
+    private event UnityAction _recipeSetChangeEvent;
+
+    public RecipeSetScheme RecipeSetScheme { get; private set; }
 
     private RecipeScheme _activeRecipe;
     private MoveableWindow _moveableWindow;
@@ -32,6 +43,13 @@ public class UICrafter : MonoBehaviour, UIIWindow
         }
     }
 
+    public void SetRecipeSet(RecipeSetScheme recipeSetScheme)
+    {
+        RecipeSetScheme = recipeSetScheme;
+        DeactivateItem();
+        _recipeSetChangeEvent?.Invoke();
+    }
+
     public void SetActiveRecipe(RecipeScheme recipe)
     {
         _activeRecipe = recipe;
@@ -46,6 +64,13 @@ public class UICrafter : MonoBehaviour, UIIWindow
         _ingredientList.CheckIngredients(_inventoryController.PlayerInventory);
 
         _crafter.SetRecipe(recipe);
+    }
+
+    private void DeactivateItem()
+    {
+        _craftIcon.enabled = false;
+        _craftName.text = string.Empty;
+        _ingredientList.DeactivateItems();
     }
 
     private void OnGameReady()

@@ -53,6 +53,11 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_windowsController != null && _windowsController.IsUIMode)
+        {
+            return;
+        }
+
         if (_windowsController != null) { Move(); }
         
     }

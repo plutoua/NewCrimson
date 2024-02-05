@@ -29,7 +29,19 @@ public class UITooltip : MonoBehaviour
         Vector2 tooltipSize = new Vector2(_tooltip.preferredWidth + 12f, _tooltip.preferredHeight + 8f);
         _backgroundRectTransform.sizeDelta = tooltipSize;
 
-        SetTooltipPosition(tooltipSize);
+        SetTooltipPosition(tooltipSize, Input.mousePosition);
+
+        _canvasGroup.alpha = 1.0f;
+    }
+
+    private void ShowTooltip(string text, Vector2 position)
+    {
+        _tooltip.text = text;
+
+        Vector2 tooltipSize = new Vector2(_tooltip.preferredWidth + 12f, _tooltip.preferredHeight + 8f);
+        _backgroundRectTransform.sizeDelta = tooltipSize;
+
+        SetTooltipPosition(tooltipSize, position);
 
         _canvasGroup.alpha = 1.0f;
     }
@@ -37,6 +49,11 @@ public class UITooltip : MonoBehaviour
     public static void Show(string text)
     {
         _instance.ShowTooltip(text);
+    }
+
+    public static void Show(string text, Vector2 position)
+    {
+        _instance.ShowTooltip(text, position);
     }
 
     private void HideTooltip()
@@ -49,9 +66,19 @@ public class UITooltip : MonoBehaviour
         _instance.HideTooltip();
     }
 
-    private void SetTooltipPosition(Vector2 sizes)
+    private void ChangeTooltipPosition(Vector2 position)
     {
-        var mousePosition = Input.mousePosition;
+        var tooltipSize = _backgroundRectTransform.sizeDelta;
+        SetTooltipPosition(tooltipSize, position);
+    }
+
+    public static void ChangePosition(Vector2 position)
+    {
+        _instance.ChangeTooltipPosition(position);
+    }
+
+    private void SetTooltipPosition(Vector2 sizes, Vector2 mousePosition)
+    {
         Vector2 finalPosition = Vector2.zero;
 
         if(mousePosition.x + sizes.x > _camera.pixelWidth)

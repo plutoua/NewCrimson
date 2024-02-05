@@ -38,7 +38,7 @@ public class CameraFolllower : MonoBehaviour
         _isMove = true;   
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isMove)
         {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2040807599745543116}
   - component: {fileID: 7604896108678173385}
   - component: {fileID: 1444567596594637333}
+  - component: {fileID: 5261123587356195621}
   m_Layer: 5
   m_Name: InventorySlotNoDrag
   m_TagString: Untagged
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3c22715437fe9b4baec438258d6cc83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5261123587356195621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637597848316838381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f063600b589a024fb5402e017e7cb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1439614830825185574
