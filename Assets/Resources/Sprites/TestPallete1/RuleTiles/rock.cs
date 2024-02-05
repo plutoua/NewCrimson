@@ -181,8 +181,8 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
 
 
     public class Neighbor : RuleTile.TilingRule.Neighbor {
-        public const int This = 1;
-        public const int NotThis = 2;
+        new public const int This = 1;
+        new public const int NotThis = 2;
         public const int Any = 3;
         public const int Specified = 4;
         public const int Nothing = 5;
@@ -199,7 +199,7 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
     }
 
     private void MakeConnect(){
-        Debug.Log("MakeConnect");
+        // Debug.Log("MakeConnect");
         if (tilesToConnect != null){
             foreach (CustomRuleTile ruleTile in tilesToConnect)
             {   
@@ -302,7 +302,7 @@ public class CustomRuleTile : RuleTile<CustomRuleTile.Neighbor>
             // If the type of customTile is the same as this CustomRuleTile's type, return false
             if (customTile.type == this.type)
             {
-                Debug.Log(fined);
+                // Debug.Log(fined);
                 fined += 1;
                 if (fined > 2)
                 {

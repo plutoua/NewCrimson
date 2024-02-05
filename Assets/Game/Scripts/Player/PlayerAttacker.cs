@@ -16,7 +16,7 @@ public class PlayerAttacker : MonoBehaviour
     private PlayerStatController _playerStatController;
 
     // [SerializeField] private AttackScheme _attackScheme;
-    private int _currentAttackIndex = 0;
+    // private int _currentAttackIndex = 0;
 
     /*
     private void NextAttackScheme()
@@ -42,7 +42,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Start()
     {
-        _attackScheme = _attackScheme;
+        // _attackScheme = _attackScheme;
         // _attackScheme.SetIsPlayerBullets(true);
         if (Game.IsReady)
         {

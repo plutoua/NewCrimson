@@ -17,10 +17,12 @@ public static class ObjectTypes{
         public static int building_area = 5;
         public static int spawner_area = 6;
         public static int background_area = 7;
+        public static int road_area = 17;
+        public static int big_pig_tavern = 13;
 
-        public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area, spawner_area, background_area };
+        public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area, spawner_area, background_area, road_area, big_pig_tavern };
 
-        public static int[] obsticles = new int[]{ wall_area, building_area, 13 };
+        public static int[] obsticles = new int[]{ wall_area, building_area, big_pig_tavern };
 
         public static bool isObsticle(int type){
             if (Array.IndexOf(obsticles, type) != -1){
@@ -45,6 +47,16 @@ public static class ObjectTypes{
             nameof(building_area),
             nameof(spawner_area),
             nameof(background_area),
+            "",
+            "",
+            "",
+            "",
+            "",
+            nameof(big_pig_tavern),
+            "",
+            "",
+            "",
+            nameof(road_area),
             };
 
         public static string asString(int type){
@@ -75,11 +87,11 @@ public class MapCreator : MonoBehaviour
 
     public ItemScheme _testItemScheme;
 
-    public void Subscribe(TileMapGenerator tmg)
+    /*public void Subscribe(TileMapGenerator tmg)
     {
         // Підписка на подію
         tmg.OnGlobalMapChange += RedrawTileOnTilemap;
-    }
+    }*/
 
 
     // temporary public, make event
@@ -93,13 +105,13 @@ public class MapCreator : MonoBehaviour
                 
             }
             if (type == ObjectTypes.on_delete){
-                if (tmg.GetTileType() == ObjectTypes.walkable_area){
+/*                if (tmg.GetTileType() == ObjectTypes.walkable_area){
                     tmg.PlaceTile(x, y, ObjectTypes.walkable_area, tileToUse);
-                }
-                else
-                {
+                }*/
+                /*else
+                {*/
                     tmg.PlaceTile(x, y, ObjectTypes.on_delete, tileToUse);
-                }
+                /*}*/
                 
             }
         }
@@ -120,9 +132,9 @@ public class MapCreator : MonoBehaviour
         //foreach (TileMapGenerator tmg in tilemapGenerators){
         //    typeNames.Add(tmg.name);
         //}
-        foreach (TileMapGenerator tmg in tilemapGenerators){
+        /*foreach (TileMapGenerator tmg in tilemapGenerators){
             Subscribe(tmg);
-        }
+        }*/
 
         string tileMapPath = "assets\\Game\\Scripts\\Generator\\map1.map";
         List<int[]> mapList = new List<int[]>();

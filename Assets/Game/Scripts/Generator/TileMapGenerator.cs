@@ -1,24 +1,20 @@
 using UnityEngine;
+using System.Linq;
 using UnityEngine.Tilemaps;
 using UnityEngine.AI;
 using System.Collections;
 using NavMeshPlus.Components;
 using System;
-
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 
 using TimmyFramework;
-using System.Linq;
-using System.Security.Permissions;
-
 
 public class TileMapGenerator : MonoBehaviour
 {
 
     // temporary MapCreator
+
 
     private MapCreator _mapCreator;
     Dictionary<string, Tile> _tiles;
@@ -44,11 +40,11 @@ public class TileMapGenerator : MonoBehaviour
         return type;
     }
 
-    bool onse = false;
+    // bool onse = false;
 
-    public delegate void GlobalMapChange(int x, int y, int type, TileObject tileToUse);
+    // public delegate void GlobalMapChange(int x, int y, int type, TileObject tileToUse);
 
-    public event GlobalMapChange OnGlobalMapChange;
+    // public event GlobalMapChange OnGlobalMapChange;
 
 
 
@@ -96,6 +92,9 @@ public class TileMapGenerator : MonoBehaviour
         {
             for (int y = 0; y < _mapData.GetLength(1); y++)
             {
+
+                // if (_mapData[x, y] == 13){ Debug.Log("13"); }
+                        
                 PlaceTile(x, y, _mapData[x, y]);
                 SetBackground(x, y);
             }
@@ -182,7 +181,7 @@ public class TileMapGenerator : MonoBehaviour
         else if (type == tileType || additionalTypes.Contains(tileType)){
             if (ObjectTypes.isMarked(tileType)){
                 if (ObjectTypes.isObsticle(tileType)){
-
+                    
                     if (_custom_tiles.ContainsKey(ObjectTypes.asString(ObjectTypes.wall_area))){
 
 
@@ -224,7 +223,7 @@ public class TileMapGenerator : MonoBehaviour
                 }
                 else
                 {
-
+                    // Debug.Log(ObjectTypes.asString(tileType));
                     if (_custom_tiles.ContainsKey(ObjectTypes.asString(tileType))){
                         _tilemap.SetTile(position, _custom_tiles[ObjectTypes.asString(tileType)]);
                     }
@@ -241,6 +240,7 @@ public class TileMapGenerator : MonoBehaviour
                 } 
             }
             else{
+                Debug.Log(tileType);
                 if (_custom_tiles.ContainsKey(ObjectTypes.asString(ObjectTypes.walkable_area))){
                         _tilemap.SetTile(position, _custom_tiles[ObjectTypes.asString(ObjectTypes.walkable_area)]);
                     }
@@ -252,8 +252,8 @@ public class TileMapGenerator : MonoBehaviour
             }
 
             if (tileToUse){
-                
 
+                    Debug.Log(tileType);
                     float fx = (float)x + tileToUse.GetLocationChanger();
                     float fy = (float)y + tileToUse.GetLocationChanger();
                     int[] additionalCoords = tileToUse.GetAdditionalCoords();
@@ -350,12 +350,30 @@ public class TileMapGenerator : MonoBehaviour
             }
 
             if (_objectsPrefabs.Count() > 0) {
-                int random_number = UnityEngine.Random.Range(0, _objectsPrefabs.Count());
-                // random_number = random.randint(0, _objectsPrefabs.Count);
-                TileObject to = _objectsPrefabs[random_number];
-                // MAKE RANDOM MECHANIZM
-                if (to && (tileType == to.type || additionalTypes.Contains(tileType))){
+                TileObject to = null;
+                foreach (TileObject obj in _objectsPrefabs)
+                {
+                    if (obj != null)
+                    {
+                        to = obj.GetComponent<TileObject>();
+                        
+                        if (to.type == tileType)
+                        {
+                            // Debug.Log(to.type);
+                            to = obj;
+                            break;
+                        }
+                    }
+                }
 
+                // int random_number = UnityEngine.Random.Range(0, _objectsPrefabs.Count());
+                // random_number = random.randint(0, _objectsPrefabs.Count);
+                // TileObject to = _objectsPrefabs[random_number];
+                // MAKE RANDOM MECHANIZM
+
+                if (to && additionalTypes.Contains(tileType)){
+
+                    // Debug.Log(to.type);
                     float fx = (float)x + to.GetLocationChanger();
                     float fy = (float)y + to.GetLocationChanger();
                     int[] additionalCoords = to.GetAdditionalCoords();
@@ -381,7 +399,7 @@ public class TileMapGenerator : MonoBehaviour
                                 Array.Resize(ref coords, coords.Length + 2); // Resizing to 4 elements
                                 
                                 if (i != 0){
-                                    Debug.Log("SetMapPartToWall " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
+                                    // Debug.Log("SetMapPartToWall " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
                                     SetMapPartToWall(t_x, t_y);
                                 }
                             }
@@ -421,7 +439,7 @@ public class TileMapGenerator : MonoBehaviour
                             if (i % 2 == 0) {
                                 Array.Resize(ref coords, coords.Length + 2); // Resizing to 4 elements
                                 if (i != 0){
-                                    Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
+                                    // Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
                                     // SetMapPartToWalkable(t_x, t_y, _walkable_tile);
                                     SetMapPartToScript(t_x, t_y);
                                 }
@@ -442,7 +460,7 @@ public class TileMapGenerator : MonoBehaviour
                         }
                         if (i % 2 == 0) {
                                 if (i != 0){
-                                    Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
+                                    // Debug.Log("SetMapPartToScript " + i.ToString() + ";" + t_x.ToString() + ";" + t_y.ToString());
                                     SetMapPartToWalkable(t_x, t_y);
                                     SetMapPartToScript(t_x, t_y);
                                 }

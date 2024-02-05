@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 using TimmyFramework;
-using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
@@ -23,6 +22,7 @@ public class EnemysLocatorController : IController
         locatorDistance = 10.0f;
         //linked = false;
         enemies_coords_links = new Dictionary<int, Vector3>();
+
     }
 
     public int GetNewPartyId()
@@ -140,7 +140,7 @@ public class EnemysLocatorController : IController
     public int DeleteEnemy(GameObject obj = null, int id = -1){
         // -1 on error, or enemy id on success
         if (obj) {
-            int keyToRemove = -1;
+            // int keyToRemove = -1;
             foreach (var pair in enemies)
             {
                 if (pair.Value == obj)

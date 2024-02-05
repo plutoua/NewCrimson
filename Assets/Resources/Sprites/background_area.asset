@@ -9,28 +9,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 11500000, guid: 9c866154a96f76049b2eab60fbc69ac3, type: 3}
   m_Name: background_area
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 5bfab3a0380db7b42aa8077f2bc67ece, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Transform:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_InstancedGameObject: {fileID: 0}
-  m_Flags: 1
-  m_ColliderType: 1
+  m_DefaultSprite: {fileID: 21300000, guid: 5a8b950c22d39df44a06d2030312c8a1, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 5
+    m_Sprites:
+    - {fileID: 21300000, guid: 8d4f9d0621a794c42ad6bfbab294e045, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 0
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions: []
+    m_RuleTransform: 0
+  alwaysConnect: 1
+  tilesToConnect:
+  - {fileID: 11400000, guid: a83c5353a3c8437458b33ac796b1b028, type: 2}
+  - {fileID: 11400000, guid: 0b1646e552e52cb4a83443a51f3019c0, type: 2}
+  - {fileID: 11400000, guid: 4cf4d7df6b46bc44f9bad759609b21a4, type: 2}
+  - {fileID: 11400000, guid: 6a7c2199b01540b42a9270b9fad12700, type: 2}
+  - {fileID: 11400000, guid: 4cb3deae6dee3154098f0ffb163a0293, type: 2}
+  - {fileID: 11400000, guid: a8bdec2fda6ec8c459a22fc3795315b7, type: 2}
+  type: 1
+  checkSelf: 1
+  first_match: 1

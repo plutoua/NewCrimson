@@ -19,12 +19,12 @@ public class GroundItem: InventoryItem
 
     public Vector2 GetCoords() { return Coords; }
 
-    public InventoryItem CloneItemWithAmount(int amount)
+    new public InventoryItem CloneItemWithAmount(int amount)
     {
         return new InventoryItem(_itemScheme, amount);
     }
 
-    public ItemScheme GetItemScheme()
+    new public ItemScheme GetItemScheme()
     {
         return _itemScheme;
     }
