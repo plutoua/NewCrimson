@@ -23,8 +23,8 @@ public class AttackScheme : ScriptableObject
 
     public void Attack(Transform spawnTransform, Vector3 targetDirection)
     {
-        Debug.Log("Spawn Transform Position: " + spawnTransform.position);
-        Debug.Log("Target Direction: " + targetDirection);
+        //Debug.Log("Spawn Transform Position: " + spawnTransform.position);
+        //Debug.Log("Target Direction: " + targetDirection);
 
         Bullet bulletTemp;
         for (int i = 0; i < _bulletPerAttack; i++)
@@ -62,8 +62,8 @@ public class AttackScheme : ScriptableObject
 
     private Vector3 TargetPositionAccuracyImpact(Vector3 target)
     {
-        target.x += Random.Range(_bulletAccuracy.x, _bulletAccuracy.y);
-        target.y += Random.Range(_bulletAccuracy.x, _bulletAccuracy.y);
+        target.x += Random.Range(_bulletAccuracy.x / 100f, _bulletAccuracy.y / 100f);
+        target.y += Random.Range(_bulletAccuracy.x / 100f, _bulletAccuracy.y / 100f);
 
         return target;
     }

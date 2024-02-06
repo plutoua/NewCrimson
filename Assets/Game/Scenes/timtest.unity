@@ -898,6 +898,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9197cbcdc3da0814880a6fd91c537051, type: 2}
     - target: {fileID: 8684597793018974307, guid: 9c5734f819bad954580701961c8efd82, type: 3}
+      propertyPath: _attackScheme
+      value: 
+      objectReference: {fileID: 11400000, guid: ce9458ef6e0efb4438e2dd502759aee1, type: 2}
+    - target: {fileID: 8684597793018974307, guid: 9c5734f819bad954580701961c8efd82, type: 3}
       propertyPath: _attackSchemes.Array.size
       value: 1
       objectReference: {fileID: 0}
