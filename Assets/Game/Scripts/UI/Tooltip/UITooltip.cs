@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UITooltip : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class UITooltip : MonoBehaviour
     private RectTransform _selfRectTransform;
     private CanvasGroup _canvasGroup;
     private Camera _camera;
+    private CanvasScaler _canvasScaler;
 
     private static UITooltip _instance;
 
@@ -20,6 +22,7 @@ public class UITooltip : MonoBehaviour
         _camera = Camera.main;
         _backgroundRectTransform = transform.Find("Background").GetComponent<RectTransform>();
         _tooltip = GetComponentInChildren<TMP_Text>();
+        _canvasScaler = GetComponentInParent<CanvasScaler>();
     }
 
     private void ShowTooltip(string text)
@@ -81,7 +84,12 @@ public class UITooltip : MonoBehaviour
     {
         Vector2 finalPosition = Vector2.zero;
 
-        if(mousePosition.x + sizes.x > _camera.pixelWidth)
+        var coefficientWidth = _canvasScaler.referenceResolution.x / _camera.pixelWidth;
+        var coefficientHeight = _canvasScaler.referenceResolution.y / _camera.pixelHeight;
+        mousePosition.x *= coefficientWidth;
+        mousePosition.y *= coefficientHeight;
+
+        if (mousePosition.x + sizes.x > _camera.pixelWidth)
         {
             finalPosition.x = _camera.pixelWidth - sizes.x;
         }
