@@ -10,9 +10,9 @@ public class BarFiller : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private TMP_Text _barValue;
     private TMP_Text _barTooltipValue;
 
-    private float _fullHP;
-    private float _nowHP;
-    private float _fallHP;
+    private float _fullValue;
+    private float _nowValue;
+    private float _fallValue;
     private bool _isFall;
 
     private void Start()
@@ -24,34 +24,28 @@ public class BarFiller : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         _barTooltipValue = transform.Find("BarTooltip").GetComponent<TMP_Text>();
         _barTooltipValue.gameObject.SetActive(false);
 
-        SetMaxHP(100);
         _isFall = false;
+
+        _fullValue = 100;
+        _nowValue = 0;
     }
 
-    public void SetMaxHP(float maxHP)
+    public void SetMaxValue(float maxHP)
     {
-        _fullHP = maxHP;
-        _nowHP = _fullHP;
-        _barValue.text = _nowHP.ToString();
-        _barTooltipValue.text = _nowHP + " / " + _fullHP;
+        _fullValue = maxHP;
+
+        if (_nowValue == 0) _nowValue = _fullValue;
+
+        CalculateBarValue(_nowValue);
     }
 
-    public void SetNowHP(float nowHP)
+    public void SetNowValue(float nowHP)
     {
         CalculateBarValue(nowHP);
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            CalculateBarValue(_nowHP - 10);
-        }
-        else if(Input.GetMouseButtonDown(1))
-        {
-            CalculateBarValue(_nowHP + 10);
-        }
-
         if (_isFall)
         {
             CalculateFallBar();
@@ -60,30 +54,30 @@ public class BarFiller : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void CalculateBarValue(float value)
     {
-        _fallHP = _nowHP;
-        _nowHP = value;
+        _fallValue = _nowValue;
+        _nowValue = value;
         var sizes = _activeBar.sizeDelta;
-        sizes.x = _width * _nowHP / _fullHP;
+        sizes.x = _width * _nowValue / _fullValue;
         _activeBar.sizeDelta = sizes;
 
         _isFall = true;
-        _barValue.text = _nowHP.ToString();
-        _barTooltipValue.text = _nowHP + " / " + _fullHP;
+        _barValue.text = _nowValue.ToString();
+        _barTooltipValue.text = _nowValue + " / " + _fullValue;
     }
 
     private void CalculateFallBar()
     {
-        _fallHP = Mathf.Lerp(_fallHP, _nowHP, 5 * Time.deltaTime);
+        _fallValue = Mathf.Lerp(_fallValue, _nowValue, 5 * Time.deltaTime);
         
 
-        if((_nowHP - 0.2f) < _fallHP && (_nowHP + 0.2f) > _fallHP)
+        if((_nowValue - 0.2f) < _fallValue && (_nowValue + 0.2f) > _fallValue)
         {
             _isFall =false;
-            _fallHP = _nowHP;
+            _fallValue = _nowValue;
         }
 
         var sizes = _fallBar.sizeDelta;
-        sizes.x = _width * _fallHP / _fullHP;
+        sizes.x = _width * _fallValue / _fullValue;
         _fallBar.sizeDelta = sizes;
     }
 

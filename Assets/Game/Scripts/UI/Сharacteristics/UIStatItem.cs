@@ -45,7 +45,9 @@ public class UIStatItem : MonoBehaviour
 
     private void OnChangeStat()
     {
-        if(_playerStatController.PlayerStatsPoints == 0)
+        var whiteStat = _playerStatController.GetWhiteStat(_stat);
+
+        if(_playerStatController.PlayerStatsPoints == 0 || whiteStat == 20)
         {
             _addButton.gameObject.SetActive(false);
         }

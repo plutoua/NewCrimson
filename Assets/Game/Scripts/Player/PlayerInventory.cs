@@ -67,5 +67,14 @@ public class PlayerInventory : MonoBehaviour
         {
             _playerStatController.AddExperience(500);
         }
+
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            _playerStatController.ChangePlayerHealth(-10);
+        }
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            _playerStatController.ChangePlayerHealth(10);
+        }
     }
 }

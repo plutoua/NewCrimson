@@ -10,6 +10,7 @@ public class UITooltipIItem : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
     private Camera _camera;
+    private CanvasScaler _canvasScaler;
 
     private static UITooltipIItem _instance;
 
@@ -24,6 +25,7 @@ public class UITooltipIItem : MonoBehaviour
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
         _camera = Camera.main;
+        _canvasScaler = GetComponentInParent<CanvasScaler>();
     }
 
     private void ShowTooltip(InventoryItem inventoryItem)
@@ -54,7 +56,16 @@ public class UITooltipIItem : MonoBehaviour
     private void CalculatePosition()
     {
         var mousePosition = Input.mousePosition;
+
+        var coefficientWidth = _canvasScaler.referenceResolution.x / _camera.pixelWidth;
+        var coefficientHeight = _canvasScaler.referenceResolution.y / _camera.pixelHeight;
+        mousePosition.x *= coefficientWidth;
+        mousePosition.y *= coefficientHeight;
+
         var windowSizes = _rectTransform.sizeDelta;
+        windowSizes.x *= coefficientWidth;
+        windowSizes.y *= coefficientHeight;
+
         Vector2 finalPosition = Vector2.zero;
 
         if (mousePosition.x + windowSizes.x > _camera.pixelWidth)
