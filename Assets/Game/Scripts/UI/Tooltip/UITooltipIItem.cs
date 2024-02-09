@@ -63,23 +63,21 @@ public class UITooltipIItem : MonoBehaviour
         mousePosition.y *= coefficientHeight;
 
         var windowSizes = _rectTransform.sizeDelta;
-        windowSizes.x *= coefficientWidth;
-        windowSizes.y *= coefficientHeight;
 
         Vector2 finalPosition = Vector2.zero;
 
-        if (mousePosition.x + windowSizes.x > _camera.pixelWidth)
+        if (mousePosition.x + windowSizes.x > _canvasScaler.referenceResolution.x)
         {
-            finalPosition.x = _camera.pixelWidth - windowSizes.x;
+            finalPosition.x = _canvasScaler.referenceResolution.x - windowSizes.x;
         }
         else
         {
             finalPosition.x = mousePosition.x;
         }
 
-        if (mousePosition.y + windowSizes.y > _camera.pixelHeight)
+        if (mousePosition.y + windowSizes.y > _canvasScaler.referenceResolution.y)
         {
-            finalPosition.y = _camera.pixelHeight - windowSizes.y;
+            finalPosition.y = _canvasScaler.referenceResolution.y - windowSizes.y;
         }
         else
         {
