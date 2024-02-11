@@ -29,16 +29,7 @@ public class Inventory
     private List<InventorySlot> _slots;
     private Inventory _dropInventory;
 
-    public Inventory(int slotNumber, int slotCapacity)
-    {
-        _slotNumber = slotNumber;
-        _slotCapacity = slotCapacity;
-        _dropInventory = null;
-
-        CreateInventorySlots();
-    }
-
-    public Inventory(int slotNumber, int slotCapacity, Inventory dropInventory)
+    public Inventory(int slotNumber, int slotCapacity, Inventory dropInventory=null)
     {
         _slotNumber = slotNumber;
         _slotCapacity = slotCapacity;
@@ -46,6 +37,15 @@ public class Inventory
 
         CreateInventorySlots();
     }
+
+    /*public Inventory(int slotNumber, int slotCapacity, Inventory dropInventory)
+    {
+        _slotNumber = slotNumber;
+        _slotCapacity = slotCapacity;
+        _dropInventory = dropInventory;
+
+        CreateInventorySlots();
+    }*/
 
     public void Add(InventoryItem item)
     {

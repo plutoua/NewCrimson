@@ -25,7 +25,7 @@ public class RoofRenderer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Перевіряємо, чи об'єкт, який увійшов - це гравець
-        // Debug.Log(collision.tag);
+        Debug.Log(collision.tag);
         if (collision.CompareTag("Player"))
         {
             // Вимикаємо рендеринг

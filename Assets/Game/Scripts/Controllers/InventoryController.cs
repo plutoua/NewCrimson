@@ -77,6 +77,7 @@ public class InventoryController : IController, IOnCreate
 
     private void UpdateGroundInventory()
     {
+        Debug.Log("UpdateGroundInventory");
         _groundDetectionController.UpdateInventory(_groundInventory);
     }
 

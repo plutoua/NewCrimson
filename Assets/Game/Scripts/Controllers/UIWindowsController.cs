@@ -129,7 +129,7 @@ public class UIWindowsController : IController, IOnStart
     public void OpenInventory()
     {
         OpenWindow(PlayerInventory);
-        _inventoryController.SetupGroundInventory();
+        // _inventoryController.SetupGroundInventory();
         OpenWindow(GroundInventory);
     }
 

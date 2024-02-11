@@ -73,6 +73,7 @@ public class FieldOfView : MonoBehaviour
 
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        GetComponent<MeshCollider>().sharedMesh = mesh;
         layerMask = LayerMask.GetMask("InteractiveLayer");
     
         if (player) { 

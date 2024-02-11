@@ -20,9 +20,10 @@ public static class ObjectTypes{
         public static int road_area = 17;
         public static int big_pig_tavern = 13;
 
+
         public static int[] marksOnTilemap = new int[]{ walkable_area, wall_area, jump_area, script_area, building_area, spawner_area, background_area, road_area, big_pig_tavern };
 
-        public static int[] obsticles = new int[]{ wall_area, building_area, big_pig_tavern };
+        public static int[] obsticles = new int[]{ wall_area, building_area, big_pig_tavern  };
 
         public static bool isObsticle(int type){
             if (Array.IndexOf(obsticles, type) != -1){
@@ -125,7 +126,7 @@ public class MapCreator : MonoBehaviour
         Dictionary<string, CustomRuleTile> customTiles = getCustomTiles();
 
         GroundDetectionController _groundDetectionController = Game.GetController<GroundDetectionController>();
-        _groundDetectionController._testItemScheme = _testItemScheme;
+        // _groundDetectionController._testItemScheme = _testItemScheme;
 
         //List<string> typeNames = new List<string>();
         tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
@@ -136,41 +137,79 @@ public class MapCreator : MonoBehaviour
             Subscribe(tmg);
         }*/
 
-        string tileMapPath = "assets\\Game\\Scripts\\Generator\\map1.map";
-        List<int[]> mapList = new List<int[]>();
+        int start_maps = 21;
 
-        foreach (var line in File.ReadAllLines(tileMapPath))
+        List<string> tileMapPaths = new List<string>();
+
+        
+        int m = 0;
+        while (m < start_maps)
         {
-            var row = Array.ConvertAll(line.Split(' '), int.Parse);
-            mapList.Add(row);
-        }
-
-        /*string objectsOnMap = "assets\\Game\\Scripts\\Generator\\map2.map";
-        List<int[]> objectsList = new List<int[]>();
-
-        foreach (var line in File.ReadAllLines(path))
-        {
-            var row = Array.ConvertAll(line.Split(' '), int.Parse);
-            BuildingsList.Add(row);
-        }*/
-
-        int[,] mapData = new int[mapList.Count, mapList[0].Length];
-
-        for (int i = 0; i < mapList.Count; i++)
-        {
-            for (int j = 0; j < mapList[i].Length; j++)
-            {
-                mapData[i, j] = mapList[i][j];
+            try {
+                string tempString = "assets\\Game\\Scripts\\Generator\\map" + m.ToString() + ".map";
+                tileMapPaths.Add(tempString);
             }
-        }
-        //Debug.Log(ObjectTypes.walkable_area);
-        tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
-        foreach (TileMapGenerator tmg in tilemapGenerators){
-            tmg.Init(mapData, tiles, this, customTiles);
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+
+            m++;
         }
 
-        foreach (TileMapGenerator tmg in tilemapGenerators){
-            tmg.AfterStart();
+
+        /*string tileMapPath = "assets\\Game\\Scripts\\Generator\\map1.map";
+        string tileMapPath = "assets\\Game\\Scripts\\Generator\\map2.map";*/
+
+        int map_num = 0;
+        foreach (string tileMapPath in tileMapPaths) { 
+            List<int[]> mapList = new List<int[]>();
+
+            foreach (var line in File.ReadAllLines(tileMapPath))
+            {
+                var row = Array.ConvertAll(line.Split(' '), int.Parse);
+                mapList.Add(row);
+            }
+
+            int[,] mapData = new int[mapList.Count, mapList[0].Length];
+
+            for (int i = 0; i < mapList.Count; i++)
+            {
+                for (int j = 0; j < mapList[i].Length; j++)
+                {
+                    mapData[i, j] = mapList[i][j];
+                }
+            }
+
+            if (map_num == 0) {
+                /*string objectsOnMap = "assets\\Game\\Scripts\\Generator\\map2.map";
+                List<int[]> objectsList = new List<int[]>();
+
+                foreach (var line in File.ReadAllLines(path))
+                {
+                    var row = Array.ConvertAll(line.Split(' '), int.Parse);
+                    BuildingsList.Add(row);
+                }*/
+
+                
+                //Debug.Log(ObjectTypes.walkable_area);
+                tilemapGenerators = this.GetComponentsInChildren<TileMapGenerator>();
+                foreach (TileMapGenerator tmg in tilemapGenerators){
+                    tmg.Init(mapData, tiles, this, customTiles);
+                }
+
+                foreach (TileMapGenerator tmg in tilemapGenerators){
+                    tmg.AfterStart();
+                }
+            }
+
+            if (map_num == 0 && map_num == 1 && map_num == 2 && map_num == 3 && map_num == 4)
+            {
+                // UP, RIGHT, DOWN, LEFT, CURRENT
+                _groundDetectionController.DownloadMap(mapData, map_num);
+            }
+            
+            map_num++;
         }
     }
 
