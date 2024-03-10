@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.h8man.2d.navmeshplus": {
-      "version": "file:C:/Users/UKRAINE4EVER/Desktop/NavMeshPlus-master/NavMeshPlus-master",
+      "version": "file:../Assets/NavMeshPlus",
       "depth": 0,
       "source": "local",
       "dependencies": {}
