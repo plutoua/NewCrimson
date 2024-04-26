@@ -1,17 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using TimmyFramework;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerRotator : MonoBehaviour
 {
+    public event UnityAction<float> PlayerRotateEvent
+    {
+        add
+        {
+            _playerRotateEvent += value;
+        }
+        remove
+        {
+            _playerRotateEvent -= value;
+        }
+    }
+
+    private event UnityAction<float> _playerRotateEvent;
+
     private PlayerMover _playerMover;
     private MouseLocatorController _mouseLocatorController;
     private UIWindowsController _windowsController;
+    private Transform _circle;
 
     private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
+        _circle = transform.Find("Circle").transform;
         if (Game.IsReady)
         {
             _windowsController = Game.GetController<UIWindowsController>();
@@ -59,7 +74,8 @@ public class PlayerRotator : MonoBehaviour
     {
         var mouseWorldPosition = _mouseLocatorController.MouseWorldPosition;
         var angle = Mathf.Atan2(mouseWorldPosition.y - transform.position.y, mouseWorldPosition.x - transform.position.x) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, angle - 90);
+        _circle.eulerAngles = new Vector3(0, 0, angle - 90);
+        _playerRotateEvent?.Invoke(angle + 90);
     }
 
     private void OnPlayerMoved(Vector3 vector3)
