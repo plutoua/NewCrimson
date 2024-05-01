@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fc89b82a7298942af669be12ca81e2, type: 3}
+  m_Name: HeadTestScheme
+  m_EditorClassIdentifier: 
+  _front: {fileID: 21300000, guid: 17ca9f7e97088a84abf03306ddfedb36, type: 3}
+  _back: {fileID: 21300000, guid: 6313c1437263a7f448f0229ab5b75f7e, type: 3}
+  _profile: {fileID: 21300000, guid: 8bc0091aafa4b604d9811014c4dae6ce, type: 3}
