@@ -18,6 +18,7 @@ public class SceneConfig_timtest : SceneConfig
         controllerMap.CreateAndAdd<InventoryController>();
         controllerMap.CreateAndAdd<GroundDetectionController>();
         controllerMap.CreateAndAdd<UIWindowsController>();
+        controllerMap.CreateAndAdd<ConsoleController>();
         return controllerMap;
     }
 

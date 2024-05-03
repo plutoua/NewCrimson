@@ -18,6 +18,7 @@ public class SceneConfig_SampleScene : SceneConfig
         controllerMap.CreateAndAdd<InventoryController>();
         controllerMap.CreateAndAdd<GroundDetectionController>();
         controllerMap.CreateAndAdd<UIWindowsController>();
+        controllerMap.CreateAndAdd<ConsoleController>();
         return controllerMap;
     }
 

@@ -17,31 +17,6 @@ public class UnitView : MonoBehaviour
         playerRotator.PlayerRotateEvent += OnPlayerRotate;
     }
 
-    private void Update()
-    {
-        return;
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SetBodySprite(_body.Profile, true);
-            SetHeadSprite(_head.Profile, true);
-        }
-        else if(Input.GetKeyDown(KeyCode.D)) 
-        {
-            SetBodySprite(_body.Profile, false);
-            SetHeadSprite(_head.Profile, false);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            SetBodySprite(_body.Back, false);
-            SetHeadSprite(_head.Back, false);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            SetBodySprite(_body.Front, false);
-            SetHeadSprite(_head.Front, false);
-        }
-    }
-
     private void SetBodySprite(Sprite sprite, bool flip)
     {
         _bodyRenderer.sprite = sprite;

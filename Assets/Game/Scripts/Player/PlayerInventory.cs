@@ -19,30 +19,50 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Game.IsReady)
         {
-            AddItemToInventory();
+            ActionOnGameReady();
         }
         {
             Game.OnInitializedEvent += OnGameReady;
         }
     }
 
-    private void AddItemToInventory()
+    private void ActionOnGameReady()
     {
         var inventoryController = Game.GetController<InventoryController>();
         _playerInventory = inventoryController.PlayerInventory;
-        var testItem = new InventoryItem(_testItemScheme, _testItemAmount);
-        testItem.SetStatsOfProgress(1000);
-        _playerInventory.Add(testItem);
         _playerInventory.Add(new InventoryItem(_testItem1Scheme, _testItem1Amount));
         _playerInventory.Add(new InventoryItem(_testItem2Scheme, _testItem2Amount));
 
         _playerStatController = Game.GetController<PlayerStatController>();
+        var console = Game.GetController<ConsoleController>();
+        console.AddCommand("addItem", ConsoleAddItem);
+    }
+
+    private void ConsoleAddItem(string itemName, string itemRank = "0", string itemNumber = "1")
+    {
+        InventoryItem tempItem;
+
+        if (int.TryParse(itemNumber, out int _itemNumber))
+        {
+            tempItem = new InventoryItem(_testItemScheme, _itemNumber);
+        }
+        else
+        {
+            tempItem = new InventoryItem(_testItemScheme, 1);
+        }
+
+        if (int.TryParse(itemRank, out int _itemRank))
+        {
+            tempItem.SetStatsOfProgress(_itemRank);
+        }
+
+        _playerInventory.Add(tempItem);
     }
 
     private void OnGameReady()
     {
         Game.OnInitializedEvent -= OnGameReady;
-        AddItemToInventory();
+        ActionOnGameReady();
     }
 
     private void Update()
