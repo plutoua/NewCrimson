@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class UIWindowsController : IController, IOnStart
 {
-    public bool IsUIMode => _activeWindows.Count > 0;
     public Canvas Canvas { get; private set; }
     public UIMoveable Moveable {  get; private set; }
     public UISlider Slider { get; private set; }
@@ -20,6 +19,7 @@ public class UIWindowsController : IController, IOnStart
     private Dictionary<Type, UIIWindow> _activeWindows;
     
     private InventoryController _inventoryController;
+    private BlockerController _blockerController;
 
     public void Initialize()
     {
@@ -29,8 +29,9 @@ public class UIWindowsController : IController, IOnStart
     public void OnStart()
     {
         _inventoryController = Game.GetController<InventoryController>();
+        _blockerController = Game.GetController<BlockerController>();
     }
-
+    #region Setters
     public void SetCanvas(Canvas canvas)
     {
         if (Canvas != null)
@@ -125,7 +126,7 @@ public class UIWindowsController : IController, IOnStart
 
         InnerInventory = innerInventory;
     }
-
+    #endregion
     public void OpenInventory()
     {
         OpenWindow(PlayerInventory);
@@ -146,6 +147,11 @@ public class UIWindowsController : IController, IOnStart
             _activeWindows[window.GetType()] = window;
             window.Activate();
         }
+
+        if(_activeWindows.Count > 0)
+        {
+            _blockerController.SetUI(true);
+        }
     }
 
     public void CloseWindow(UIIWindow window)
@@ -154,6 +160,11 @@ public class UIWindowsController : IController, IOnStart
         {
             _activeWindows.Remove(window.GetType());
             window.Deactivate();
+        }
+
+        if (_activeWindows.Count == 0)
+        {
+            _blockerController.SetUI(false);
         }
     }
 
@@ -164,6 +175,11 @@ public class UIWindowsController : IController, IOnStart
             window.Deactivate();
         }
         _activeWindows.Clear();
+
+        if (_activeWindows.Count == 0)
+        {
+            _blockerController.SetUI(false);
+        }
     }
 
     

@@ -16,23 +16,20 @@ public class PlayerMover : MonoBehaviour
 
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody;
+    private bool _isCanMove;
 
-    private UIWindowsController _windowsController;
+    private BlockerController _blockerController;
     private PlayerStatController _playerStatController;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _moveDirection = Vector2.zero;
+        _isCanMove = true;
 
         if (Game.IsReady)
         {
-            _windowsController = Game.GetController<UIWindowsController>();
-            _playerStatController = Game.GetController<PlayerStatController>();
-            _speed = _playerStatController.GetStat(Stat.MoveSpeed);
-            _playerStatController.PlayerStatChangeEvent += OnStatChange;
-            var playerLocatorController = Game.GetController<PlayerLocatorController>();
-            playerLocatorController.SetPlayerMover(this);
+            WhenGameReady();
         }
         else
         {
@@ -42,7 +39,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        if (_windowsController != null && _windowsController.IsUIMode)
+        if (!_isCanMove)
         {
             return;
         }
@@ -53,12 +50,12 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_windowsController != null && _windowsController.IsUIMode)
+        if (!_isCanMove)
         {
             return;
         }
 
-        if (_windowsController != null) { Move(); }
+        Move();
         
     }
 
@@ -82,16 +79,28 @@ public class PlayerMover : MonoBehaviour
 
     private void OnGameReady()
     {
-        _windowsController = Game.GetController<UIWindowsController>();
+        Game.OnInitializedEvent -= OnGameReady;
+        WhenGameReady();
+    }
+
+    private void WhenGameReady()
+    {
+        _blockerController = Game.GetController<BlockerController>();
         _playerStatController = Game.GetController<PlayerStatController>();
         _speed = _playerStatController.GetStat(Stat.MoveSpeed);
         var playerLocatorController = Game.GetController<PlayerLocatorController>();
         playerLocatorController.SetPlayerMover(this);
         _playerStatController.PlayerStatChangeEvent += OnStatChange;
+        _blockerController.UIChangeActivityEvent += OnUIChangeActivity;
     }
 
     private void OnStatChange()
     {
         _speed = _playerStatController.GetStat(Stat.MoveSpeed);
+    }
+
+    private void OnUIChangeActivity(bool isCanMove)
+    {
+        _isCanMove = isCanMove;
     }
 }

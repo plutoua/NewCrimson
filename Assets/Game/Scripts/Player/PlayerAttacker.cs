@@ -11,46 +11,24 @@ public class PlayerAttacker : MonoBehaviour
     private float _attackDelay;
     private float _lastAttackTimePass;
     private bool _isCanAttack;
+    private bool _isAvalibleAtack;
     private MouseLocatorController _mouseLocatorController;
-    private UIWindowsController _windowsController;
+    private BlockerController _blocker;
     private PlayerStatController _playerStatController;
-
-    // [SerializeField] private AttackScheme _attackScheme;
-    // private int _currentAttackIndex = 0;
-
-    /*
-    private void NextAttackScheme()
-    {
-        if (_attackSchemes.Count == 0)
-        {
-            return;
-        }
-
-        ChangeAttackScheme(_attackSchemes[_currentAttackIndex]);
-
-        // «б≥льшуЇмо ≥ндекс, але €кщо в≥н дос€гаЇ к≥нц€ списку, починаЇмо знову з 0
-        _currentAttackIndex = (_currentAttackIndex + 1) % _attackSchemes.Count;
-    }*/
-
 
     private void ChangeAttackScheme(AttackScheme newAttackScheme)
     {
         StartAttackDelay();
         _attackScheme = newAttackScheme;
-        // _attackScheme.SetIsPlayerBullets(true);
     }
 
     private void Start()
     {
-        // _attackScheme = _attackScheme;
-        // _attackScheme.SetIsPlayerBullets(true);
+        _isAvalibleAtack = true;
+
         if (Game.IsReady)
         {
-            _mouseLocatorController = Game.GetController<MouseLocatorController>();
-            _windowsController = Game.GetController<UIWindowsController>();
-            _playerStatController = Game.GetController<PlayerStatController>();
-            _attackDelay = SetAttackDelay();
-            _playerStatController.PlayerStatChangeEvent += OnStatChange;
+            WhenGameReady();
 
         }
         else
@@ -61,7 +39,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void Update()
     {
-        if(_windowsController != null && _windowsController.IsUIMode)
+        if(!_isAvalibleAtack)
         {
             return;
         }
@@ -121,12 +99,23 @@ public class PlayerAttacker : MonoBehaviour
 
     private void OnGameReady()
     {
+        Game.OnInitializedEvent -= OnGameReady;
+        WhenGameReady();
+    }
+
+    private void WhenGameReady()
+    {
         _mouseLocatorController = Game.GetController<MouseLocatorController>();
-        _windowsController = Game.GetController<UIWindowsController>();
+        _blocker = Game.GetController<BlockerController>();
         _playerStatController = Game.GetController<PlayerStatController>();
         _attackDelay = SetAttackDelay();
         _playerStatController.PlayerStatChangeEvent += OnStatChange;
+        _blocker.UIChangeActivityEvent += OnUIChangeActivity;
+    }
 
+    private void OnUIChangeActivity(bool isCanAtack)
+    {
+        _isAvalibleAtack = isCanAtack;
     }
 
     private void OnStatChange()
@@ -173,10 +162,7 @@ public class PlayerAttacker : MonoBehaviour
         {
             attackDeley = 8f;
         }
-
-
-
-        
+  
         return attackDeley;
     }
 }

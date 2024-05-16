@@ -42,10 +42,10 @@ public class EnemyAttacker : MonoBehaviour
 
     private void Update()
     {
-        if (_windowsController != null && _windowsController.IsUIMode)
-        {
-            return;
-        }
+        //if (_windowsController != null && _windowsController.IsUIMode)
+        //{
+        //    return;
+        //}
 
         if (_isCanAttack)
         {

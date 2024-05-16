@@ -12,6 +12,7 @@ public class ConsoleManager : MonoBehaviour
     [SerializeField] private ScrollRect _scrollRect;
 
     private ConsoleController _console;
+    private BlockerController _blocker;
     private CanvasGroup _canvasGroup;
     private bool _isVisible;
 
@@ -62,7 +63,9 @@ public class ConsoleManager : MonoBehaviour
 
     private void OnGameReady()
     {
+        Game.OnInitializedEvent -= OnGameReady;
         _console = Game.GetController<ConsoleController>();
+        _blocker = Game.GetController<BlockerController>();
     }
 
     private void DoAction(string value)
@@ -98,14 +101,18 @@ public class ConsoleManager : MonoBehaviour
         {
             _isVisible = true;
             _canvasGroup.alpha = 1f;
-        }
+            _canvasGroup.blocksRaycasts = true;
+            _blocker.SetConsole(_isVisible);
+        }  
     }
 
     private void HideConsole()
     {
         _isVisible = false;
         _canvasGroup.alpha = 0;
+        _canvasGroup.blocksRaycasts = false;
         ResetConsole();
+        _blocker.SetConsole(_isVisible);
     }
 
     private void ResetConsole()

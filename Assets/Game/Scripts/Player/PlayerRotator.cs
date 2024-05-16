@@ -20,18 +20,19 @@ public class PlayerRotator : MonoBehaviour
 
     private PlayerMover _playerMover;
     private MouseLocatorController _mouseLocatorController;
-    private UIWindowsController _windowsController;
+    private BlockerController _blockerController;
     private Transform _circle;
+    private bool _isCanRotate;
 
     private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
         _circle = transform.Find("Circle").transform;
+        _isCanRotate = true;
+
         if (Game.IsReady)
         {
-            _windowsController = Game.GetController<UIWindowsController>();
-            _mouseLocatorController = Game.GetController<MouseLocatorController>();
-            _mouseLocatorController.MouseChangePositionEvent += OnMouseMoved;
+            WhenGameReady();
         }
         else
         {
@@ -50,7 +51,7 @@ public class PlayerRotator : MonoBehaviour
 
     private void Update()
     {
-        if (_windowsController != null && _windowsController.IsUIMode)
+        if (!_isCanRotate)
         {
             return;
         }
@@ -90,8 +91,19 @@ public class PlayerRotator : MonoBehaviour
 
     private void OnGameReady()
     {
-        _windowsController = Game.GetController<UIWindowsController>();
+        WhenGameReady();
+    }
+
+    private void WhenGameReady()
+    {
+        _blockerController = Game.GetController<BlockerController>();
         _mouseLocatorController = Game.GetController<MouseLocatorController>();
         _mouseLocatorController.MouseChangePositionEvent += OnMouseMoved;
+        _blockerController.UIChangeActivityEvent += OnUIChangeActivity;
+    }
+
+    private void OnUIChangeActivity(bool isCanRotate)
+    {
+        _isCanRotate = isCanRotate;
     }
 }
