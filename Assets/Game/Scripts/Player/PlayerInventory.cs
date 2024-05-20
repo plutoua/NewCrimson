@@ -3,15 +3,9 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // Test only
-    [SerializeField] private ItemScheme _testItemScheme;
-    [SerializeField] private int _testItemAmount;
-    [SerializeField] private ItemScheme _testItem1Scheme;
-    [SerializeField] private int _testItem1Amount;
-    [SerializeField] private ItemScheme _testItem2Scheme;
-    [SerializeField] private int _testItem2Amount;
 
     private PlayerStatController _playerStatController;
+    private ItemStorage _itemStorage;
 
     private Inventory _playerInventory;
 
@@ -30,25 +24,37 @@ public class PlayerInventory : MonoBehaviour
     {
         var inventoryController = Game.GetController<InventoryController>();
         _playerInventory = inventoryController.PlayerInventory;
-        _playerInventory.Add(new InventoryItem(_testItem1Scheme, _testItem1Amount));
-        _playerInventory.Add(new InventoryItem(_testItem2Scheme, _testItem2Amount));
-
         _playerStatController = Game.GetController<PlayerStatController>();
+        _itemStorage = Game.GetStorage<ItemStorage>();
         var console = Game.GetController<ConsoleController>();
         console.AddCommand("addItem", ConsoleAddItem);
     }
 
-    private void ConsoleAddItem(string itemName, string itemRank = "0", string itemNumber = "1")
+    private void ConsoleAddItem(string itemID, string itemRank = "0", string itemNumber = "1")
     {
         InventoryItem tempItem;
+        ItemScheme itemScheme;
 
-        if (int.TryParse(itemNumber, out int _itemNumber))
+        if (int.TryParse(itemID, out int _itemID))
         {
-            tempItem = new InventoryItem(_testItemScheme, _itemNumber);
+            itemScheme = _itemStorage.GetItemByID(_itemID);
+            if(itemScheme == null) 
+            {
+                return;
+            }
         }
         else
         {
-            tempItem = new InventoryItem(_testItemScheme, 1);
+            return;
+        }
+
+        if (int.TryParse(itemNumber, out int _itemNumber))
+        {
+            tempItem = new InventoryItem(itemScheme, _itemNumber);
+        }
+        else
+        {
+            tempItem = new InventoryItem(itemScheme, 1);
         }
 
         if (int.TryParse(itemRank, out int _itemRank))
@@ -67,14 +73,6 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.O)) 
-        {
-            _playerInventory.Add(new InventoryItem(_testItemScheme, Random.Range(1, 15)));
-        }
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            _playerInventory.Remove(new InventoryItem(_testItemScheme, 4));
-        }
         if (Input.GetKeyUp(KeyCode.K))
         {
             _playerInventory.ChangeInventorySize(_playerInventory.SlotNumber + 1);

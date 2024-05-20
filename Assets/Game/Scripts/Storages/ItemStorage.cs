@@ -10,13 +10,18 @@ public class ItemStorage : IStorage
     public void Initialize()
     {
         _items = new Dictionary<int, ItemScheme>();
+        var itemSchemes = Resources.LoadAll("ItemSchemes", typeof(ItemScheme));
+
+        SetItems(itemSchemes);
     }
 
-    public void SetItems(ItemScheme[] items)
+    public void SetItems(Object[] items)
     {
+        ItemScheme itemScheme;
         foreach (var item in items)
         {
-            _items[item.ID] = item;
+            itemScheme = (ItemScheme)item;
+            _items[itemScheme.ID] = itemScheme;
         }
     }
 

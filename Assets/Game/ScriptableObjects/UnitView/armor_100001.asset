@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fc89b82a7298942af669be12ca81e2, type: 3}
-  m_Name: test_head
+  m_Name: armor_100001
   m_EditorClassIdentifier: 
-  _front: {fileID: 21300000, guid: fdaa5ef450fda85479204d2f61f2d73c, type: 3}
-  _back: {fileID: 21300000, guid: 380ac7e8f09ba4e4c814e41967f86426, type: 3}
-  _profile: {fileID: 21300000, guid: 9341dd54b5e45044498367ef0c7859ae, type: 3}
+  _front: {fileID: 1405859686, guid: a283fb548eabb93459f94a849cedc6f6, type: 3}
+  _back: {fileID: 1562966778, guid: a283fb548eabb93459f94a849cedc6f6, type: 3}
+  _profile: {fileID: -1335762421, guid: a283fb548eabb93459f94a849cedc6f6, type: 3}

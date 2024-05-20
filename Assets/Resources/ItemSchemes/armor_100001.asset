@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c3c97f8fa008d4db733d9fd6fe42bd, type: 3}
+  m_Name: armor_100001
+  m_EditorClassIdentifier: 
+  _id: 100001
+  _spriteIcon: {fileID: 1405859686, guid: a283fb548eabb93459f94a849cedc6f6, type: 3}
+  _name: armor_100001
+  _maxItemsInStack: 1
+  _stackMultiplier: 1
+  _price: 1000
+  _equipmentType: 1
+  _stats:
+  - Stat: 0
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 0
+  - Stat: 0
+    PointCost: 1
+    CoinCost: 25
+    Value: 5
+    MaxValue: 100
+    IsPercent: 1
+  - Stat: 1
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 2
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 3
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 4
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 5
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 6
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  - Stat: 7
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 1
+  _attackSchemes: []
+  _viewScheme: {fileID: 11400000, guid: 78076c532cd66ca4a9772a791b8fd29d, type: 2}
