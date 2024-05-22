@@ -54,6 +54,7 @@ public class BlockerController : IController
         {
             _consoleChangeActivityEvent?.Invoke(false);
         }
+        else
         {
             _consoleChangeActivityEvent?.Invoke(true);
         }

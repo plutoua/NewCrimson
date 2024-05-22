@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class UIWindowsController : IController, IOnStart
 {
+    public event Action<UIEquipment> OnEqupmentReadyEvent;
+
     public Canvas Canvas { get; private set; }
     public UIMoveable Moveable {  get; private set; }
     public UISlider Slider { get; private set; }
@@ -15,6 +17,7 @@ public class UIWindowsController : IController, IOnStart
     public UIStaticCharacteristics Ñharacteristics { get; private set; }
     public UITrade Trade { get; private set; }
     public InventoryItemMover ItemOnMove { get; private set; }
+    public UIEquipment Equipment { get; private set; }
 
     private Dictionary<Type, UIIWindow> _activeWindows;
     
@@ -125,6 +128,17 @@ public class UIWindowsController : IController, IOnStart
         }
 
         InnerInventory = innerInventory;
+    }
+
+    public void SetEquipment(UIEquipment equipment)
+    {
+        if (Equipment != null)
+        {
+            return;
+        }
+        Equipment = equipment;
+
+        OnEqupmentReadyEvent?.Invoke(Equipment);
     }
     #endregion
     public void OpenInventory()

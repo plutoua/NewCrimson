@@ -6,13 +6,14 @@ public class UIWindowSystem : MonoBehaviour
     [SerializeField] private RecipeSetScheme _selfRecipes;
 
     private UIWindowsController _windowsController;
+    private bool _isUIAvalible;
 
     private void Start()
     {
+        _isUIAvalible = true;
         if (Game.IsReady)
         {
-            _windowsController = Game.GetController<UIWindowsController>();
-            _windowsController.SetCanvas(GetComponent<Canvas>());
+            WhenGameReady();
         }
         else
         {
@@ -22,7 +23,7 @@ public class UIWindowSystem : MonoBehaviour
 
     private void Update()
     {
-        if(_windowsController == null) 
+        if(_windowsController == null || !_isUIAvalible) 
         {
             return;
         }
@@ -48,6 +49,11 @@ public class UIWindowSystem : MonoBehaviour
             _windowsController.OpenWindow(_windowsController.Trade);
         }
 
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            _windowsController.OpenWindow(_windowsController.Equipment);
+        }
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             _windowsController.CloseAllWindows();
@@ -57,12 +63,24 @@ public class UIWindowSystem : MonoBehaviour
     private void OnGameReady()
     {
         Game.OnInitializedEvent -= OnGameReady;
+        WhenGameReady();
+    }
+
+    private void WhenGameReady()
+    {
         _windowsController = Game.GetController<UIWindowsController>();
         _windowsController.SetCanvas(GetComponent<Canvas>());
+        var blocker = Game.GetController<BlockerController>();
+        blocker.ConsoleChangeActivityEvent += OnConsoleAction;
     }
 
     private void ActivateInventory()
     {
         _windowsController.OpenInventory();
+    }
+
+    private void OnConsoleAction(bool enable)
+    {
+        _isUIAvalible = enable;
     }
 }

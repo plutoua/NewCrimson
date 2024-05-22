@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c3c97f8fa008d4db733d9fd6fe42bd, type: 3}
+  m_Name: armor_100002
+  m_EditorClassIdentifier: 
+  _id: 100002
+  _spriteIcon: {fileID: 1820161724, guid: 463de9eb5d85b49409995f68995786dd, type: 3}
+  _name: armor_100002
+  _maxItemsInStack: 1
+  _stackMultiplier: 1
+  _price: 1000
+  _equipmentType: 1
+  _stats:
+  - Stat: 0
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 0
+  - Stat: 1
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 0
+  - Stat: 3
+    PointCost: 1
+    CoinCost: 10
+    Value: 1
+    MaxValue: 20
+    IsPercent: 0
+  _attackSchemes: []
+  _viewScheme: {fileID: 11400000, guid: a33417f3a8b9c9f44af08c3436b76600, type: 2}

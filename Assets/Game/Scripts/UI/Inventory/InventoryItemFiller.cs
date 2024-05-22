@@ -34,8 +34,9 @@ public class InventoryItemFiller : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag.gameObject.TryGetComponent(out UIInventoryItem inventoryItem))
-        {
+        
+        if (eventData.pointerDrag.gameObject.TryGetComponent(out UIInventoryItem inventoryItem))
+        { 
             var toSlot = _uIInventorySlot.InventorySlot;
             var fromSlot = inventoryItem.UIInventorySlot.InventorySlot;        
             _windowsController.Slider.Activate(fromSlot, toSlot);  

@@ -1,10 +1,22 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TimmyFramework;
 using UnityEngine;
 
-public class UIEquipment : MonoBehaviour
+public class UIEquipment : MonoBehaviour, UIIWindow
 {
+    public event Action<InventoryItem[]> OnItemSetChangeEvent
+    {
+        add { _onItemSetChangeEvent += value; }
+        remove { _onItemSetChangeEvent -= value; }
+    }
+
+    private event Action<InventoryItem[]> _onItemSetChangeEvent;
+
+    private MoveableWindow _moveableWindow;
+    private UIWindowsController _windowsController;
+
     private UIEquipmentSlot[] _slots;
     private PlayerStatController _playerStatController;
 
@@ -23,6 +35,9 @@ public class UIEquipment : MonoBehaviour
 
     private void InitialSetup()
     {
+        _moveableWindow = GetComponentInParent<MoveableWindow>();
+        _moveableWindow.CloseButtonEvent += OnCloseButton;
+
         _slots = GetComponentsInChildren<UIEquipmentSlot>();
 
         for(int i = 0; i < _slots.Length; i++)
@@ -34,6 +49,9 @@ public class UIEquipment : MonoBehaviour
     private void SetLinks()
     {
         _playerStatController = Game.GetController<PlayerStatController>();
+
+        _windowsController = Game.GetController<UIWindowsController>();
+        _windowsController.SetEquipment(this);
     }
 
     private void OnGameReady()
@@ -45,6 +63,7 @@ public class UIEquipment : MonoBehaviour
     private void OnEquipmentChange()
     {
         var items = SelectItemsFromSlots();
+        _onItemSetChangeEvent?.Invoke(items);
         var stats = SelectStatsFromItems(items);
         var statsPercent = SelectStatsPercentFromItems(items);
         var attackSchemes = GetAttackSchemes(items);
@@ -125,5 +144,20 @@ public class UIEquipment : MonoBehaviour
         }
 
         return result;
+    }
+
+    private void OnCloseButton()
+    {
+        _windowsController.CloseWindow(this);
+    }
+
+    public void Activate()
+    {
+        _moveableWindow.Activate();
+    }
+
+    public void Deactivate()
+    {
+        _moveableWindow.Deactivate();
     }
 }

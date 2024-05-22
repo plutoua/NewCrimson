@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitView : MonoBehaviour
@@ -8,10 +9,23 @@ public class UnitView : MonoBehaviour
     private SpriteRenderer _bodyRenderer;
     private SpriteRenderer _headRenderer;
 
+    private View _viewNow;
+
+    public void SetEquipment(ViewScheme head, ViewScheme body)
+    {
+        if (head != null) _head = head;
+        if (body != null) _body = body;
+
+        UpdateView();
+    }
+
     private void Start()
     {
         _bodyRenderer = transform.Find("Body").GetComponent<SpriteRenderer>();
         _headRenderer = transform.Find("Head").GetComponent<SpriteRenderer>();
+
+        _viewNow = View.Front;
+        UpdateView();
 
         var playerRotator = GetComponentInParent<PlayerRotator>();
         playerRotator.PlayerRotateEvent += OnPlayerRotate;
@@ -31,25 +45,55 @@ public class UnitView : MonoBehaviour
 
     private void OnPlayerRotate(float angle)
     {
-        if(angle <= 45 || angle >= 315)
+        
+        if(angle >= -45 && angle <= 45 || angle >= 315)
         {
-            SetBodySprite(_body.Front, false);
-            SetHeadSprite(_head.Front, false);
+            _viewNow = View.Front;
         }
         else if(angle > 45 && angle < 135)
         {
-            SetBodySprite(_body.Profile, false);
-            SetHeadSprite(_head.Profile, false);
+            _viewNow = View.Right;
         }
         else if(angle >= 135 &&  angle <= 225)
         {
-            SetBodySprite(_body.Back, false);
-            SetHeadSprite(_head.Back, false);
+            _viewNow = View.Back;
         }
-        else if(angle > 225 && angle < 315)
+        else if(angle > 225 && angle < 315 || angle < -45 && angle >= -90)
         {
-            SetBodySprite(_body.Profile, true);
-            SetHeadSprite(_head.Profile, true);
+            _viewNow = View.Left;
         }
+
+        UpdateView();
+    }
+
+    private void UpdateView()
+    {
+        switch (_viewNow)
+        {
+            case View.Front:
+                SetBodySprite(_body.Front, false);
+                SetHeadSprite(_head.Front, false);
+                break;
+            case View.Right:
+                SetBodySprite(_body.Profile, false);
+                SetHeadSprite(_head.Profile, false);
+                break;
+            case View.Back:
+                SetBodySprite(_body.Back, false);
+                SetHeadSprite(_head.Back, false);
+                break;
+            case View.Left:
+                SetBodySprite(_body.Profile, true);
+                SetHeadSprite(_head.Profile, true);
+                break;
+        }
+    }
+
+    private enum View
+    {
+        Left,
+        Right,
+        Front,
+        Back
     }
 }

@@ -102,6 +102,7 @@ public class ConsoleManager : MonoBehaviour
             _isVisible = true;
             _canvasGroup.alpha = 1f;
             _canvasGroup.blocksRaycasts = true;
+            _inputField.Select();
             _blocker.SetConsole(_isVisible);
         }  
     }

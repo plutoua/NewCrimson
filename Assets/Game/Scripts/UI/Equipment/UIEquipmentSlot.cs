@@ -47,7 +47,7 @@ public class UIEquipmentSlot : MonoBehaviour, IDropHandler
 
     private void SetItem(InventoryItem item)
     {
-        Item = item;
+        Item = item.CloneItemWithAmount(item.Amount);
         _image.gameObject.SetActive(true);
         _image.sprite = Item.Sprite;
         _onEquipmentChangeEvent?.Invoke();

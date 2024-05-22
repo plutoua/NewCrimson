@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b74670d1fae4cc43b4ac2d5449c5c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _body: {fileID: 11400000, guid: 07f15034e71328e40bf8c2a18c72bc43, type: 2}
-  _head: {fileID: 11400000, guid: 98457dad90e618146ac59cea0454eb1a, type: 2}
+  _body: {fileID: 11400000, guid: 6d26e3eca27b5ad4188b502be7d68bc3, type: 2}
+  _head: {fileID: 11400000, guid: 82b360239dffe4548a100bc137c96b22, type: 2}
 --- !u!70 &9134831321175520397
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -333,6 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3179298701242449538}
+  - component: {fileID: 7505296043545753146}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -357,6 +358,41 @@ Transform:
   - {fileID: 8091589121717824564}
   m_Father: {fileID: 3165572888226048939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7505296043545753146
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112158437012891863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8231711498242636620
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +420,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4957890109946926346}
@@ -430,7 +466,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 18
-  m_Sprite: {fileID: 21300000, guid: 29a744f03e58fc44db1e3d36c6c5f88e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ebe4a7006d401f45890a0c8508d6ce6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -556,12 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e787124263950644a9bddbffaf13c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testItemScheme: {fileID: 11400000, guid: d9d57f2fa9aecb640915f088ee90bf0f, type: 2}
-  _testItemAmount: 1
-  _testItem1Scheme: {fileID: 11400000, guid: 83e664276d7823e45b488910b5b6c16b, type: 2}
-  _testItem1Amount: 12
-  _testItem2Scheme: {fileID: 11400000, guid: 9197cbcdc3da0814880a6fd91c537051, type: 2}
-  _testItem2Amount: 100
 --- !u!1 &9045246023872846455
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +619,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.98999995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4957890109946926346}
@@ -635,7 +665,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 19
-  m_Sprite: {fileID: 21300000, guid: fdaa5ef450fda85479204d2f61f2d73c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe691ed5103e9c54ca8413a3d48037a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
