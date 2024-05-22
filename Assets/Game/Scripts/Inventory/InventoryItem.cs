@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InventoryItem
@@ -10,11 +11,13 @@ public class InventoryItem
     public int MaxItemInStack => _itemScheme.MaxItemInStack;
     public int Price => _itemScheme.Price + _statsPrice;
     public int Multiplier => _itemScheme.StackMultiplier;
+    public int Progress => _progress;
     public int Amount { get; private set; }
     public ItemScheme ItemScheme => _itemScheme;
     public List<StatAmount> Stats => _stats;
 
     protected ItemScheme _itemScheme;
+    protected int _progress;
     protected int _statsPrice;
     protected List<StatAmount> _stats;
 
@@ -23,6 +26,7 @@ public class InventoryItem
         _itemScheme = itemScheme;
         Amount = amount;
         _statsPrice = 0;
+        _progress = 0;
         _stats = new List<StatAmount>();
     }
 
@@ -31,6 +35,7 @@ public class InventoryItem
         _itemScheme = itemScheme;
         Amount = amount;
         _statsPrice = 0;
+        _progress = 0;
         _stats = stats;
     }
 
@@ -60,6 +65,7 @@ public class InventoryItem
         {
             _stats.Clear();
             _statsPrice = 0;
+            _progress = progressValue;
             var statFromScheme = ((EquipmentScheme)_itemScheme).Stats;
             var statCount = statFromScheme.Length > 5 ? 5 : statFromScheme.Length;
 

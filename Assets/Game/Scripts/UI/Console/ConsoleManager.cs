@@ -66,6 +66,8 @@ public class ConsoleManager : MonoBehaviour
         Game.OnInitializedEvent -= OnGameReady;
         _console = Game.GetController<ConsoleController>();
         _blocker = Game.GetController<BlockerController>();
+
+        _console.OnNeedWriteToConsoleEvent += OnInputEnd;
     }
 
     private void DoAction(string value)
@@ -119,5 +121,6 @@ public class ConsoleManager : MonoBehaviour
     private void ResetConsole()
     {
         _inputField.text = string.Empty;
+        _inputField.ReleaseSelection();
     }
 }

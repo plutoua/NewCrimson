@@ -4,6 +4,14 @@ using TimmyFramework;
 
 public class ConsoleController : IController
 {
+    public event Action<string> OnNeedWriteToConsoleEvent
+    {
+        add { _onNeedWriteToConsoleEvent += value; }
+        remove { _onNeedWriteToConsoleEvent -= value; }
+    }
+
+    private event Action<string> _onNeedWriteToConsoleEvent;
+
     private Dictionary<string, Action<string, string, string>> _commands;
     public void Initialize()
     {
@@ -27,5 +35,10 @@ public class ConsoleController : IController
             _commands[command](arg1, arg2, arg3);
         }
            
+    }
+
+    public void WriteToConsole(string message)
+    {
+        _onNeedWriteToConsoleEvent?.Invoke(message);
     }
 }

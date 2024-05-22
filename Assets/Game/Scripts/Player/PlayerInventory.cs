@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     private ItemStorage _itemStorage;
 
     private Inventory _playerInventory;
+    private ConsoleController _consoleController;
 
     private void Start()
     {
@@ -26,8 +27,8 @@ public class PlayerInventory : MonoBehaviour
         _playerInventory = inventoryController.PlayerInventory;
         _playerStatController = Game.GetController<PlayerStatController>();
         _itemStorage = Game.GetStorage<ItemStorage>();
-        var console = Game.GetController<ConsoleController>();
-        console.AddCommand("addItem", ConsoleAddItem);
+        _consoleController = Game.GetController<ConsoleController>();
+        _consoleController.AddCommand("addItem", ConsoleAddItem);
     }
 
     private void ConsoleAddItem(string itemID, string itemRank = "0", string itemNumber = "1")
@@ -62,7 +63,11 @@ public class PlayerInventory : MonoBehaviour
             tempItem.SetStatsOfProgress(_itemRank);
         }
 
+        var message = $"Item {tempItem.Name} (progress: {tempItem.Progress}, amount: {tempItem.Amount}) add to inventory.";
+
         _playerInventory.Add(tempItem);
+        
+        _consoleController.WriteToConsole(message);
     }
 
     private void OnGameReady()
